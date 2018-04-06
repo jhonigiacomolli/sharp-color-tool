@@ -194,6 +194,7 @@
             this.lstTintas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lstTintas.BackColor = System.Drawing.Color.White;
+            this.lstTintas.CheckBoxes = true;
             this.lstTintas.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F);
             this.lstTintas.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lstTintas.FullRowSelect = true;
@@ -388,6 +389,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lstTintasFinalizadas.BackColor = System.Drawing.Color.White;
+            this.lstTintasFinalizadas.CheckBoxes = true;
             this.lstTintasFinalizadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F);
             this.lstTintasFinalizadas.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lstTintasFinalizadas.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
@@ -446,6 +448,8 @@
             // check_Multi_Selecao
             // 
             this.check_Multi_Selecao.AutoSize = true;
+            this.check_Multi_Selecao.Checked = true;
+            this.check_Multi_Selecao.CheckState = System.Windows.Forms.CheckState.Checked;
             this.check_Multi_Selecao.ForeColor = System.Drawing.Color.Silver;
             this.check_Multi_Selecao.Location = new System.Drawing.Point(302, 76);
             this.check_Multi_Selecao.Name = "check_Multi_Selecao";

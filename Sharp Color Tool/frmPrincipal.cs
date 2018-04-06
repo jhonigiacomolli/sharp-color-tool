@@ -1397,7 +1397,16 @@ namespace Sharp_Color_Tool
                         string Colorista = wsPlanilha.get_Range("C4").Text;
                         string Valor_Custo = wsPlanilha.get_Range("H4").Text;
                         string Contador_Chapinhas = wsPlanilha.get_Range("I5").Text;
-                        string Valor_Venda = wsPlanilha.get_Range("H3").Text;
+
+                        string Valor_Venda;
+                        if (wsPlanilha.get_Range("H3").Text == string.Empty)
+                        {
+                            Valor_Venda = "0,00";
+                        }
+                        else
+                        {
+                            Valor_Venda = wsPlanilha.get_Range("H3").Text;
+                        }
 
                         excelApp.DisplayAlerts = false;
 
@@ -1532,7 +1541,16 @@ namespace Sharp_Color_Tool
                     string Colorista = wsPlanilha.get_Range("C4").Text;
                     string Valor_Custo = wsPlanilha.get_Range("H4").Text;
                     string Contador_Chapinhas = wsPlanilha.get_Range("I5").Text;
-                    string Valor_Venda = wsPlanilha.get_Range("H3").Text;
+
+                    string Valor_Venda;
+                    if(wsPlanilha.get_Range("H3").Text == string.Empty)
+                    {
+                        Valor_Venda = "0,00";
+                    }
+                    else
+                    {
+                        Valor_Venda = wsPlanilha.get_Range("H3").Text;
+                    }
 
                     excelApp.DisplayAlerts = false;
 
