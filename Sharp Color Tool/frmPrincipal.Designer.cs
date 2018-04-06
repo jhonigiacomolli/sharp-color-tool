@@ -198,10 +198,9 @@
             this.lstTintas.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lstTintas.FullRowSelect = true;
             this.lstTintas.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.lstTintas.HoverSelection = true;
             this.lstTintas.Location = new System.Drawing.Point(0, 37);
             this.lstTintas.Name = "lstTintas";
-            this.lstTintas.Size = new System.Drawing.Size(1352, 234);
+            this.lstTintas.Size = new System.Drawing.Size(1752, 234);
             this.lstTintas.TabIndex = 20;
             this.lstTintas.UseCompatibleStateImageBehavior = false;
             this.lstTintas.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lstTintas_ColumnClick);
@@ -394,7 +393,7 @@
             this.lstTintasFinalizadas.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lstTintasFinalizadas.Location = new System.Drawing.Point(0, 275);
             this.lstTintasFinalizadas.Name = "lstTintasFinalizadas";
-            this.lstTintasFinalizadas.Size = new System.Drawing.Size(1352, 214);
+            this.lstTintasFinalizadas.Size = new System.Drawing.Size(1752, 248);
             this.lstTintasFinalizadas.Sorting = System.Windows.Forms.SortOrder.Descending;
             this.lstTintasFinalizadas.TabIndex = 25;
             this.lstTintasFinalizadas.UseCompatibleStateImageBehavior = false;
@@ -438,9 +437,9 @@
             this.Painel_Opcoes.Controls.Add(this.cmdOpen_Options);
             this.Painel_Opcoes.Controls.Add(this.cmdClose_Options);
             this.Painel_Opcoes.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Painel_Opcoes.Location = new System.Drawing.Point(957, 0);
+            this.Painel_Opcoes.Location = new System.Drawing.Point(1370, 0);
             this.Painel_Opcoes.Name = "Painel_Opcoes";
-            this.Painel_Opcoes.Size = new System.Drawing.Size(445, 709);
+            this.Painel_Opcoes.Size = new System.Drawing.Size(32, 709);
             this.Painel_Opcoes.TabIndex = 26;
             this.Painel_Opcoes.Click += new System.EventHandler(this.Painel_Opcoes_Click);
             // 

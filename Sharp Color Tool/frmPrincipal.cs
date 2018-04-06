@@ -8,7 +8,7 @@ using System.Globalization;
 using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Media;
-using Excel=Microsoft.Office.Interop.Excel;
+using Excel = Microsoft.Office.Interop.Excel;
 
 
 
@@ -17,8 +17,8 @@ namespace Sharp_Color_Tool
     public partial class frmPrincipal : Form
     {
         public ListViewColumnSorter lvwColumnSorter;
-        public ListViewColumnSorter lvwColumnSorter2;        
-        
+        public ListViewColumnSorter lvwColumnSorter2;
+
         public string RespostaMSG;
         public frmPrincipal()
         {
@@ -310,7 +310,7 @@ namespace Sharp_Color_Tool
             AtualizaLSTOSAberta();
             Globais.Config();
         }
-        
+
 
         public void AtualizaLSTOSAberta()
         {
@@ -405,7 +405,7 @@ namespace Sharp_Color_Tool
                         item.SubItems.Add(dr["Data_Faturamento"].ToString().ToUpper());
 
                         double Custo = Convert.ToDouble(dr["Valor_Custo"]);
-                        item.SubItems.Add(string.Format("{0:N2}" , Custo));
+                        item.SubItems.Add(string.Format("{0:N2}", Custo));
 
                         double Venda = Convert.ToDouble(dr["Valor_Venda"]);
                         item.SubItems.Add(string.Format("{0:N2}", Venda));
@@ -416,6 +416,11 @@ namespace Sharp_Color_Tool
                     }
 
                     lstTintas.Items.Add(item);
+
+                    lvwColumnSorter.Order = SortOrder.Ascending;
+                    lvwColumnSorter.SortColumn = 19;
+                    lstTintas.Sort();
+                    
                 }
                 //fecha o datareader
                 dr.Close();
@@ -529,7 +534,7 @@ namespace Sharp_Color_Tool
                         item2.SubItems.Add(dr2["Data_Faturamento"].ToString().ToUpper());
 
                         double Custo = Convert.ToDouble(dr2["Valor_Custo"]);
-                        item2.SubItems.Add(string.Format("{0:N2}" , Custo));
+                        item2.SubItems.Add(string.Format("{0:N2}", Custo));
 
                         double Venda = Convert.ToDouble(dr2["Valor_Venda"]);
                         item2.SubItems.Add(string.Format("{0:N2}", Venda));
@@ -540,12 +545,13 @@ namespace Sharp_Color_Tool
                     }
 
                     lstTintasFinalizadas.Items.Add(item2);
+
+                    lvwColumnSorter2.Order = SortOrder.Descending;
+                    lvwColumnSorter2.SortColumn = 16;
+                    lstTintasFinalizadas.Sort();
                 }
                 //fecha o datareader
                 dr2.Close();
-
-                
-
             }
             catch (System.Data.OleDb.OleDbException ex)
             {
@@ -575,13 +581,13 @@ namespace Sharp_Color_Tool
 
         private void cmdEdit_Click(object sender, EventArgs e)
         {
-            if (check_Multi_Selecao.Checked == true && lstTintas.CheckedItems.Count>1)
+            if (check_Multi_Selecao.Checked == true && lstTintas.CheckedItems.Count > 1)
             {
                 Form messagebox = new frmMensagemPersonalizada("Critico", "Ação não autorizada", "Não é possivel fazer multiplas edições!");
                 messagebox.ShowDialog();
                 return;
             }
-            if (check_Multi_Selecao.Checked == true && lstTintas.CheckedItems.Count==1)
+            if (check_Multi_Selecao.Checked == true && lstTintas.CheckedItems.Count == 1)
             {
 
                 foreach (ListViewItem ItemSelecionado in lstTintas.Items) ;
@@ -589,10 +595,10 @@ namespace Sharp_Color_Tool
                 frmIncluir frmincluir = new frmIncluir(this);
                 List<Itens_Lista> Lista = new List<Itens_Lista>();
 
-                for (int i=0 ; i<lstTintas.Items.Count ; i++)
-                {                  
+                for (int i = 0; i < lstTintas.Items.Count; i++)
+                {
 
-                    if(lstTintas.Items[i].Checked==true)
+                    if (lstTintas.Items[i].Checked == true)
                     {
                         Lista.Add(new Itens_Lista()
                         {
@@ -614,53 +620,53 @@ namespace Sharp_Color_Tool
                     }
 
                 }
-                    frmincluir.Preenche_CBO_TipoOS();
-                    frmincluir.Preenche_CBO_Clientes();
-                    frmincluir.Preenche_CBO_Cores();
-                    frmincluir.Preenche_CBO_SP();
-                    frmincluir.ObterPrioridade();
+                frmincluir.Preenche_CBO_TipoOS();
+                frmincluir.Preenche_CBO_Clientes();
+                frmincluir.Preenche_CBO_Cores();
+                frmincluir.Preenche_CBO_SP();
+                frmincluir.ObterPrioridade();
 
-                    //Preenche os Campos no Formulario 
-                    frmincluir.txtID.Text = Lista[0].NOS;
-                    frmincluir.txtTipoOS.Text = Lista[0].TipoOS;
-                    frmincluir.txtCliente.Text = Lista[0].Cliente;
-                    frmincluir.txtVeiculo.Text = Lista[0].Veiculo;
-                    frmincluir.txtPlaca.Text = Lista[0].Placa;
-                    frmincluir.txtGrupoCor.Text = Lista[0].GrupoCores;
-                    frmincluir.txtCor.Text = Lista[0].Cor;
-                    frmincluir.txtMontadora.Text = Lista[0].Montadora;
-                    frmincluir.txtCodCor.Text = Lista[0].Codigo;
-                    frmincluir.txtQuantidade.Text = Lista[0].Quantidade;
-                    frmincluir.txtPintura.Text = Lista[0].TipoPintura;
-                    frmincluir.txtCorpo_Prova.Text = Lista[0].CorpoProva;
-                    frmincluir.txtPrevisao.Text = Lista[0].Previsao.ToString();
-                    frmincluir.txtHorario.Text = Lista[0].Previsao.ToShortTimeString();
-                    frmincluir.txtStatus.Text = Lista[0].Status;
+                //Preenche os Campos no Formulario 
+                frmincluir.txtID.Text = Lista[0].NOS;
+                frmincluir.txtTipoOS.Text = Lista[0].TipoOS;
+                frmincluir.txtCliente.Text = Lista[0].Cliente;
+                frmincluir.txtVeiculo.Text = Lista[0].Veiculo;
+                frmincluir.txtPlaca.Text = Lista[0].Placa;
+                frmincluir.txtGrupoCor.Text = Lista[0].GrupoCores;
+                frmincluir.txtCor.Text = Lista[0].Cor;
+                frmincluir.txtMontadora.Text = Lista[0].Montadora;
+                frmincluir.txtCodCor.Text = Lista[0].Codigo;
+                frmincluir.txtQuantidade.Text = Lista[0].Quantidade;
+                frmincluir.txtPintura.Text = Lista[0].TipoPintura;
+                frmincluir.txtCorpo_Prova.Text = Lista[0].CorpoProva;
+                frmincluir.txtPrevisao.Text = Lista[0].Previsao.ToString();
+                frmincluir.txtHorario.Text = Lista[0].Previsao.ToShortTimeString();
+                frmincluir.txtStatus.Text = Lista[0].Status;
 
-                    //Modifica a cor dos campos, para mostrar a edição
-                    frmincluir.txtID.BackColor = System.Drawing.Color.BlanchedAlmond;
-                    frmincluir.txtTipoOS.BackColor = System.Drawing.Color.BlanchedAlmond;
-                    frmincluir.txtCliente.BackColor = System.Drawing.Color.BlanchedAlmond;
-                    frmincluir.txtVeiculo.BackColor = System.Drawing.Color.BlanchedAlmond;
-                    frmincluir.txtPlaca.BackColor = System.Drawing.Color.BlanchedAlmond;
-                    frmincluir.txtGrupoCor.BackColor = System.Drawing.Color.BlanchedAlmond;
-                    frmincluir.txtCor.BackColor = System.Drawing.Color.BlanchedAlmond;
-                    frmincluir.txtMontadora.BackColor = System.Drawing.Color.BlanchedAlmond;
-                    frmincluir.txtCodCor.BackColor = System.Drawing.Color.BlanchedAlmond;
-                    frmincluir.txtQuantidade.BackColor = System.Drawing.Color.BlanchedAlmond;
-                    frmincluir.txtPintura.BackColor = System.Drawing.Color.BlanchedAlmond;
-                    frmincluir.txtCorpo_Prova.BackColor = System.Drawing.Color.BlanchedAlmond;
-                    frmincluir.txtPrevisao.BackColor = System.Drawing.Color.BlanchedAlmond;
-                    frmincluir.txtHorario.BackColor = System.Drawing.Color.BlanchedAlmond;
+                //Modifica a cor dos campos, para mostrar a edição
+                frmincluir.txtID.BackColor = System.Drawing.Color.BlanchedAlmond;
+                frmincluir.txtTipoOS.BackColor = System.Drawing.Color.BlanchedAlmond;
+                frmincluir.txtCliente.BackColor = System.Drawing.Color.BlanchedAlmond;
+                frmincluir.txtVeiculo.BackColor = System.Drawing.Color.BlanchedAlmond;
+                frmincluir.txtPlaca.BackColor = System.Drawing.Color.BlanchedAlmond;
+                frmincluir.txtGrupoCor.BackColor = System.Drawing.Color.BlanchedAlmond;
+                frmincluir.txtCor.BackColor = System.Drawing.Color.BlanchedAlmond;
+                frmincluir.txtMontadora.BackColor = System.Drawing.Color.BlanchedAlmond;
+                frmincluir.txtCodCor.BackColor = System.Drawing.Color.BlanchedAlmond;
+                frmincluir.txtQuantidade.BackColor = System.Drawing.Color.BlanchedAlmond;
+                frmincluir.txtPintura.BackColor = System.Drawing.Color.BlanchedAlmond;
+                frmincluir.txtCorpo_Prova.BackColor = System.Drawing.Color.BlanchedAlmond;
+                frmincluir.txtPrevisao.BackColor = System.Drawing.Color.BlanchedAlmond;
+                frmincluir.txtHorario.BackColor = System.Drawing.Color.BlanchedAlmond;
 
-                    //Muda o caption para Editar
-                    frmincluir.lblTitulo.Text = "SHARP - Edição de Item";
-                    frmincluir.txtTipo.Text = "Editar";
-                    frmincluir.txtTipo.Text = "Atualizar";
+                //Muda o caption para Editar
+                frmincluir.lblTitulo.Text = "SHARP - Edição de Item";
+                frmincluir.txtTipo.Text = "Editar";
+                frmincluir.txtTipo.Text = "Atualizar";
 
-                    //Inicializa o Formulario
-                    frmincluir.StartPosition = FormStartPosition.CenterParent;
-                    frmincluir.ShowDialog();
+                //Inicializa o Formulario
+                frmincluir.StartPosition = FormStartPosition.CenterParent;
+                frmincluir.ShowDialog();
             }
             if (check_Multi_Selecao.Checked == false)
             {
@@ -721,7 +727,7 @@ namespace Sharp_Color_Tool
                 }
                 else
                 {
-                    Form messagebox = new frmMensagemPersonalizada("Critico","Nenhum item selecionado", "Nenhum item selecionado, Favor selecionar um item!");
+                    Form messagebox = new frmMensagemPersonalizada("Critico", "Nenhum item selecionado", "Nenhum item selecionado, Favor selecionar um item!");
                     messagebox.ShowDialog();
                 }
             }
@@ -732,7 +738,7 @@ namespace Sharp_Color_Tool
             if (check_Multi_Selecao.Checked == true)
             {
                 DialogResult Resultado = new DialogResult();
-                Form messagebox = new frmMensagemPersonalizada("Questao","Exclusão", "Esta ação inutilizará os Veículos permanentemente, Deseja realmente excluir as OS's selecionadas?");
+                Form messagebox = new frmMensagemPersonalizada("Questao", "Exclusão", "Esta ação inutilizará os Veículos permanentemente, Deseja realmente excluir as OS's selecionadas?");
                 Resultado = messagebox.ShowDialog();
 
                 if (Resultado == DialogResult.OK)
@@ -767,13 +773,13 @@ namespace Sharp_Color_Tool
 
                             //executa o comando e gera um datareader
                             cmd.ExecuteNonQuery();
-                    
+
                             conn.Close();
                         }
 
                         catch (OleDbException ex)
                         {
-                            Form messagebox2 = new frmMensagemPersonalizada("Critico","Erro", "Error: " + ex.Message);
+                            Form messagebox2 = new frmMensagemPersonalizada("Critico", "Erro", "Error: " + ex.Message);
                             messagebox2.ShowDialog();
                         }
 
@@ -784,12 +790,12 @@ namespace Sharp_Color_Tool
                     }
                     Form messagebox3 = new frmMensagemPersonalizada("Alerta", "Exclusão", "Itens excluidos com sucesso!");
                     messagebox3.ShowDialog();
-                    
+
                     AtualizaLSTOSAberta();
                 }
             }
 
-            if(check_Multi_Selecao.Checked==false)
+            if (check_Multi_Selecao.Checked == false)
             {
                 DialogResult Resultado = new DialogResult();
                 Form messagebox = new frmMensagemPersonalizada("Questao", "Exclusão", "Esta ação inutilizará o Veículo permanentemente, Deseja realmente excluir a OS selecionada?");
@@ -856,7 +862,7 @@ namespace Sharp_Color_Tool
             this.Close();
         }
 
-        
+
 
 
         private void cmdIniciar_Click(object sender, EventArgs e)
@@ -865,8 +871,8 @@ namespace Sharp_Color_Tool
             {
                 List<Itens_Lista> Lista = new List<Itens_Lista>();
                 Prioridade_Cliente p = new Prioridade_Cliente();
-                
-                for (int i=0; i<lstTintas.Items.Count; i++)
+
+                for (int i = 0; i < lstTintas.Items.Count; i++)
                 {
                     if (lstTintas.Items[i].Checked == true)
                     {
@@ -888,7 +894,7 @@ namespace Sharp_Color_Tool
                             CorpoProva = lstTintas.Items[i].SubItems[12].Text,
                             Previsao = DateTime.Parse(lstTintas.Items[i].SubItems[13].Text),
                             Status = lstTintas.Items[i].SubItems[14].Text,
-                            Prioridade = p.Prioridade                            
+                            Prioridade = p.Prioridade
                         });
                     }
                 }
@@ -899,7 +905,7 @@ namespace Sharp_Color_Tool
 
                     DateTime _Inicio = DateTime.Now;
                     DateTime _ReInicio = DateTime.Now;
-                    
+
                     string Previsao_Prioridade = Lista[S].Previsao.ToString("yyyy/MM/dd hh:mm:ss");
                     string _Status_Prioridade = "0";
 
@@ -1096,7 +1102,7 @@ namespace Sharp_Color_Tool
             }
         }
 
-       
+
 
 
         private void lstTintas_SelectedIndexChanged(object sender, EventArgs e)
@@ -1196,17 +1202,22 @@ namespace Sharp_Color_Tool
 
         private void cmdPausar_Click(object sender, EventArgs e)
         {
-            if (check_Multi_Selecao.Checked==true && lstTintas.CheckedItems.Count>0)
+            if (check_Multi_Selecao.Checked == true && lstTintas.CheckedItems.Count > 0)
             {
                 List<Itens_Lista> Lista = new List<Itens_Lista>();
-                
+
 
                 for (int i = 0; i < lstTintas.Items.Count; i++)
                 {
                     if (lstTintas.Items[i].Checked)
                     {
-                        Lista.Add(new Itens_Lista() { NOS = lstTintas.Items[i].Text, Previsao = DateTime.Parse(lstTintas.Items[i].SubItems[13].Text),
-                                                        Inicio = lstTintas.Items[i].SubItems[15].Text, Tempo = lstTintas.Items[i].SubItems[17].Text });
+                        Lista.Add(new Itens_Lista()
+                        {
+                            NOS = lstTintas.Items[i].Text,
+                            Previsao = DateTime.Parse(lstTintas.Items[i].SubItems[13].Text),
+                            Inicio = lstTintas.Items[i].SubItems[15].Text,
+                            Tempo = lstTintas.Items[i].SubItems[17].Text
+                        });
                     }
                 }
 
@@ -1248,7 +1259,7 @@ namespace Sharp_Color_Tool
 
                     catch (OleDbException ex)
                     {
-                        Form messagebox = new frmMensagemPersonalizada("Critico","Erro", "Error: " + ex.Message);
+                        Form messagebox = new frmMensagemPersonalizada("Critico", "Erro", "Error: " + ex.Message);
                         messagebox.ShowDialog();
                     }
 
@@ -1258,14 +1269,14 @@ namespace Sharp_Color_Tool
 
                     }
                 }
-                Form messagebox2 = new frmMensagemPersonalizada("Alerta","Pausa", "Ordens de Serviço selecionadas pausadas!");
+                Form messagebox2 = new frmMensagemPersonalizada("Alerta", "Pausa", "Ordens de Serviço selecionadas pausadas!");
                 messagebox2.ShowDialog();
 
                 AtualizaLSTOSAberta();
             }
 
 
-            if(check_Multi_Selecao.Checked==false)
+            if (check_Multi_Selecao.Checked == false)
             {
                 string _ID = lstTintas.FocusedItem.SubItems[0].Text;
                 string _NovoStatus = "PAUSADO";
@@ -1320,7 +1331,7 @@ namespace Sharp_Color_Tool
 
         private void cmdFinalizar_Click(object sender, EventArgs e)
         {
-            if (check_Multi_Selecao.Checked==true && lstTintas.CheckedItems.Count>0)
+            if (check_Multi_Selecao.Checked == true && lstTintas.CheckedItems.Count > 0)
             {
                 List<Itens_Lista> Lista = new List<Itens_Lista>();
 
@@ -1339,21 +1350,21 @@ namespace Sharp_Color_Tool
                     }
                 }
 
-                for(int S=0; S<Lista.Count; S++)
+                for (int S = 0; S < Lista.Count; S++)
                 {
-                    
+
                     string _NovoStatus = "FINALIZADO";
-                    
+
                     DateTime _TempoFim = DateTime.Now;
-                    
-                    string previsaoPrioridade = string.Format("yyyy/MM/dd hh:mm:ss",Lista[S].Prioridade);
+
+                    string previsaoPrioridade = string.Format("yyyy/MM/dd hh:mm:ss", Lista[S].Prioridade);
                     string _Entrega = string.Empty;
                     string _Prioridade = txtPrioridade.Text;
                     string _Status_Prioridade = "3";
                     string _Existente = "SIM";
 
                     TimeSpan _TempoCorrido = _TempoFim.Subtract(DateTime.Parse(Lista[S].Inicio));
-                    DateTime _NovoTempo =DateTime.Parse(Lista[S].Tempo).Add(_TempoCorrido);
+                    DateTime _NovoTempo = DateTime.Parse(Lista[S].Tempo).Add(_TempoCorrido);
 
                     if (Lista[S].Previsao >= _TempoFim)
                     {
@@ -1411,7 +1422,7 @@ namespace Sharp_Color_Tool
 
                             //executa o comando e gera um datareader
                             cmd.ExecuteNonQuery();
-                            
+
                             conn.Close();
 
 
@@ -1447,7 +1458,7 @@ namespace Sharp_Color_Tool
 
                             //executa o comando e gera um datareader
                             cmd.ExecuteNonQuery();
-                            
+
                             conn.Close();
 
 
@@ -1455,7 +1466,7 @@ namespace Sharp_Color_Tool
 
                         catch (OleDbException ex)
                         {
-                            Form messagebox = new frmMensagemPersonalizada("Critico", "Erro","Error? " + ex.Message);
+                            Form messagebox = new frmMensagemPersonalizada("Critico", "Erro", "Error? " + ex.Message);
                             messagebox.ShowDialog();
                         }
 
@@ -1471,7 +1482,7 @@ namespace Sharp_Color_Tool
                 carrega_LST_tintas();
                 AtualizaLSTOSAberta();
             }
-            
+
             if (check_Multi_Selecao.Checked == false)
             {
 
@@ -1547,7 +1558,7 @@ namespace Sharp_Color_Tool
                         //executa o comando e gera um datareader
                         cmd.ExecuteNonQuery();
 
-                        Form messagebox = new frmMensagemPersonalizada("Alerta","Ordem de serviço finalizada","Ordem de serviço Nº " + _ID + " finalizada!");
+                        Form messagebox = new frmMensagemPersonalizada("Alerta", "Ordem de serviço finalizada", "Ordem de serviço Nº " + _ID + " finalizada!");
                         messagebox.ShowDialog();
 
                         conn.Close();
@@ -1600,7 +1611,7 @@ namespace Sharp_Color_Tool
                     catch (OleDbException ex)
                     {
                         Form messagebox = new frmMensagemPersonalizada("Critico", "Erro", "Error? " + ex.Message);
-                        messagebox.ShowDialog();                        
+                        messagebox.ShowDialog();
                     }
 
 
@@ -1748,7 +1759,7 @@ namespace Sharp_Color_Tool
                 }
                 catch (System.Data.OleDb.OleDbException ex)
                 {
-                    Form messagebox = new frmMensagemPersonalizada("Critico","Erro", "Ocorreu um erro durante a execução da instrução SQL." + "Erro : " + ex.Message);
+                    Form messagebox = new frmMensagemPersonalizada("Critico", "Erro", "Ocorreu um erro durante a execução da instrução SQL." + "Erro : " + ex.Message);
                     messagebox.ShowDialog();
                 }
                 finally
@@ -1789,7 +1800,7 @@ namespace Sharp_Color_Tool
         {
             foreach (ListViewItem Item in lstTintas.Items)
             {
-                
+
 
                 if (Item.SubItems[18].Text == "NO PRAZO")
                 {
@@ -2868,7 +2879,14 @@ namespace Sharp_Color_Tool
             {
                 txtData.Visible = true;
             }
-
+            if (this.Width < (850 * Globais.Fator_Largura))
+            {
+                cmdSair.Visible = false;
+            }
+            if (this.Width > (850 * Globais.Fator_Largura))
+            {
+                cmdSair.Visible = true;
+            }
 
         }
 
@@ -2897,7 +2915,7 @@ namespace Sharp_Color_Tool
 
                 //define o tipo do comando como texto 
                 cmd.CommandText = "Select * from Agendamentos WHERE Status_Operacao like '" + Status + "' or Status_Operacao like '" + Status2 + "' or Status_Operacao like '" + Status3 + "'";
-                
+
                 //executa o comando e gera um datareader
                 OleDbDataReader dr = cmd.ExecuteReader();
 
@@ -2920,9 +2938,9 @@ namespace Sharp_Color_Tool
 
                             cmd2.ExecuteNonQuery();
 
-                            Form messagebox = new frmMensagemPersonalizada("Alerta","Ordem de Serviço", "Ordem de serviço " + Cliente + " " + Veiculo + " " + Placa + " esta em atrazo!");
+                            Form messagebox = new frmMensagemPersonalizada("Alerta", "Ordem de Serviço", "Ordem de serviço " + Cliente + " " + Veiculo + " " + Placa + " esta em atrazo!");
                             messagebox.ShowDialog();
-                            
+
                             this.carrega_LST_tintas();
                             this.AtualizaLSTOSAberta();
                         }
@@ -2945,7 +2963,7 @@ namespace Sharp_Color_Tool
 
         private void lstTintasFinalizadas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(check_Multi_Selecao.Checked==true)
+            if (check_Multi_Selecao.Checked == true)
             {
             }
 
@@ -4072,7 +4090,7 @@ namespace Sharp_Color_Tool
         {
             if (lstTintas.CheckedItems.Count == 0 || lstTintas.SelectedItems.Count == 0)
             {
-               AtualizaLSTOSAberta();
+                AtualizaLSTOSAberta();
             }
         }
 
@@ -4869,74 +4887,74 @@ namespace Sharp_Color_Tool
 
         private void cmdReabrir_Click(object sender, EventArgs e)
         {
-            
 
-            if (check_Multi_Selecao.Checked==true && lstTintasFinalizadas.CheckedItems.Count > 0)
+
+            if (check_Multi_Selecao.Checked == true && lstTintasFinalizadas.CheckedItems.Count > 0)
             {
-                
-                    List<Itens_Lista> Lista = new List<Itens_Lista>();
 
-                    for (int i = 0; i < lstTintasFinalizadas.Items.Count; i++)
+                List<Itens_Lista> Lista = new List<Itens_Lista>();
+
+                for (int i = 0; i < lstTintasFinalizadas.Items.Count; i++)
+                {
+                    if (lstTintasFinalizadas.Items[i].Checked == true)
                     {
-                        if (lstTintasFinalizadas.Items[i].Checked == true)
+                        DialogResult Resultado = new DialogResult();
+                        Form Messagebox = new frmMensagemPersonalizada("Questao", "Abertura de Item", "Deseja Reabrir Ordem de Serviço Nº " + lstTintasFinalizadas.Items[i].SubItems[0].Text + " ? A mesma encontra-se finalizada");
+
+                        Resultado = Messagebox.ShowDialog();
+
+                        if (Resultado == DialogResult.OK)
                         {
-                            DialogResult Resultado = new DialogResult();
-                            Form Messagebox = new frmMensagemPersonalizada("Questao", "Abertura de Item", "Deseja Reabrir Ordem de Serviço Nº " + lstTintasFinalizadas.Items[i].SubItems[0].Text + " ? A mesma encontra-se finalizada");
-
-                            Resultado = Messagebox.ShowDialog();
-
-                            if (Resultado == DialogResult.OK)
+                            Lista.Add(new Itens_Lista()
                             {
-                                Lista.Add(new Itens_Lista()
-                                {
-                                    NOS = lstTintasFinalizadas.Items[i].Text,
-                                    Previsao = DateTime.Parse(lstTintasFinalizadas.Items[i].SubItems[13].Text),
-                                });
-                            }
+                                NOS = lstTintasFinalizadas.Items[i].Text,
+                                Previsao = DateTime.Parse(lstTintasFinalizadas.Items[i].SubItems[13].Text),
+                            });
                         }
                     }
+                }
 
-                
-                    for (int S = 0; S < Lista.Count; S++)
+
+                for (int S = 0; S < Lista.Count; S++)
+                {
+                    DateTime Previsao = Lista[S].Previsao;
+                    string Previsao_prioridade = Previsao.ToString("yyyy/MM/dd HH:mm:ss");
+
+                    OleDbConnection conn = new OleDbConnection(Conexao.Database_Agendamentos);
+                    string comandoSQL = "";
+
+                    comandoSQL = "UPDATE Agendamentos SET Status_Operacao='EM PRODUÇÃO', Existente='" + null + "', Prioridade='" + string.Concat('0', " ", Previsao_prioridade, " ", txtPrioridade.Text) + "' WHERE Código=" + int.Parse(Lista[S].NOS) + "";
+
+                    OleDbCommand cmd = new OleDbCommand(comandoSQL, conn);
+
+                    try
                     {
-                        DateTime Previsao = Lista[S].Previsao;
-                        string Previsao_prioridade = Previsao.ToString("yyyy/MM/dd HH:mm:ss");
+                        //abre a conexao
+                        conn.Open();
 
-                        OleDbConnection conn = new OleDbConnection(Conexao.Database_Agendamentos);
-                        string comandoSQL = "";
+                        //executa o comando e gera um datareader
+                        cmd.ExecuteNonQuery();
 
-                        comandoSQL = "UPDATE Agendamentos SET Status_Operacao='EM PRODUÇÃO', Existente='" + null + "', Prioridade='" + string.Concat('0', " ", Previsao_prioridade, " ", txtPrioridade.Text) + "' WHERE Código=" + int.Parse(Lista[S].NOS) + "";
-
-                        OleDbCommand cmd = new OleDbCommand(comandoSQL, conn);
-
-                        try
-                        {
-                            //abre a conexao
-                            conn.Open();
-
-                            //executa o comando e gera um datareader
-                            cmd.ExecuteNonQuery();
-
-                            conn.Close();
-
-                        }
-
-                        catch (OleDbException ex)
-                        {
-                        Form messagebox = new frmMensagemPersonalizada("Critico","Erro", "Error: " + ex.Message);
-                        messagebox.ShowDialog();
-                        }
-
-
-                        finally
-                        {
-
-                        }
+                        conn.Close();
 
                     }
-                    AtualizaLSTOSAberta();
-                    carrega_LST_tintas();
-                
+
+                    catch (OleDbException ex)
+                    {
+                        Form messagebox = new frmMensagemPersonalizada("Critico", "Erro", "Error: " + ex.Message);
+                        messagebox.ShowDialog();
+                    }
+
+
+                    finally
+                    {
+
+                    }
+
+                }
+                AtualizaLSTOSAberta();
+                carrega_LST_tintas();
+
 
             }
 
@@ -4976,7 +4994,7 @@ namespace Sharp_Color_Tool
 
                     catch (OleDbException ex)
                     {
-                        Form messagebox2 = new frmMensagemPersonalizada("Critico","Erro", "Error: " + ex.Message);
+                        Form messagebox2 = new frmMensagemPersonalizada("Critico", "Erro", "Error: " + ex.Message);
                         messagebox2.Show();
                     }
 
@@ -4992,79 +5010,86 @@ namespace Sharp_Color_Tool
 
         private void BW_PreencheOSExcel_DoWork(object sender, DoWorkEventArgs e)
         {
-            Itens_Lista OS = e.Argument as Itens_Lista;        
+            Itens_Lista OS = e.Argument as Itens_Lista;
 
-           Thread T2= new Thread(()=> Preenche_OS(OS.Status,OS.NOS,OS.TipoOS,OS.Cliente,OS.Veiculo,OS.Placa,OS.GrupoCores,OS.Cor,OS.Montadora,OS.Codigo,OS.Quantidade,
-               OS.TipoPintura,OS.CorpoProva,OS.Previsao));
+            Thread T2 = new Thread(() => Preenche_OS(OS.Status, OS.NOS, OS.TipoOS, OS.Cliente, OS.Veiculo, OS.Placa, OS.GrupoCores, OS.Cor, OS.Montadora, OS.Codigo, OS.Quantidade,
+                 OS.TipoPintura, OS.CorpoProva, OS.Previsao));
             T2.Start();
         }
-        
+
 
         public void Preenche_OS(string Status, string ID, string TipoOS, string Cliente, string Veiculo, string Placa, string GrupoCor, string Cor, string Montadora, string CodCor, string QNT, string SP, string corpoProva, DateTime Previsao)
         {
-            Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
-            app.Visible = true;
-            Microsoft.Office.Interop.Excel.Workbook wb = app.Workbooks.Open(Globais.ModeloOS);
+            try
+            {
+                Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
+                app.Visible = true;
+                Microsoft.Office.Interop.Excel.Workbook wb = app.Workbooks.Open(Globais.ModeloOS);
 
-            Microsoft.Office.Interop.Excel.Worksheet wsOrdemServico = wb.Worksheets[1];
-            
-            app.DisplayAlerts = false;
+                Microsoft.Office.Interop.Excel.Worksheet wsOrdemServico = wb.Worksheets[1];
 
-            wsOrdemServico.Unprotect("++060188jhonie");            
+                app.DisplayAlerts = false;
 
-            if ( ID != string.Empty)
+                wsOrdemServico.Unprotect("++060188jhonie");
+
+                if (ID != string.Empty)
+                {
+                    wb.Unprotect("++060188jhonie");
+                    wsOrdemServico.Range["F4:G4"].Value = ID;
+                }
+                if (TipoOS != string.Empty)
+                {
+                    wsOrdemServico.Range["F5:G5"].Value = TipoOS;
+                }
+                if (Veiculo != string.Empty)
+                {
+                    wsOrdemServico.Range["C6:G6"].Value = Veiculo;
+                }
+                if (Placa != string.Empty)
+                {
+                    wsOrdemServico.Range["C7:G7"].Value = Placa;
+                }
+                if (Cliente != string.Empty)
+                {
+                    wsOrdemServico.Range["C8:G8"].Value = Cliente;
+                }
+                if (GrupoCor != string.Empty)
+                {
+                    wsOrdemServico.Range["C9:G9"].Value = GrupoCor;
+                }
+                if (Cor != string.Empty)
+                {
+                    wsOrdemServico.Range["C10:G10"].Value = Cor;
+                }
+                if (Montadora != string.Empty)
+                {
+                    wsOrdemServico.Range["C11:G11"].Value = Montadora;
+                }
+                if (CodCor != string.Empty)
+                {
+                    wsOrdemServico.Range["C12:G12"].Value = CodCor;
+                }
+                if (SP != string.Empty)
+                {
+                    wsOrdemServico.Range["C13:G13"].Value = SP;
+                }
+                if (QNT != string.Empty)
+                {
+                    wsOrdemServico.Range["C14:D14"].Value = QNT;
+                }
+                if (corpoProva != string.Empty)
+                {
+                    wsOrdemServico.Range["C15:G15"].Value = corpoProva;
+                }
+                wsOrdemServico.Protect("++060188jhonie");
+                wb.Application.Run("Colorista");
+                wb.Application.Run("Salvar");
+            }
+            catch
             {
-                wb.Unprotect("++060188jhonie");
-                wsOrdemServico.Range["F4:G4"].Value =ID;
+                Form msg = new frmMensagemPersonalizada("Critico", "Erro", "Erro ao preencher a Ordem de Servico Nº " + ID);
+                return;
             }
-            if (TipoOS != string.Empty)
-            {
-                wsOrdemServico.Range["F5:G5"].Value = TipoOS;
-            }
-            if (Veiculo != string.Empty)
-            {
-                wsOrdemServico.Range["C6:G6"].Value = Veiculo;
-            }
-            if (Placa != string.Empty)
-            {
-                wsOrdemServico.Range["C7:G7"].Value = Placa;
-            }
-            if (Cliente != string.Empty)
-            {
-                wsOrdemServico.Range["C8:G8"].Value = Cliente;
-            }
-            if (GrupoCor != string.Empty)
-            {
-                wsOrdemServico.Range["C9:G9"].Value = GrupoCor;
-            }
-            if (Cor != string.Empty)
-            {
-                wsOrdemServico.Range["C10:G10"].Value = Cor;
-            }
-            if (Montadora != string.Empty)
-            {
-                wsOrdemServico.Range["C11:G11"].Value = Montadora;
-            }
-            if (CodCor != string.Empty)
-            {
-                wsOrdemServico.Range["C12:G12"].Value = CodCor;
-            }
-            if (SP != string.Empty)
-            { 
-                wsOrdemServico.Range["C13:G13"].Value = SP;
-            }
-            if (QNT != string.Empty)
-            {
-                wsOrdemServico.Range["C14:D14"].Value = QNT;
-            }
-            if (corpoProva != string.Empty)
-            {
-                wsOrdemServico.Range["C15:G15"].Value = corpoProva;
-            }
-            wsOrdemServico.Protect("++060188jhonie");
-            wb.Application.Run("Colorista");
-            wb.Application.Run("Salvar");
-            
         }
 
         public void IniciarOS(string Status, string ID, string TipoOS, string Cliente, string Veiculo, string Placa, string GrupoCor, string Cor, string Montadora, string CodCor, string QNT, string SP, string corpoProva, DateTime Previsao)
@@ -5079,52 +5104,52 @@ namespace Sharp_Color_Tool
             p.ObterPrioridade(Cliente);
 
 
-                OleDbConnection conn = new OleDbConnection(Conexao.Database_Agendamentos);
+            OleDbConnection conn = new OleDbConnection(Conexao.Database_Agendamentos);
 
-                string comandoSQL = "UPDATE Agendamentos SET Status_Operacao='" + _NovoStatus.Replace("'", "''") + "', Inicio='" + _Inicio + "', Tempo='" + _Tempo + "', Existente='" + null + "', Prioridade='" + string.Concat(_Status_Prioridade, " ", Previsao_Prioridade, " ", p.Prioridade) + "' WHERE Código=" + int.Parse(ID) + "";
+            string comandoSQL = "UPDATE Agendamentos SET Status_Operacao='" + _NovoStatus.Replace("'", "''") + "', Inicio='" + _Inicio + "', Tempo='" + _Tempo + "', Existente='" + null + "', Prioridade='" + string.Concat(_Status_Prioridade, " ", Previsao_Prioridade, " ", p.Prioridade) + "' WHERE Código=" + int.Parse(ID) + "";
 
-                //cria um comando oledb
-                OleDbCommand cmd = new OleDbCommand(comandoSQL, conn);
+            //cria um comando oledb
+            OleDbCommand cmd = new OleDbCommand(comandoSQL, conn);
 
-                try
-                {
-                    //abre a conexao
-                    conn.Open();
+            try
+            {
+                //abre a conexao
+                conn.Open();
 
-                    //executa o comando e gera um datareader
-                    cmd.ExecuteNonQuery();
+                //executa o comando e gera um datareader
+                cmd.ExecuteNonQuery();
 
-                    Form messagebox = new frmMensagemPersonalizada("Alerta","Ordem de Serviço Iniciada", "OS Nº " + ID + " - Processo de confecção de tinta iniciado!");
-                    messagebox.ShowDialog();
+                Form messagebox = new frmMensagemPersonalizada("Alerta", "Ordem de Serviço Iniciada", "OS Nº " + ID + " - Processo de confecção de tinta iniciado!");
+                messagebox.ShowDialog();
 
-                    conn.Close();
+                conn.Close();
 
-                    Itens_Lista OS = new Itens_Lista();
+                Itens_Lista OS = new Itens_Lista();
 
-                    OS.Status = Status;
-                    OS.NOS = ID;
-                    OS.TipoOS = TipoOS;
-                    OS.Cliente = Cliente;
-                    OS.Veiculo = Veiculo;
-                    OS.Placa = Placa;
-                    OS.GrupoCores = GrupoCor;
-                    OS.Cor = Cor;
-                    OS.Montadora = Montadora;
-                    OS.Codigo = CodCor;
-                    OS.Quantidade = QNT;
-                    OS.TipoPintura = SP;
-                    OS.CorpoProva = corpoProva;
-                    OS.Previsao = Previsao;
+                OS.Status = Status;
+                OS.NOS = ID;
+                OS.TipoOS = TipoOS;
+                OS.Cliente = Cliente;
+                OS.Veiculo = Veiculo;
+                OS.Placa = Placa;
+                OS.GrupoCores = GrupoCor;
+                OS.Cor = Cor;
+                OS.Montadora = Montadora;
+                OS.Codigo = CodCor;
+                OS.Quantidade = QNT;
+                OS.TipoPintura = SP;
+                OS.CorpoProva = corpoProva;
+                OS.Previsao = Previsao;
 
-                    BW_PreencheOSExcel.RunWorkerAsync(OS);
+                BW_PreencheOSExcel.RunWorkerAsync(OS);
 
-                }
+            }
 
-                catch (OleDbException ex)
-                {
-                Form messagebox2 = new frmMensagemPersonalizada("Critico","Erro", "Error: " + ex.Message);
+            catch (OleDbException ex)
+            {
+                Form messagebox2 = new frmMensagemPersonalizada("Critico", "Erro", "Error: " + ex.Message);
                 messagebox2.ShowDialog();
-                }
+            }
 
         }
 
@@ -5172,10 +5197,10 @@ namespace Sharp_Color_Tool
             AtualizaLSTOSAberta();
         }
 
-        
+
 
         private void lstTintas_ItemChecked(object sender, ItemCheckedEventArgs e)
-        {    
+        {
             if (lstTintas.CheckedItems.Count > 0)
             {
                 List<string> ListaStatus = new List<string>();
@@ -5202,7 +5227,7 @@ namespace Sharp_Color_Tool
 
 
                 if (e.Item.Checked)
-                {                 
+                {
                     if (StatusPausado == true)
                     {
                         cmdIniciar.Enabled = true;
@@ -5352,7 +5377,7 @@ namespace Sharp_Color_Tool
                     }
                 }
             }
-            if(lstTintas.CheckedItems.Count == 0)
+            if (lstTintas.CheckedItems.Count == 0)
             {
                 cmdIniciar.Enabled = false;
                 cmdPausar.Enabled = false;
@@ -5364,7 +5389,7 @@ namespace Sharp_Color_Tool
                 cmdFaturar.Enabled = false;
             }
 
-            
+
         }
 
         private void lstTintasFinalizadas_ItemChecked(object sender, ItemCheckedEventArgs e)
@@ -5403,15 +5428,15 @@ namespace Sharp_Color_Tool
             }
 
             if (e.CurrentValue.Equals(CheckState.Checked))
-            {              
-                    if (lstTintas.Items[e.Index].SubItems[18].Text == "NO PRAZO")
+            {
+                if (lstTintas.Items[e.Index].SubItems[18].Text == "NO PRAZO")
+                {
+                    if (lstTintas.Items[e.Index].SubItems[14].Text == "EM PRODUÇÃO")
                     {
-                        if (lstTintas.Items[e.Index].SubItems[14].Text == "EM PRODUÇÃO")
-                        {
-                            lstTintas.Items[e.Index].BackColor = System.Drawing.Color.White;
-                            lstTintas.Items[e.Index].ForeColor = System.Drawing.Color.Green;
-                            lstTintas.Items[e.Index].Font = new System.Drawing.Font("Calibri", 9, System.Drawing.FontStyle.Bold);
-                        }
+                        lstTintas.Items[e.Index].BackColor = System.Drawing.Color.White;
+                        lstTintas.Items[e.Index].ForeColor = System.Drawing.Color.Green;
+                        lstTintas.Items[e.Index].Font = new System.Drawing.Font("Calibri", 9, System.Drawing.FontStyle.Bold);
+                    }
 
                     if (lstTintas.Items[e.Index].SubItems[14].Text == "AGUARDANDO")
                     {
@@ -5428,36 +5453,36 @@ namespace Sharp_Color_Tool
                         }
                     }
 
-                        if (lstTintas.Items[e.Index].SubItems[14].Text == "PAUSADO")
-                        {
-                            lstTintas.Items[e.Index].BackColor = System.Drawing.Color.White;
-                            lstTintas.Items[e.Index].ForeColor = System.Drawing.Color.DarkOrange;
-                            lstTintas.Items[e.Index].Font = new System.Drawing.Font("Calibri", 9, System.Drawing.FontStyle.Bold);
-                        }
-                    }
-                    if (lstTintas.Items[e.Index].SubItems[18].Text == "ATRASADO")
+                    if (lstTintas.Items[e.Index].SubItems[14].Text == "PAUSADO")
                     {
-                        if (lstTintas.Items[e.Index].SubItems[14].Text == "EM PRODUÇÃO")
-                        {
+                        lstTintas.Items[e.Index].BackColor = System.Drawing.Color.White;
+                        lstTintas.Items[e.Index].ForeColor = System.Drawing.Color.DarkOrange;
+                        lstTintas.Items[e.Index].Font = new System.Drawing.Font("Calibri", 9, System.Drawing.FontStyle.Bold);
+                    }
+                }
+                if (lstTintas.Items[e.Index].SubItems[18].Text == "ATRASADO")
+                {
+                    if (lstTintas.Items[e.Index].SubItems[14].Text == "EM PRODUÇÃO")
+                    {
                         lstTintas.Items[e.Index].BackColor = System.Drawing.Color.Red;
                         lstTintas.Items[e.Index].ForeColor = System.Drawing.Color.White;
                         lstTintas.Items[e.Index].Font = new System.Drawing.Font("Calibri", 9, System.Drawing.FontStyle.Bold);
-                        }
-                        if (lstTintas.Items[e.Index].SubItems[14].Text == "AGUARDANDO")
-                        {
+                    }
+                    if (lstTintas.Items[e.Index].SubItems[14].Text == "AGUARDANDO")
+                    {
                         lstTintas.Items[e.Index].BackColor = System.Drawing.Color.Red;
                         lstTintas.Items[e.Index].ForeColor = System.Drawing.Color.Black;
                         lstTintas.Items[e.Index].Font = new System.Drawing.Font("Calibri", 9, System.Drawing.FontStyle.Bold);
-                        }
-                        if (lstTintas.Items[e.Index].SubItems[14].Text == "PAUSADO")
-                        {
+                    }
+                    if (lstTintas.Items[e.Index].SubItems[14].Text == "PAUSADO")
+                    {
                         lstTintas.Items[e.Index].BackColor = System.Drawing.Color.Red;
                         lstTintas.Items[e.Index].ForeColor = System.Drawing.Color.LightGray;
                         lstTintas.Items[e.Index].Font = new System.Drawing.Font("Calibri", 9, System.Drawing.FontStyle.Bold);
-                        }
                     }
-
                 }
+
+            }
         }
 
         private void lstTintas_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
@@ -5479,46 +5504,94 @@ namespace Sharp_Color_Tool
                 Form messagebox = new frmMensagemPersonalizada("Critico", "Ação não autorizada", "Não é possivel fazer multiplos faturamentos!");
                 messagebox.ShowDialog();
             }
-                if (check_Multi_Selecao.Checked == true && lstTintasFinalizadas.CheckedItems.Count == 1)
+            if (check_Multi_Selecao.Checked == true && lstTintasFinalizadas.CheckedItems.Count == 1)
             {
-                string ID = lstTintasFinalizadas.FocusedItem.SubItems[0].Text;
                 double Margem;
-                double ValorSugerido;      
-                Faturado=lstTintasFinalizadas.FocusedItem.SubItems[26].Text;
+                double ValorSugerido;
 
-                if (Faturado != "0,00")
+                Itens_Lista OS = new Itens_Lista();
+
+                for (int i = 0; i < lstTintasFinalizadas.Items.Count; i++)
                 {
-                    Form MSG = new frmMensagemPersonalizada("Questao", "Faturamento", "A OS Nº " + ID + " ja foi faturada, deseja fazer alguma alteração?");
-                    Resultado = DialogResult;
+                    if (lstTintasFinalizadas.Items[i].Checked == true)
+                    {
+                         
+
+                        OS.NOS = lstTintasFinalizadas.Items[i].SubItems[0].Text;
+                        OS.Cliente = lstTintasFinalizadas.Items[i].SubItems[3].Text;
+                        OS.Veiculo = lstTintasFinalizadas.Items[i].SubItems[4].Text;
+                        OS.Placa = lstTintasFinalizadas.Items[i].SubItems[5].Text;
+                        OS.Cor = lstTintasFinalizadas.Items[i].SubItems[7].Text;
+                        OS.TipoPintura = lstTintasFinalizadas.Items[i].SubItems[11].Text;
+                        OS.Quantidade = lstTintasFinalizadas.Items[i].SubItems[10].Text + " mls";
+                        OS.ValorCusto = decimal.Parse(lstTintasFinalizadas.Items[i].SubItems[22].Text).ToString("N2");
+                        if (lstTintasFinalizadas.Items[i].SubItems[23].Text != string.Empty)
+                        {
+                            OS.Markup =lstTintasFinalizadas.Items[i].SubItems[24].Text;
+
+                            OS.ValorVenda = decimal.Parse(lstTintasFinalizadas.Items[i].SubItems[23].Text).ToString("N2");
+
+                        }
+                        Margem = 1 + (Globais.Margen_Sugerida / 100);
+                        ValorSugerido = double.Parse(lstTintasFinalizadas.Items[i].SubItems[22].Text) * Margem;
+                        OS.Valor_Sugerido = ValorSugerido.ToString();
+                        OS.Existente = lstTintasFinalizadas.Items[i].SubItems[26].Text;
+                    }
+                }
+
+
+                if (OS.Existente == "SIM")
+                {
+                    frmFaturamento frm = new frmFaturamento(this);
+
+                    frm.lblNOS.Text = OS.NOS;
+                    frm.lblCliente.Text = OS.Cliente;
+                    frm.lblVeiculo.Text = OS.Veiculo;
+                    frm.lblPlaca.Text = OS.Placa;
+                    frm.lblCor.Text = OS.Cor;
+                    frm.lblSP.Text = OS.TipoPintura;
+                    frm.lblQuantidade.Text =OS.Quantidade + " mls";
+                    frm.lblCusto.Text =double.Parse(OS.ValorCusto).ToString("N2");
+                    if (OS.ValorVenda != "0,00")
+                    {
+                        double Markup = double.Parse(OS.Markup);
+
+                        frm.txtVenda.Text = decimal.Parse(OS.Markup).ToString("N2");
+                        frm.lblMarkup.Text = string.Format("{0:P2}", Markup);
+                    }
+                    frm.lblSugerido.Text = OS.Valor_Sugerido;
+                    frm.ShowDialog();
+                }
+
+                if (OS.Existente == string.Empty)
+                {
+                    Form MSG = new frmMensagemPersonalizada("Questao", "Faturamento", "A OS Nº " + OS.NOS + " ja foi faturada, deseja fazer alguma alteração?");
+                    Resultado = MSG.ShowDialog();
 
                     if (Resultado == DialogResult.OK)
                     {
                         frmFaturamento frm = new frmFaturamento(this);
 
-                        frm.lblNOS.Text = ID;
-                        frm.lblCliente.Text = lstTintasFinalizadas.FocusedItem.SubItems[3].Text;
-                        frm.lblVeiculo.Text = lstTintasFinalizadas.FocusedItem.SubItems[4].Text;
-                        frm.lblPlaca.Text = lstTintasFinalizadas.FocusedItem.SubItems[5].Text;
-                        frm.lblCor.Text = lstTintasFinalizadas.FocusedItem.SubItems[7].Text;
-                        frm.lblSP.Text = lstTintasFinalizadas.FocusedItem.SubItems[11].Text;
-                        frm.lblQuantidade.Text = lstTintasFinalizadas.FocusedItem.SubItems[10].Text + " mls";
-                        frm.lblCusto.Text = decimal.Parse(lstTintasFinalizadas.FocusedItem.SubItems[22].Text).ToString("N2");
-                        if (lstTintasFinalizadas.FocusedItem.SubItems[23].Text != string.Empty)
+                        frm.lblNOS.Text = OS.NOS;
+                        frm.lblCliente.Text = OS.Cliente;
+                        frm.lblVeiculo.Text = OS.Veiculo;
+                        frm.lblPlaca.Text = OS.Placa;
+                        frm.lblCor.Text = OS.Cor;
+                        frm.lblSP.Text = OS.TipoPintura;
+                        frm.lblQuantidade.Text = OS.Quantidade + " mls";
+                        frm.lblCusto.Text = double.Parse(OS.ValorCusto).ToString("N2");
+                        if (OS.ValorVenda != "0,00")
                         {
-                            double Markup = double.Parse(lstTintasFinalizadas.FocusedItem.SubItems[24].Text);
+                            double Markup = double.Parse(OS.Markup);
 
-                            frm.txtVenda.Text = decimal.Parse(lstTintasFinalizadas.FocusedItem.SubItems[23].Text).ToString("N2");
+                            frm.txtVenda.Text = decimal.Parse(OS.Markup).ToString("N2");
                             frm.lblMarkup.Text = string.Format("{0:P2}", Markup);
                         }
-
-                        Margem = 1 + (Globais.Margen_Sugerida / 100);
-                        ValorSugerido = double.Parse(lstTintasFinalizadas.FocusedItem.SubItems[22].Text) * Margem;
-                        frm.lblSugerido.Text = ValorSugerido.ToString("N2");
-
+                        frm.lblSugerido.Text = OS.Valor_Sugerido;
                         frm.ShowDialog();
                     }
                 }
-                
+
 
             }
 
@@ -5527,9 +5600,9 @@ namespace Sharp_Color_Tool
                 string ID = lstTintasFinalizadas.FocusedItem.SubItems[0].Text;
                 double Margem;
                 double ValorSugerido;
-                Faturado =lstTintasFinalizadas.FocusedItem.SubItems[23].Text;
+                Faturado = lstTintasFinalizadas.FocusedItem.SubItems[26].Text;
 
-                if (Faturado == "0,0000")
+                if (Faturado == "SIM")
                 {
                     frmFaturamento frm = new frmFaturamento(this);
 
@@ -5555,7 +5628,7 @@ namespace Sharp_Color_Tool
 
                     frm.ShowDialog();
                 }
-                if (Faturado != "0,0000")
+                if (Faturado != "SIM" || Faturado == string.Empty)
                 {
 
                     Form MSG = new frmMensagemPersonalizada("Questao", "Faturamento", "A OS Nº " + ID + " ja foi faturada, deseja fazer alguma alteração?");
@@ -5589,7 +5662,7 @@ namespace Sharp_Color_Tool
                     }
                 }
             }
-            }
+        }
 
         private void btnOcultarContador_Click(object sender, EventArgs e)
         {
@@ -5651,7 +5724,7 @@ namespace Sharp_Color_Tool
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(WindowState == FormWindowState.Maximized)
+            if (WindowState == FormWindowState.Maximized)
             {
                 this.WindowState = FormWindowState.Normal;
                 return;
@@ -5685,8 +5758,8 @@ namespace Sharp_Color_Tool
                     (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
             }
 
-            
-            
+
+
         }
 
         private void pictureBox3_MouseUp(object sender, MouseEventArgs e)
@@ -5763,7 +5836,6 @@ namespace Sharp_Color_Tool
                 }
             }
         }
-    }      
+    }
 }
 
- 

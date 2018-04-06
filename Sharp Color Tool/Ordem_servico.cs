@@ -31,7 +31,7 @@ namespace Sharp_Color_Tool
 
                 OleDbCommand cmd = conn.CreateCommand();
              
-                cmd.CommandText = "Select * from Agendamentos where Placa='" + Placa + "'";
+                cmd.CommandText = "Select * from Agendamentos where Placa='" + Placa + "' and Status_Operacao='FINALIZADO'";
      
                 OleDbDataReader dr = cmd.ExecuteReader();
                 

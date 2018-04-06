@@ -34,5 +34,9 @@ namespace Sharp_Color_Tool
         public string ValorVenda { get; set; }
         public string Markup { get; set; }
         public string Chapinhas { get; set; }
+        public string Existente { get; set; }
+        public string Valor_Sugerido { get; set; }
+
+
     }    
 }
