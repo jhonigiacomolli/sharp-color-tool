@@ -309,6 +309,8 @@ namespace Sharp_Color_Tool
             carrega_LST_tintas();
             AtualizaLSTOSAberta();
             Globais.Config();
+
+            
         }
 
 
@@ -5853,6 +5855,12 @@ namespace Sharp_Color_Tool
                     }
                 }
             }
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmClientes form = new frmClientes();
+            form.Show();
         }
     }
 }

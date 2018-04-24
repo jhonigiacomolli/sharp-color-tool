@@ -145,6 +145,12 @@
             this.btnFechar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.opçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             picFavIcon = new System.Windows.Forms.PictureBox();
             pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(picFavIcon)).BeginInit();
@@ -159,6 +165,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnOcultarContador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExibirContador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSharp)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // picFavIcon
@@ -179,6 +186,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             pictureBox3.Location = new System.Drawing.Point(0, 0);
+            pictureBox3.Margin = new System.Windows.Forms.Padding(0);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new System.Drawing.Size(1306, 30);
             pictureBox3.TabIndex = 43;
@@ -214,7 +222,7 @@
             // 
             // txtPrioridade
             // 
-            this.txtPrioridade.Location = new System.Drawing.Point(793, 582);
+            this.txtPrioridade.Location = new System.Drawing.Point(793, 583);
             this.txtPrioridade.Name = "txtPrioridade";
             this.txtPrioridade.Size = new System.Drawing.Size(26, 20);
             this.txtPrioridade.TabIndex = 22;
@@ -233,7 +241,7 @@
             this.txtRelogio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRelogio.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRelogio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtRelogio.Location = new System.Drawing.Point(1177, 48);
+            this.txtRelogio.Location = new System.Drawing.Point(1177, 77);
             this.txtRelogio.Name = "txtRelogio";
             this.txtRelogio.Size = new System.Drawing.Size(216, 54);
             this.txtRelogio.TabIndex = 21;
@@ -246,7 +254,7 @@
             this.txtSP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtSP.ForeColor = System.Drawing.Color.Gray;
-            this.txtSP.Location = new System.Drawing.Point(429, 142);
+            this.txtSP.Location = new System.Drawing.Point(429, 171);
             this.txtSP.Name = "txtSP";
             this.txtSP.Size = new System.Drawing.Size(100, 21);
             this.txtSP.TabIndex = 12;
@@ -260,7 +268,7 @@
             this.txtCor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtCor.ForeColor = System.Drawing.Color.Gray;
-            this.txtCor.Location = new System.Drawing.Point(325, 142);
+            this.txtCor.Location = new System.Drawing.Point(325, 171);
             this.txtCor.Name = "txtCor";
             this.txtCor.Size = new System.Drawing.Size(100, 21);
             this.txtCor.TabIndex = 11;
@@ -274,7 +282,7 @@
             this.txtVeiculo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtVeiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtVeiculo.ForeColor = System.Drawing.Color.Gray;
-            this.txtVeiculo.Location = new System.Drawing.Point(119, 142);
+            this.txtVeiculo.Location = new System.Drawing.Point(119, 171);
             this.txtVeiculo.Name = "txtVeiculo";
             this.txtVeiculo.Size = new System.Drawing.Size(100, 21);
             this.txtVeiculo.TabIndex = 9;
@@ -288,7 +296,7 @@
             this.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtCliente.ForeColor = System.Drawing.Color.Gray;
-            this.txtCliente.Location = new System.Drawing.Point(16, 142);
+            this.txtCliente.Location = new System.Drawing.Point(16, 171);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(100, 21);
             this.txtCliente.TabIndex = 8;
@@ -304,7 +312,7 @@
             this.txtPlaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtPlaca.ForeColor = System.Drawing.Color.Gray;
             this.txtPlaca.HidePromptOnLeave = true;
-            this.txtPlaca.Location = new System.Drawing.Point(222, 142);
+            this.txtPlaca.Location = new System.Drawing.Point(222, 171);
             this.txtPlaca.Mask = ">AAA-0000";
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.Size = new System.Drawing.Size(100, 21);
@@ -317,7 +325,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Silver;
-            this.label1.Location = new System.Drawing.Point(46, 126);
+            this.label1.Location = new System.Drawing.Point(46, 155);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 23;
@@ -327,7 +335,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(146, 126);
+            this.label2.Location = new System.Drawing.Point(146, 155);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 23;
@@ -337,7 +345,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(251, 126);
+            this.label3.Location = new System.Drawing.Point(251, 155);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 23;
@@ -347,7 +355,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Silver;
-            this.label4.Location = new System.Drawing.Point(360, 126);
+            this.label4.Location = new System.Drawing.Point(360, 155);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(23, 13);
             this.label4.TabIndex = 23;
@@ -357,7 +365,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Silver;
-            this.label5.Location = new System.Drawing.Point(430, 126);
+            this.label5.Location = new System.Drawing.Point(430, 155);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 13);
             this.label5.TabIndex = 23;
@@ -370,7 +378,7 @@
             this.txtData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtData.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtData.ForeColor = System.Drawing.Color.Gray;
-            this.txtData.Location = new System.Drawing.Point(1174, 108);
+            this.txtData.Location = new System.Drawing.Point(1174, 137);
             this.txtData.Name = "txtData";
             this.txtData.Size = new System.Drawing.Size(216, 17);
             this.txtData.TabIndex = 21;
@@ -395,7 +403,7 @@
             this.lstTintasFinalizadas.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lstTintasFinalizadas.Location = new System.Drawing.Point(0, 275);
             this.lstTintasFinalizadas.Name = "lstTintasFinalizadas";
-            this.lstTintasFinalizadas.Size = new System.Drawing.Size(1752, 248);
+            this.lstTintasFinalizadas.Size = new System.Drawing.Size(1752, 262);
             this.lstTintasFinalizadas.Sorting = System.Windows.Forms.SortOrder.Descending;
             this.lstTintasFinalizadas.TabIndex = 25;
             this.lstTintasFinalizadas.UseCompatibleStateImageBehavior = false;
@@ -441,7 +449,7 @@
             this.Painel_Opcoes.Dock = System.Windows.Forms.DockStyle.Right;
             this.Painel_Opcoes.Location = new System.Drawing.Point(1370, 0);
             this.Painel_Opcoes.Name = "Painel_Opcoes";
-            this.Painel_Opcoes.Size = new System.Drawing.Size(32, 709);
+            this.Painel_Opcoes.Size = new System.Drawing.Size(32, 757);
             this.Painel_Opcoes.TabIndex = 26;
             this.Painel_Opcoes.Click += new System.EventHandler(this.Painel_Opcoes_Click);
             // 
@@ -835,7 +843,7 @@
             // 
             this.cmdOpen_Options.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cmdOpen_Options.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cmdOpen_Options.BackgroundImage")));
-            this.cmdOpen_Options.Location = new System.Drawing.Point(4, 301);
+            this.cmdOpen_Options.Location = new System.Drawing.Point(4, 313);
             this.cmdOpen_Options.Name = "cmdOpen_Options";
             this.cmdOpen_Options.Size = new System.Drawing.Size(22, 113);
             this.cmdOpen_Options.TabIndex = 2;
@@ -846,7 +854,7 @@
             // 
             this.cmdClose_Options.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cmdClose_Options.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cmdClose_Options.BackgroundImage")));
-            this.cmdClose_Options.Location = new System.Drawing.Point(4, 301);
+            this.cmdClose_Options.Location = new System.Drawing.Point(4, 325);
             this.cmdClose_Options.Name = "cmdClose_Options";
             this.cmdClose_Options.Size = new System.Drawing.Size(22, 113);
             this.cmdClose_Options.TabIndex = 3;
@@ -1320,9 +1328,9 @@
             this.panel1.Controls.Add(this.cmdLSTColumn13);
             this.panel1.Controls.Add(this.lstTintas);
             this.panel1.Controls.Add(this.lstTintasFinalizadas);
-            this.panel1.Location = new System.Drawing.Point(16, 154);
+            this.panel1.Location = new System.Drawing.Point(16, 189);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1352, 492);
+            this.panel1.Size = new System.Drawing.Size(1352, 506);
             this.panel1.TabIndex = 28;
             this.panel1.Click += new System.EventHandler(this.panel1_Click);
             // 
@@ -1448,7 +1456,7 @@
             this.panel2.Controls.Add(this.lblNTotal);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.lblNAjustes);
-            this.panel2.Location = new System.Drawing.Point(678, 31);
+            this.panel2.Location = new System.Drawing.Point(678, 60);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(286, 132);
             this.panel2.TabIndex = 41;
@@ -1560,7 +1568,7 @@
             // 
             this.btnExibirContador.BackgroundImage = global::Sharp_Color_Tool.Properties.Resources.Exibir_Contador;
             this.btnExibirContador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnExibirContador.Location = new System.Drawing.Point(757, 137);
+            this.btnExibirContador.Location = new System.Drawing.Point(757, 166);
             this.btnExibirContador.Name = "btnExibirContador";
             this.btnExibirContador.Size = new System.Drawing.Size(129, 25);
             this.btnExibirContador.TabIndex = 41;
@@ -1575,7 +1583,7 @@
             this.cmdFaturar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cmdFaturar.FlatAppearance.BorderSize = 0;
             this.cmdFaturar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdFaturar.Location = new System.Drawing.Point(824, 650);
+            this.cmdFaturar.Location = new System.Drawing.Point(824, 699);
             this.cmdFaturar.Name = "cmdFaturar";
             this.cmdFaturar.Size = new System.Drawing.Size(80, 45);
             this.cmdFaturar.TabIndex = 30;
@@ -1593,7 +1601,7 @@
             this.cmdSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cmdSair.FlatAppearance.BorderSize = 0;
             this.cmdSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdSair.Location = new System.Drawing.Point(1313, 650);
+            this.cmdSair.Location = new System.Drawing.Point(1313, 699);
             this.cmdSair.Name = "cmdSair";
             this.cmdSair.Size = new System.Drawing.Size(80, 45);
             this.cmdSair.TabIndex = 7;
@@ -1611,7 +1619,7 @@
             this.cmdPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cmdPesquisar.FlatAppearance.BorderSize = 0;
             this.cmdPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdPesquisar.Location = new System.Drawing.Point(535, 132);
+            this.cmdPesquisar.Location = new System.Drawing.Point(535, 161);
             this.cmdPesquisar.Name = "cmdPesquisar";
             this.cmdPesquisar.Size = new System.Drawing.Size(134, 37);
             this.cmdPesquisar.TabIndex = 13;
@@ -1629,7 +1637,7 @@
             this.cmdFinalizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cmdFinalizar.FlatAppearance.BorderSize = 0;
             this.cmdFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdFinalizar.Location = new System.Drawing.Point(618, 650);
+            this.cmdFinalizar.Location = new System.Drawing.Point(618, 699);
             this.cmdFinalizar.Name = "cmdFinalizar";
             this.cmdFinalizar.Size = new System.Drawing.Size(80, 45);
             this.cmdFinalizar.TabIndex = 6;
@@ -1648,7 +1656,7 @@
             this.cmdPausar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cmdPausar.FlatAppearance.BorderSize = 0;
             this.cmdPausar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdPausar.Location = new System.Drawing.Point(519, 650);
+            this.cmdPausar.Location = new System.Drawing.Point(519, 699);
             this.cmdPausar.Name = "cmdPausar";
             this.cmdPausar.Size = new System.Drawing.Size(80, 45);
             this.cmdPausar.TabIndex = 5;
@@ -1667,7 +1675,7 @@
             this.cmdIniciar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cmdIniciar.FlatAppearance.BorderSize = 0;
             this.cmdIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdIniciar.Location = new System.Drawing.Point(421, 650);
+            this.cmdIniciar.Location = new System.Drawing.Point(421, 699);
             this.cmdIniciar.Name = "cmdIniciar";
             this.cmdIniciar.Size = new System.Drawing.Size(80, 45);
             this.cmdIniciar.TabIndex = 4;
@@ -1686,7 +1694,7 @@
             this.cmdAtualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cmdAtualizar.FlatAppearance.BorderSize = 0;
             this.cmdAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdAtualizar.Location = new System.Drawing.Point(16, 650);
+            this.cmdAtualizar.Location = new System.Drawing.Point(16, 699);
             this.cmdAtualizar.Name = "cmdAtualizar";
             this.cmdAtualizar.Size = new System.Drawing.Size(80, 45);
             this.cmdAtualizar.TabIndex = 0;
@@ -1705,7 +1713,7 @@
             this.cmdExluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cmdExluir.FlatAppearance.BorderSize = 0;
             this.cmdExluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdExluir.Location = new System.Drawing.Point(323, 650);
+            this.cmdExluir.Location = new System.Drawing.Point(323, 699);
             this.cmdExluir.Name = "cmdExluir";
             this.cmdExluir.Size = new System.Drawing.Size(80, 45);
             this.cmdExluir.TabIndex = 3;
@@ -1724,7 +1732,7 @@
             this.cmdEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cmdEdit.FlatAppearance.BorderSize = 0;
             this.cmdEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdEdit.Location = new System.Drawing.Point(225, 650);
+            this.cmdEdit.Location = new System.Drawing.Point(225, 699);
             this.cmdEdit.Name = "cmdEdit";
             this.cmdEdit.Size = new System.Drawing.Size(80, 45);
             this.cmdEdit.TabIndex = 2;
@@ -1743,7 +1751,7 @@
             this.cmdNew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cmdNew.FlatAppearance.BorderSize = 0;
             this.cmdNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdNew.Location = new System.Drawing.Point(129, 650);
+            this.cmdNew.Location = new System.Drawing.Point(129, 699);
             this.cmdNew.Name = "cmdNew";
             this.cmdNew.Size = new System.Drawing.Size(80, 45);
             this.cmdNew.TabIndex = 1;
@@ -1758,7 +1766,7 @@
             // 
             this.picSharp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picSharp.BackgroundImage")));
             this.picSharp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picSharp.Location = new System.Drawing.Point(16, 31);
+            this.picSharp.Location = new System.Drawing.Point(16, 60);
             this.picSharp.Name = "picSharp";
             this.picSharp.Size = new System.Drawing.Size(338, 120);
             this.picSharp.TabIndex = 24;
@@ -1773,7 +1781,7 @@
             this.cmdReabrir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cmdReabrir.FlatAppearance.BorderSize = 0;
             this.cmdReabrir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdReabrir.Location = new System.Drawing.Point(718, 650);
+            this.cmdReabrir.Location = new System.Drawing.Point(718, 699);
             this.cmdReabrir.Name = "cmdReabrir";
             this.cmdReabrir.Size = new System.Drawing.Size(80, 45);
             this.cmdReabrir.TabIndex = 29;
@@ -1847,12 +1855,69 @@
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(0);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.opçõesToolStripMenuItem});
+            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1370, 23);
+            this.menuStrip1.TabIndex = 49;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clientesToolStripMenuItem});
+            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.Silver;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Overflow = System.Windows.Forms.ToolStripItemOverflow.AsNeeded;
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(61, 19);
+            this.toolStripMenuItem1.Text = "Clientes";
+            // 
+            // clientesToolStripMenuItem
+            // 
+            this.clientesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.clientesToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.ShowShortcutKeys = false;
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.clientesToolStripMenuItem.Text = "Clientes";
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
+            // 
+            // opçõesToolStripMenuItem
+            // 
+            this.opçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.configuraçõesToolStripMenuItem});
+            this.opçõesToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.opçõesToolStripMenuItem.Name = "opçõesToolStripMenuItem";
+            this.opçõesToolStripMenuItem.Size = new System.Drawing.Size(59, 19);
+            this.opçõesToolStripMenuItem.Text = "Opções";
+            // 
+            // configuraçõesToolStripMenuItem
+            // 
+            this.configuraçõesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.configuraçõesToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
+            this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.configuraçõesToolStripMenuItem.Text = "Configurações";
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.ClientSize = new System.Drawing.Size(1402, 709);
+            this.ClientSize = new System.Drawing.Size(1402, 757);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.button2);
@@ -1911,6 +1976,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnOcultarContador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExibirContador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSharp)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2031,6 +2098,12 @@
         public System.Windows.Forms.Label lblTitulo;
         public System.Windows.Forms.Button button1;
         public System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem opçõesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem configuraçõesToolStripMenuItem;
     }
 }
 
