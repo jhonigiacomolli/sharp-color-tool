@@ -184,6 +184,7 @@
             this.Controls.Add(pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCadastroClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CadastroClientes";
             ((System.ComponentModel.ISupportInitialize)(picFavIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();

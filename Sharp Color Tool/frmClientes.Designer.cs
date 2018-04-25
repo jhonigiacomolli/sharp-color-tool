@@ -42,6 +42,31 @@
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
+            // picFavIcon
+            // 
+            picFavIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            picFavIcon.BackgroundImage = global::Sharp_Color_Tool.Properties.Resources.FavIcon_25px_;
+            picFavIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            picFavIcon.Location = new System.Drawing.Point(4, 0);
+            picFavIcon.Name = "picFavIcon";
+            picFavIcon.Size = new System.Drawing.Size(25, 25);
+            picFavIcon.TabIndex = 35;
+            picFavIcon.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            pictureBox1.Location = new System.Drawing.Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(658, 25);
+            pictureBox1.TabIndex = 33;
+            pictureBox1.TabStop = false;
+            pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+            // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
@@ -122,31 +147,6 @@
             this.cmdExcluir.UseVisualStyleBackColor = false;
             this.cmdExcluir.Click += new System.EventHandler(this.cmdExcluir_Click);
             // 
-            // picFavIcon
-            // 
-            picFavIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            picFavIcon.BackgroundImage = global::Sharp_Color_Tool.Properties.Resources.FavIcon_25px_;
-            picFavIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            picFavIcon.Location = new System.Drawing.Point(4, 0);
-            picFavIcon.Name = "picFavIcon";
-            picFavIcon.Size = new System.Drawing.Size(25, 25);
-            picFavIcon.TabIndex = 35;
-            picFavIcon.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            pictureBox1.Location = new System.Drawing.Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(658, 25);
-            pictureBox1.TabIndex = 33;
-            pictureBox1.TabStop = false;
-            pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
-            pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
-            // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,6 +163,7 @@
             this.Controls.Add(pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmClientes";
             ((System.ComponentModel.ISupportInitialize)(picFavIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();

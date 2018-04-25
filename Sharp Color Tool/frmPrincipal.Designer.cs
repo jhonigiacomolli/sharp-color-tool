@@ -1890,7 +1890,7 @@
             this.clientesToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.ShowShortcutKeys = false;
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
@@ -1908,8 +1908,9 @@
             this.configuraçõesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.configuraçõesToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
             this.configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
-            this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.configuraçõesToolStripMenuItem.Text = "Configurações";
+            this.configuraçõesToolStripMenuItem.Click += new System.EventHandler(this.configuraçõesToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 

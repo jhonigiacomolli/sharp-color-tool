@@ -2,7 +2,7 @@
 using System.Data.OleDb;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Windows.Forms;
 
 namespace Sharp_Color_Tool
 {
@@ -110,6 +110,73 @@ namespace Sharp_Color_Tool
             {
                 //fecha a conexao
                 conn.Close();
+            }
+        }
+
+        public void Preenche_PainelConfig(frmConfig configuracoes)
+        {
+            configuracoes.txtCaminhoModelo.Text = ModeloOS;
+            configuracoes.txtCaminhoBackup.Text = PastaBackupOS;
+            configuracoes.txtTempoRepesagem.Value =int.Parse(TempoRepesagemAuto);
+            configuracoes.txtNumeroOSFim.Text = Numero_OSFim;
+            configuracoes.txtMargemSugerida.Value =(Int32)Margen_Sugerida;
+            configuracoes.txtCL_NOS.Value =LstTIntas_Coluna_NumeroOS;
+            configuracoes.txtCL_DataCadastro.Value = LstTIntas_Coluna_DataCadastro;
+            configuracoes.txtCL_TipoOS.Value = LstTIntas_Coluna_TipoOS;
+            configuracoes.txtCL_Cliente.Value = LstTIntas_Coluna_Cliente;
+            configuracoes.txtCL_Veiculo.Value = LstTIntas_Coluna_Veiculo;
+            configuracoes.txtCL_Placa.Value = LstTIntas_Coluna_Placa;
+            configuracoes.txtCL_GrupoCores.Value = LstTIntas_Coluna_GrupoCores;
+            configuracoes.txtCL_Montadora.Value = LstTIntas_Coluna_Montadora;
+            configuracoes.txtCL_CodigoCor.Value = LstTIntas_Coluna_CodigoCor;
+            configuracoes.txtCL_Quantidade.Value = LstTIntas_Coluna_Quantidade;
+            configuracoes.txtCL_SP.Value = LstTIntas_Coluna_Pintura;
+            configuracoes.txtCL_Colorista.Value = LstTIntas_Coluna_Colorista;
+            configuracoes.txtCL_Cor.Value = LstTIntas_Coluna_Cor;
+            configuracoes.txtCL_CorpoProva.Value = LstTIntas_Coluna_CorpoProva;
+            configuracoes.txtCL_Prioridade.Value = LstTIntas_Coluna_Prioridade;
+            configuracoes.txtCL_Status.Value = LstTIntas_Coluna_StatusOperacao;
+            configuracoes.txtCL_Inicio.Value = LstTIntas_Coluna_Inicio;
+            configuracoes.txtCL_Fim.Value = LstTIntas_Coluna_Fim;
+            configuracoes.txtCL_Tempo.Value = LstTIntas_Coluna_Tempo;
+            configuracoes.txtCL_Entrega.Value = LstTIntas_Coluna_Entrega;
+            configuracoes.txtCL_DataFaturamento.Value = LstTIntas_Coluna_DataFaturamento;
+            configuracoes.txtCL_ValorCusto.Value = LstTIntas_Coluna_ValorCusto;
+            configuracoes.txtCL_ValorVenda.Value = LstTIntas_Coluna_ValorVenda;
+            configuracoes.txtCL_Markup.Value = LstTIntas_Coluna_Markup;
+            configuracoes.txtCL_Chapinhas.Value = LstTIntas_Coluna_Chapinhas;
+            configuracoes.txtCL_Previsao.Value = LstTIntas_Coluna_Previsao;
+        }
+
+        public void Atualizar_Configuracoes(string EnderecoOS,string Backup, int TempoRepesagem, int NumeroOSFim, int CL_Nos,int CL_DataCadastro,int CL_TipoOS,int CL_Cliente, int CL_Veiculo,int CL_Placa,int CL_GrupoCores, int CL_Montadora, int CL_COdCOr, int CL_Qnt, int CL_SP, int CL_Colorista,int CL_Cor, int CL_CorpoProva, int CL_Prioridade, int CL_Status, int CL_Inicio, int CL_Fim, int CL_Tempo, int CL_Entrega, int CL_DataFat, int CL_ValorCusto, int CL_ValorVenda, int CL_MArkup, int CL_Chapinhas, int CL_Previsao, int MargemSugerida)
+        {
+            int ID = 1;
+
+            try
+            {                
+                OleDbConnection conn = new OleDbConnection(Conexao.Database_Agendamentos);
+                //abre a conexao
+                conn.Open();
+
+                //cria um comando oledb
+                OleDbCommand cmd = conn.CreateCommand();
+
+                //define o tipo do comando como texto 
+                cmd.CommandText = "UPDATE Config SET Endereco_OSModelo='" + ModeloOS.Replace("'", "''") + "', Pasta_BackupOS='" + Backup + "', Tempo_Repesagem='" + TempoRepesagem + "', Numero_OSFim='" + NumeroOSFim + "', LstTIntas_Coluna_NumeroOS='" + CL_Nos + "', LstTIntas_Coluna_DataCadastro='" + CL_DataCadastro + "', LstTIntas_Coluna_TipoOS='" + CL_TipoOS + "', LstTIntas_Coluna_Cliente='" + CL_Cliente + "', LstTIntas_Coluna_Veiculo='" + CL_Veiculo + "', LstTIntas_Coluna_Placa='" + CL_Placa + "', LstTIntas_Coluna_GrupoCores='" + CL_GrupoCores + "', LstTIntas_Coluna_Montadora='" + CL_Montadora + "', LstTIntas_Coluna_CodigoCor='" + CL_COdCOr + "', LstTIntas_Coluna_Quantidade='" + CL_Qnt + "', LstTIntas_Coluna_Pintura='" + CL_SP + "', LstTIntas_Coluna_Colorista='" + CL_Colorista + "', LstTIntas_Coluna_Cor='" + CL_Cor + "', LstTIntas_Coluna_CorpoProva='" + CL_CorpoProva + "', LstTIntas_Coluna_Prioridade='" + CL_Prioridade + "', LstTIntas_Coluna_StatusOperacao='" + CL_Status + "', LstTIntas_Coluna_Inicio='" + CL_Inicio + "', LstTIntas_Coluna_Fim='" + CL_Fim + "', LstTIntas_Coluna_Tempo='" + CL_Tempo + "', LstTIntas_Coluna_Entrega='" + CL_Entrega + "', LstTIntas_Coluna_DataFaturamento='" + CL_DataFat + "', LstTIntas_Coluna_ValorCusto='" + CL_ValorCusto + "', LstTIntas_Coluna_ValorVenda='" + CL_ValorVenda + "', LstTIntas_Coluna_Markup='" + CL_MArkup + "', LstTIntas_Coluna_Chapinhas='" + CL_Chapinhas + "', LstTIntas_Coluna_Previsao='" + CL_Previsao + "', Margem_Sugerida='" + MargemSugerida + "' WHERE Código=" + ID + "";
+
+                //executa o comando e gera um datareader
+                OleDbDataReader dr = cmd.ExecuteReader();
+
+                dr.Close();
+                conn.Close();
+
+                Form messagebox = new frmMensagemPersonalizada("Alerta", "Erro", "Configurações alteradas com sucesso!");
+                messagebox.ShowDialog();
+            }
+            catch (OleDbException ex)
+            {
+                Form messagebox = new frmMensagemPersonalizada("Critico", "Erro", "Error: " + ex.Message);
+                messagebox.ShowDialog();
             }
         }
     }

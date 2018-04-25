@@ -149,7 +149,6 @@
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="LST_Tintas.cs" />
-    <Compile Include="MenuStrip.cs" />
     <Compile Include="Ordem_Servico.cs" />
     <Compile Include="Prioridade_Cliente.cs" />
     <Compile Include="Program.cs" />
@@ -159,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfig.resx">
+      <DependentUpon>frmConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFaturamento.resx">
       <DependentUpon>frmFaturamento.cs</DependentUpon>

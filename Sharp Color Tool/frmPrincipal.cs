@@ -5859,8 +5859,14 @@ namespace Sharp_Color_Tool
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmClientes form = new frmClientes();
-            form.Show();
+            frmClientes clientes = new frmClientes();
+            clientes.Show();
+        }
+
+        private void configuraçõesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConfig config = new frmConfig();
+            config.Show();
         }
     }
 }
