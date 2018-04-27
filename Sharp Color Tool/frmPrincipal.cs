@@ -306,6 +306,8 @@ namespace Sharp_Color_Tool
             lstTintasFinalizadas.Columns.Add("Chapinhas", Globais.LstTIntas_Coluna_Chapinhas, HorizontalAlignment.Center);
             lstTintasFinalizadas.Columns.Add("Existente", 0);
 
+            menuStrip1.Renderer = new MyRenderer();
+
             carrega_LST_tintas();
             AtualizaLSTOSAberta();
             Globais.Config();
@@ -5867,6 +5869,17 @@ namespace Sharp_Color_Tool
         {
             frmConfig config = new frmConfig();
             config.Show();
+        }
+
+        private void entregasPrazoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRelatorios Relatorio = new frmRelatorios();
+            Relatorio.Show();
+        }
+
+        private void relatóriosToolStripMenuItem_MouseHover(object sender, EventArgs e)
+        {
+            
         }
     }
 }

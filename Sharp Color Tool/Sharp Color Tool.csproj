@@ -89,8 +89,12 @@
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -101,6 +105,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database_AgendamentosDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database_AgendamentosDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmCadastroClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +141,12 @@
     <Compile Include="frmMensagemPersonalizada.Designer.cs">
       <DependentUpon>frmMensagemPersonalizada.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRelatorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRelatorios.Designer.cs">
+      <DependentUpon>frmRelatorios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Globais.cs" />
     <Compile Include="Itens_Lista.cs" />
     <Compile Include="LST_Column_Reorder.cs" />
@@ -149,6 +164,7 @@
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="LST_Tintas.cs" />
+    <Compile Include="Menu_Strip.cs" />
     <Compile Include="Ordem_Servico.cs" />
     <Compile Include="Prioridade_Cliente.cs" />
     <Compile Include="Program.cs" />
@@ -174,11 +190,26 @@
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRelatorios.resx">
+      <DependentUpon>frmRelatorios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="rlt_TintasEntregues.rdlc" />
+    <None Include="Database_AgendamentosDataSet.xsc">
+      <DependentUpon>Database_AgendamentosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Database_AgendamentosDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database_AgendamentosDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database_AgendamentosDataSet.xss">
+      <DependentUpon>Database_AgendamentosDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -293,6 +324,9 @@
     <None Include="bin\x86\Debug\BTN\BTN_Sair_Sobre.png" />
     <None Include="bin\x86\Debug\BTN\teste.png" />
     <Content Include="Icone Sharp.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

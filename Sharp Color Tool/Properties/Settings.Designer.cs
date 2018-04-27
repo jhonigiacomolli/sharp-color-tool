@@ -22,5 +22,39 @@ namespace Sharp_Color_Tool.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\bin\\x86\\Debug\\Databa" +
+            "se\\Database_Agendamentos.mdb;Persist Security Info=True;Jet OLEDB:Database Passw" +
+            "ord=++060188jhoni.fg")]
+        public string Database_AgendamentosConnectionString {
+            get {
+                return ((string)(this["Database_AgendamentosConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\bin\\x86\\Debug\\Databa" +
+            "se_Agendamentos.mdb;Jet OLEDB:Database Password=++060188jhoni.fg")]
+        public string Database_AgendamentosConnectionString1 {
+            get {
+                return ((string)(this["Database_AgendamentosConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\Database_Agendamento" +
+            "s.mdb;Persist Security Info=True;Jet OLEDB:Database Password=++060188jhoni.fg")]
+        public string Database_AgendamentosConnectionString2 {
+            get {
+                return ((string)(this["Database_AgendamentosConnectionString2"]));
+            }
+        }
     }
 }

@@ -40,24 +40,22 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtCL_NOS = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtCL_DataCadastro = new System.Windows.Forms.NumericUpDown();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtCL_TipoOS = new System.Windows.Forms.NumericUpDown();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtCL_Cliente = new System.Windows.Forms.NumericUpDown();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtCL_Veiculo = new System.Windows.Forms.NumericUpDown();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtCL_Placa = new System.Windows.Forms.NumericUpDown();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtCL_GrupoCores = new System.Windows.Forms.NumericUpDown();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtCL_Montadora = new System.Windows.Forms.NumericUpDown();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtCL_CodigoCor = new System.Windows.Forms.NumericUpDown();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txtCL_Previsao = new System.Windows.Forms.NumericUpDown();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txtCL_Chapinhas = new System.Windows.Forms.NumericUpDown();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txtCL_Markup = new System.Windows.Forms.NumericUpDown();
+            this.label28 = new System.Windows.Forms.Label();
+            this.txtCL_ValorVenda = new System.Windows.Forms.NumericUpDown();
+            this.label29 = new System.Windows.Forms.Label();
+            this.txtCL_ValorCusto = new System.Windows.Forms.NumericUpDown();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txtCL_DataFaturamento = new System.Windows.Forms.NumericUpDown();
+            this.label31 = new System.Windows.Forms.Label();
+            this.txtCL_Entrega = new System.Windows.Forms.NumericUpDown();
+            this.label32 = new System.Windows.Forms.Label();
+            this.txtCL_Tempo = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
             this.txtCL_Fim = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
@@ -76,41 +74,44 @@
             this.txtCL_SP = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.txtCL_Quantidade = new System.Windows.Forms.NumericUpDown();
-            this.label25 = new System.Windows.Forms.Label();
-            this.txtCL_Previsao = new System.Windows.Forms.NumericUpDown();
-            this.label26 = new System.Windows.Forms.Label();
-            this.txtCL_Chapinhas = new System.Windows.Forms.NumericUpDown();
-            this.label27 = new System.Windows.Forms.Label();
-            this.txtCL_Markup = new System.Windows.Forms.NumericUpDown();
-            this.label28 = new System.Windows.Forms.Label();
-            this.txtCL_ValorVenda = new System.Windows.Forms.NumericUpDown();
-            this.label29 = new System.Windows.Forms.Label();
-            this.txtCL_ValorCusto = new System.Windows.Forms.NumericUpDown();
-            this.label30 = new System.Windows.Forms.Label();
-            this.txtCL_DataFaturamento = new System.Windows.Forms.NumericUpDown();
-            this.label31 = new System.Windows.Forms.Label();
-            this.txtCL_Entrega = new System.Windows.Forms.NumericUpDown();
-            this.label32 = new System.Windows.Forms.Label();
-            this.txtCL_Tempo = new System.Windows.Forms.NumericUpDown();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtCL_CodigoCor = new System.Windows.Forms.NumericUpDown();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtCL_Montadora = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtCL_GrupoCores = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtCL_Placa = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtCL_Veiculo = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtCL_Cliente = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtCL_TipoOS = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtCL_DataCadastro = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtCL_NOS = new System.Windows.Forms.NumericUpDown();
             this.txtNumeroOSFim = new System.Windows.Forms.NumericUpDown();
             this.cmdCancelar = new System.Windows.Forms.Button();
             this.cmdGravar = new System.Windows.Forms.Button();
             this.txtTempoRepesagem = new System.Windows.Forms.NumericUpDown();
             this.txtMargemSugerida = new System.Windows.Forms.NumericUpDown();
+            this.txtZoomRelatorio = new System.Windows.Forms.NumericUpDown();
+            this.label24 = new System.Windows.Forms.Label();
             picFavIcon = new System.Windows.Forms.PictureBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(picFavIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_NOS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_DataCadastro)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_TipoOS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Cliente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Veiculo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Placa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_GrupoCores)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Montadora)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_CodigoCor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Previsao)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Chapinhas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Markup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_ValorVenda)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_ValorCusto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_DataFaturamento)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Entrega)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Tempo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCL_Fim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCL_Inicio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCL_Status)).BeginInit();
@@ -120,17 +121,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCL_Colorista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCL_SP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCL_Quantidade)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Previsao)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Chapinhas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Markup)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_ValorVenda)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_ValorCusto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_DataFaturamento)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Entrega)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Tempo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_CodigoCor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Montadora)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_GrupoCores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Placa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Veiculo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Cliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_TipoOS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_DataCadastro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_NOS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumeroOSFim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTempoRepesagem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMargemSugerida)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtZoomRelatorio)).BeginInit();
             this.SuspendLayout();
             // 
             // picFavIcon
@@ -143,6 +146,20 @@
             picFavIcon.Size = new System.Drawing.Size(25, 25);
             picFavIcon.TabIndex = 39;
             picFavIcon.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            pictureBox1.Location = new System.Drawing.Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(695, 25);
+            pictureBox1.TabIndex = 37;
+            pictureBox1.TabStop = false;
+            pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
             // lblTitulo
             // 
@@ -173,20 +190,6 @@
             this.btnFechar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnFechar.UseVisualStyleBackColor = false;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            pictureBox1.Location = new System.Drawing.Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(695, 25);
-            pictureBox1.TabIndex = 37;
-            pictureBox1.TabStop = false;
-            pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
-            pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
             // label2
             // 
@@ -317,212 +320,189 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dimensões das Colunas das Listas de Tintas";
             // 
-            // txtCL_NOS
+            // label25
             // 
-            this.txtCL_NOS.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtCL_NOS.Location = new System.Drawing.Point(118, 19);
-            this.txtCL_NOS.Maximum = new decimal(new int[] {
+            this.label25.AutoSize = true;
+            this.label25.ForeColor = System.Drawing.Color.Silver;
+            this.label25.Location = new System.Drawing.Point(467, 203);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(103, 13);
+            this.label25.TabIndex = 101;
+            this.label25.Text = "Previsão de Entrega";
+            // 
+            // txtCL_Previsao
+            // 
+            this.txtCL_Previsao.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtCL_Previsao.Location = new System.Drawing.Point(580, 201);
+            this.txtCL_Previsao.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.txtCL_NOS.Name = "txtCL_NOS";
-            this.txtCL_NOS.Size = new System.Drawing.Size(67, 20);
-            this.txtCL_NOS.TabIndex = 5;
+            this.txtCL_Previsao.Name = "txtCL_Previsao";
+            this.txtCL_Previsao.Size = new System.Drawing.Size(67, 20);
+            this.txtCL_Previsao.TabIndex = 30;
             // 
-            // label6
+            // label26
             // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Silver;
-            this.label6.Location = new System.Drawing.Point(8, 21);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 13);
-            this.label6.TabIndex = 51;
-            this.label6.Text = "Numero OS";
+            this.label26.AutoSize = true;
+            this.label26.ForeColor = System.Drawing.Color.Silver;
+            this.label26.Location = new System.Drawing.Point(467, 177);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(112, 13);
+            this.label26.TabIndex = 99;
+            this.label26.Text = "Numero de Chapinhas";
             // 
-            // label7
+            // txtCL_Chapinhas
             // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Silver;
-            this.label7.Location = new System.Drawing.Point(8, 47);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 13);
-            this.label7.TabIndex = 53;
-            this.label7.Text = "Data de Cadastro";
-            // 
-            // txtCL_DataCadastro
-            // 
-            this.txtCL_DataCadastro.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtCL_DataCadastro.Location = new System.Drawing.Point(118, 45);
-            this.txtCL_DataCadastro.Maximum = new decimal(new int[] {
+            this.txtCL_Chapinhas.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtCL_Chapinhas.Location = new System.Drawing.Point(580, 175);
+            this.txtCL_Chapinhas.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.txtCL_DataCadastro.Name = "txtCL_DataCadastro";
-            this.txtCL_DataCadastro.Size = new System.Drawing.Size(67, 20);
-            this.txtCL_DataCadastro.TabIndex = 6;
+            this.txtCL_Chapinhas.Name = "txtCL_Chapinhas";
+            this.txtCL_Chapinhas.Size = new System.Drawing.Size(67, 20);
+            this.txtCL_Chapinhas.TabIndex = 29;
             // 
-            // label8
+            // label27
             // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Silver;
-            this.label8.Location = new System.Drawing.Point(8, 73);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(61, 13);
-            this.label8.TabIndex = 55;
-            this.label8.Text = "Tipo de OS";
+            this.label27.AutoSize = true;
+            this.label27.ForeColor = System.Drawing.Color.Silver;
+            this.label27.Location = new System.Drawing.Point(467, 151);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(43, 13);
+            this.label27.TabIndex = 97;
+            this.label27.Text = "Markup";
             // 
-            // txtCL_TipoOS
+            // txtCL_Markup
             // 
-            this.txtCL_TipoOS.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtCL_TipoOS.Location = new System.Drawing.Point(118, 71);
-            this.txtCL_TipoOS.Maximum = new decimal(new int[] {
+            this.txtCL_Markup.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtCL_Markup.Location = new System.Drawing.Point(580, 149);
+            this.txtCL_Markup.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.txtCL_TipoOS.Name = "txtCL_TipoOS";
-            this.txtCL_TipoOS.Size = new System.Drawing.Size(67, 20);
-            this.txtCL_TipoOS.TabIndex = 7;
+            this.txtCL_Markup.Name = "txtCL_Markup";
+            this.txtCL_Markup.Size = new System.Drawing.Size(67, 20);
+            this.txtCL_Markup.TabIndex = 28;
             // 
-            // label9
+            // label28
             // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.Silver;
-            this.label9.Location = new System.Drawing.Point(8, 99);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 13);
-            this.label9.TabIndex = 57;
-            this.label9.Text = "Cliente";
+            this.label28.AutoSize = true;
+            this.label28.ForeColor = System.Drawing.Color.Silver;
+            this.label28.Location = new System.Drawing.Point(467, 125);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(80, 13);
+            this.label28.TabIndex = 95;
+            this.label28.Text = "Valor de Venda";
             // 
-            // txtCL_Cliente
+            // txtCL_ValorVenda
             // 
-            this.txtCL_Cliente.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtCL_Cliente.Location = new System.Drawing.Point(118, 97);
-            this.txtCL_Cliente.Maximum = new decimal(new int[] {
+            this.txtCL_ValorVenda.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtCL_ValorVenda.Location = new System.Drawing.Point(580, 123);
+            this.txtCL_ValorVenda.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.txtCL_Cliente.Name = "txtCL_Cliente";
-            this.txtCL_Cliente.Size = new System.Drawing.Size(67, 20);
-            this.txtCL_Cliente.TabIndex = 8;
+            this.txtCL_ValorVenda.Name = "txtCL_ValorVenda";
+            this.txtCL_ValorVenda.Size = new System.Drawing.Size(67, 20);
+            this.txtCL_ValorVenda.TabIndex = 27;
             // 
-            // label10
+            // label29
             // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.Silver;
-            this.label10.Location = new System.Drawing.Point(8, 125);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(42, 13);
-            this.label10.TabIndex = 59;
-            this.label10.Text = "Veiculo";
+            this.label29.AutoSize = true;
+            this.label29.ForeColor = System.Drawing.Color.Silver;
+            this.label29.Location = new System.Drawing.Point(467, 99);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(76, 13);
+            this.label29.TabIndex = 93;
+            this.label29.Text = "Valor de Custo";
             // 
-            // txtCL_Veiculo
+            // txtCL_ValorCusto
             // 
-            this.txtCL_Veiculo.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtCL_Veiculo.Location = new System.Drawing.Point(118, 123);
-            this.txtCL_Veiculo.Maximum = new decimal(new int[] {
+            this.txtCL_ValorCusto.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtCL_ValorCusto.Location = new System.Drawing.Point(580, 97);
+            this.txtCL_ValorCusto.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.txtCL_Veiculo.Name = "txtCL_Veiculo";
-            this.txtCL_Veiculo.Size = new System.Drawing.Size(67, 20);
-            this.txtCL_Veiculo.TabIndex = 9;
+            this.txtCL_ValorCusto.Name = "txtCL_ValorCusto";
+            this.txtCL_ValorCusto.Size = new System.Drawing.Size(67, 20);
+            this.txtCL_ValorCusto.TabIndex = 26;
             // 
-            // label11
+            // label30
             // 
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.Color.Silver;
-            this.label11.Location = new System.Drawing.Point(8, 151);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(34, 13);
-            this.label11.TabIndex = 61;
-            this.label11.Text = "Placa";
+            this.label30.AutoSize = true;
+            this.label30.ForeColor = System.Drawing.Color.Silver;
+            this.label30.Location = new System.Drawing.Point(467, 73);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(107, 13);
+            this.label30.TabIndex = 91;
+            this.label30.Text = "Data de Faturamento";
             // 
-            // txtCL_Placa
+            // txtCL_DataFaturamento
             // 
-            this.txtCL_Placa.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtCL_Placa.Location = new System.Drawing.Point(118, 149);
-            this.txtCL_Placa.Maximum = new decimal(new int[] {
+            this.txtCL_DataFaturamento.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtCL_DataFaturamento.Location = new System.Drawing.Point(580, 71);
+            this.txtCL_DataFaturamento.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.txtCL_Placa.Name = "txtCL_Placa";
-            this.txtCL_Placa.Size = new System.Drawing.Size(67, 20);
-            this.txtCL_Placa.TabIndex = 10;
+            this.txtCL_DataFaturamento.Name = "txtCL_DataFaturamento";
+            this.txtCL_DataFaturamento.Size = new System.Drawing.Size(67, 20);
+            this.txtCL_DataFaturamento.TabIndex = 25;
             // 
-            // label12
+            // label31
             // 
-            this.label12.AutoSize = true;
-            this.label12.ForeColor = System.Drawing.Color.Silver;
-            this.label12.Location = new System.Drawing.Point(8, 177);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(81, 13);
-            this.label12.TabIndex = 63;
-            this.label12.Text = "Grupo de Cores";
+            this.label31.AutoSize = true;
+            this.label31.ForeColor = System.Drawing.Color.Silver;
+            this.label31.Location = new System.Drawing.Point(467, 47);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(44, 13);
+            this.label31.TabIndex = 89;
+            this.label31.Text = "Entrega";
             // 
-            // txtCL_GrupoCores
+            // txtCL_Entrega
             // 
-            this.txtCL_GrupoCores.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtCL_GrupoCores.Location = new System.Drawing.Point(118, 175);
-            this.txtCL_GrupoCores.Maximum = new decimal(new int[] {
+            this.txtCL_Entrega.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtCL_Entrega.Location = new System.Drawing.Point(580, 45);
+            this.txtCL_Entrega.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.txtCL_GrupoCores.Name = "txtCL_GrupoCores";
-            this.txtCL_GrupoCores.Size = new System.Drawing.Size(67, 20);
-            this.txtCL_GrupoCores.TabIndex = 11;
+            this.txtCL_Entrega.Name = "txtCL_Entrega";
+            this.txtCL_Entrega.Size = new System.Drawing.Size(67, 20);
+            this.txtCL_Entrega.TabIndex = 24;
             // 
-            // label13
+            // label32
             // 
-            this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.Color.Silver;
-            this.label13.Location = new System.Drawing.Point(8, 203);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(58, 13);
-            this.label13.TabIndex = 65;
-            this.label13.Text = "Montadora";
+            this.label32.AutoSize = true;
+            this.label32.ForeColor = System.Drawing.Color.Silver;
+            this.label32.Location = new System.Drawing.Point(467, 21);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(40, 13);
+            this.label32.TabIndex = 87;
+            this.label32.Text = "Tempo";
             // 
-            // txtCL_Montadora
+            // txtCL_Tempo
             // 
-            this.txtCL_Montadora.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtCL_Montadora.Location = new System.Drawing.Point(118, 201);
-            this.txtCL_Montadora.Maximum = new decimal(new int[] {
+            this.txtCL_Tempo.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtCL_Tempo.Location = new System.Drawing.Point(580, 19);
+            this.txtCL_Tempo.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.txtCL_Montadora.Name = "txtCL_Montadora";
-            this.txtCL_Montadora.Size = new System.Drawing.Size(67, 20);
-            this.txtCL_Montadora.TabIndex = 12;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.Color.Silver;
-            this.label14.Location = new System.Drawing.Point(8, 229);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(74, 13);
-            this.label14.TabIndex = 67;
-            this.label14.Text = "Codigo da Cor";
-            // 
-            // txtCL_CodigoCor
-            // 
-            this.txtCL_CodigoCor.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtCL_CodigoCor.Location = new System.Drawing.Point(118, 227);
-            this.txtCL_CodigoCor.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.txtCL_CodigoCor.Name = "txtCL_CodigoCor";
-            this.txtCL_CodigoCor.Size = new System.Drawing.Size(67, 20);
-            this.txtCL_CodigoCor.TabIndex = 13;
+            this.txtCL_Tempo.Name = "txtCL_Tempo";
+            this.txtCL_Tempo.Size = new System.Drawing.Size(67, 20);
+            this.txtCL_Tempo.TabIndex = 23;
             // 
             // label15
             // 
@@ -731,189 +711,212 @@
             this.txtCL_Quantidade.Size = new System.Drawing.Size(67, 20);
             this.txtCL_Quantidade.TabIndex = 14;
             // 
-            // label25
+            // label14
             // 
-            this.label25.AutoSize = true;
-            this.label25.ForeColor = System.Drawing.Color.Silver;
-            this.label25.Location = new System.Drawing.Point(467, 203);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(103, 13);
-            this.label25.TabIndex = 101;
-            this.label25.Text = "Previsão de Entrega";
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.Silver;
+            this.label14.Location = new System.Drawing.Point(8, 229);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(74, 13);
+            this.label14.TabIndex = 67;
+            this.label14.Text = "Codigo da Cor";
             // 
-            // txtCL_Previsao
+            // txtCL_CodigoCor
             // 
-            this.txtCL_Previsao.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtCL_Previsao.Location = new System.Drawing.Point(580, 201);
-            this.txtCL_Previsao.Maximum = new decimal(new int[] {
+            this.txtCL_CodigoCor.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtCL_CodigoCor.Location = new System.Drawing.Point(118, 227);
+            this.txtCL_CodigoCor.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.txtCL_Previsao.Name = "txtCL_Previsao";
-            this.txtCL_Previsao.Size = new System.Drawing.Size(67, 20);
-            this.txtCL_Previsao.TabIndex = 30;
+            this.txtCL_CodigoCor.Name = "txtCL_CodigoCor";
+            this.txtCL_CodigoCor.Size = new System.Drawing.Size(67, 20);
+            this.txtCL_CodigoCor.TabIndex = 13;
             // 
-            // label26
+            // label13
             // 
-            this.label26.AutoSize = true;
-            this.label26.ForeColor = System.Drawing.Color.Silver;
-            this.label26.Location = new System.Drawing.Point(467, 177);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(112, 13);
-            this.label26.TabIndex = 99;
-            this.label26.Text = "Numero de Chapinhas";
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.Silver;
+            this.label13.Location = new System.Drawing.Point(8, 203);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(58, 13);
+            this.label13.TabIndex = 65;
+            this.label13.Text = "Montadora";
             // 
-            // txtCL_Chapinhas
+            // txtCL_Montadora
             // 
-            this.txtCL_Chapinhas.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtCL_Chapinhas.Location = new System.Drawing.Point(580, 175);
-            this.txtCL_Chapinhas.Maximum = new decimal(new int[] {
+            this.txtCL_Montadora.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtCL_Montadora.Location = new System.Drawing.Point(118, 201);
+            this.txtCL_Montadora.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.txtCL_Chapinhas.Name = "txtCL_Chapinhas";
-            this.txtCL_Chapinhas.Size = new System.Drawing.Size(67, 20);
-            this.txtCL_Chapinhas.TabIndex = 29;
+            this.txtCL_Montadora.Name = "txtCL_Montadora";
+            this.txtCL_Montadora.Size = new System.Drawing.Size(67, 20);
+            this.txtCL_Montadora.TabIndex = 12;
             // 
-            // label27
+            // label12
             // 
-            this.label27.AutoSize = true;
-            this.label27.ForeColor = System.Drawing.Color.Silver;
-            this.label27.Location = new System.Drawing.Point(467, 151);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(43, 13);
-            this.label27.TabIndex = 97;
-            this.label27.Text = "Markup";
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.Silver;
+            this.label12.Location = new System.Drawing.Point(8, 177);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(81, 13);
+            this.label12.TabIndex = 63;
+            this.label12.Text = "Grupo de Cores";
             // 
-            // txtCL_Markup
+            // txtCL_GrupoCores
             // 
-            this.txtCL_Markup.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtCL_Markup.Location = new System.Drawing.Point(580, 149);
-            this.txtCL_Markup.Maximum = new decimal(new int[] {
+            this.txtCL_GrupoCores.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtCL_GrupoCores.Location = new System.Drawing.Point(118, 175);
+            this.txtCL_GrupoCores.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.txtCL_Markup.Name = "txtCL_Markup";
-            this.txtCL_Markup.Size = new System.Drawing.Size(67, 20);
-            this.txtCL_Markup.TabIndex = 28;
+            this.txtCL_GrupoCores.Name = "txtCL_GrupoCores";
+            this.txtCL_GrupoCores.Size = new System.Drawing.Size(67, 20);
+            this.txtCL_GrupoCores.TabIndex = 11;
             // 
-            // label28
+            // label11
             // 
-            this.label28.AutoSize = true;
-            this.label28.ForeColor = System.Drawing.Color.Silver;
-            this.label28.Location = new System.Drawing.Point(467, 125);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(80, 13);
-            this.label28.TabIndex = 95;
-            this.label28.Text = "Valor de Venda";
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.Silver;
+            this.label11.Location = new System.Drawing.Point(8, 151);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(34, 13);
+            this.label11.TabIndex = 61;
+            this.label11.Text = "Placa";
             // 
-            // txtCL_ValorVenda
+            // txtCL_Placa
             // 
-            this.txtCL_ValorVenda.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtCL_ValorVenda.Location = new System.Drawing.Point(580, 123);
-            this.txtCL_ValorVenda.Maximum = new decimal(new int[] {
+            this.txtCL_Placa.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtCL_Placa.Location = new System.Drawing.Point(118, 149);
+            this.txtCL_Placa.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.txtCL_ValorVenda.Name = "txtCL_ValorVenda";
-            this.txtCL_ValorVenda.Size = new System.Drawing.Size(67, 20);
-            this.txtCL_ValorVenda.TabIndex = 27;
+            this.txtCL_Placa.Name = "txtCL_Placa";
+            this.txtCL_Placa.Size = new System.Drawing.Size(67, 20);
+            this.txtCL_Placa.TabIndex = 10;
             // 
-            // label29
+            // label10
             // 
-            this.label29.AutoSize = true;
-            this.label29.ForeColor = System.Drawing.Color.Silver;
-            this.label29.Location = new System.Drawing.Point(467, 99);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(76, 13);
-            this.label29.TabIndex = 93;
-            this.label29.Text = "Valor de Custo";
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.Silver;
+            this.label10.Location = new System.Drawing.Point(8, 125);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(42, 13);
+            this.label10.TabIndex = 59;
+            this.label10.Text = "Veiculo";
             // 
-            // txtCL_ValorCusto
+            // txtCL_Veiculo
             // 
-            this.txtCL_ValorCusto.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtCL_ValorCusto.Location = new System.Drawing.Point(580, 97);
-            this.txtCL_ValorCusto.Maximum = new decimal(new int[] {
+            this.txtCL_Veiculo.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtCL_Veiculo.Location = new System.Drawing.Point(118, 123);
+            this.txtCL_Veiculo.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.txtCL_ValorCusto.Name = "txtCL_ValorCusto";
-            this.txtCL_ValorCusto.Size = new System.Drawing.Size(67, 20);
-            this.txtCL_ValorCusto.TabIndex = 26;
+            this.txtCL_Veiculo.Name = "txtCL_Veiculo";
+            this.txtCL_Veiculo.Size = new System.Drawing.Size(67, 20);
+            this.txtCL_Veiculo.TabIndex = 9;
             // 
-            // label30
+            // label9
             // 
-            this.label30.AutoSize = true;
-            this.label30.ForeColor = System.Drawing.Color.Silver;
-            this.label30.Location = new System.Drawing.Point(467, 73);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(107, 13);
-            this.label30.TabIndex = 91;
-            this.label30.Text = "Data de Faturamento";
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Silver;
+            this.label9.Location = new System.Drawing.Point(8, 99);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(39, 13);
+            this.label9.TabIndex = 57;
+            this.label9.Text = "Cliente";
             // 
-            // txtCL_DataFaturamento
+            // txtCL_Cliente
             // 
-            this.txtCL_DataFaturamento.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtCL_DataFaturamento.Location = new System.Drawing.Point(580, 71);
-            this.txtCL_DataFaturamento.Maximum = new decimal(new int[] {
+            this.txtCL_Cliente.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtCL_Cliente.Location = new System.Drawing.Point(118, 97);
+            this.txtCL_Cliente.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.txtCL_DataFaturamento.Name = "txtCL_DataFaturamento";
-            this.txtCL_DataFaturamento.Size = new System.Drawing.Size(67, 20);
-            this.txtCL_DataFaturamento.TabIndex = 25;
+            this.txtCL_Cliente.Name = "txtCL_Cliente";
+            this.txtCL_Cliente.Size = new System.Drawing.Size(67, 20);
+            this.txtCL_Cliente.TabIndex = 8;
             // 
-            // label31
+            // label8
             // 
-            this.label31.AutoSize = true;
-            this.label31.ForeColor = System.Drawing.Color.Silver;
-            this.label31.Location = new System.Drawing.Point(467, 47);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(44, 13);
-            this.label31.TabIndex = 89;
-            this.label31.Text = "Entrega";
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Silver;
+            this.label8.Location = new System.Drawing.Point(8, 73);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(61, 13);
+            this.label8.TabIndex = 55;
+            this.label8.Text = "Tipo de OS";
             // 
-            // txtCL_Entrega
+            // txtCL_TipoOS
             // 
-            this.txtCL_Entrega.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtCL_Entrega.Location = new System.Drawing.Point(580, 45);
-            this.txtCL_Entrega.Maximum = new decimal(new int[] {
+            this.txtCL_TipoOS.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtCL_TipoOS.Location = new System.Drawing.Point(118, 71);
+            this.txtCL_TipoOS.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.txtCL_Entrega.Name = "txtCL_Entrega";
-            this.txtCL_Entrega.Size = new System.Drawing.Size(67, 20);
-            this.txtCL_Entrega.TabIndex = 24;
+            this.txtCL_TipoOS.Name = "txtCL_TipoOS";
+            this.txtCL_TipoOS.Size = new System.Drawing.Size(67, 20);
+            this.txtCL_TipoOS.TabIndex = 7;
             // 
-            // label32
+            // label7
             // 
-            this.label32.AutoSize = true;
-            this.label32.ForeColor = System.Drawing.Color.Silver;
-            this.label32.Location = new System.Drawing.Point(467, 21);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(40, 13);
-            this.label32.TabIndex = 87;
-            this.label32.Text = "Tempo";
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Silver;
+            this.label7.Location = new System.Drawing.Point(8, 47);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(90, 13);
+            this.label7.TabIndex = 53;
+            this.label7.Text = "Data de Cadastro";
             // 
-            // txtCL_Tempo
+            // txtCL_DataCadastro
             // 
-            this.txtCL_Tempo.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtCL_Tempo.Location = new System.Drawing.Point(580, 19);
-            this.txtCL_Tempo.Maximum = new decimal(new int[] {
+            this.txtCL_DataCadastro.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtCL_DataCadastro.Location = new System.Drawing.Point(118, 45);
+            this.txtCL_DataCadastro.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.txtCL_Tempo.Name = "txtCL_Tempo";
-            this.txtCL_Tempo.Size = new System.Drawing.Size(67, 20);
-            this.txtCL_Tempo.TabIndex = 23;
+            this.txtCL_DataCadastro.Name = "txtCL_DataCadastro";
+            this.txtCL_DataCadastro.Size = new System.Drawing.Size(67, 20);
+            this.txtCL_DataCadastro.TabIndex = 6;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Silver;
+            this.label6.Location = new System.Drawing.Point(8, 21);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(62, 13);
+            this.label6.TabIndex = 51;
+            this.label6.Text = "Numero OS";
+            // 
+            // txtCL_NOS
+            // 
+            this.txtCL_NOS.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtCL_NOS.Location = new System.Drawing.Point(118, 19);
+            this.txtCL_NOS.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.txtCL_NOS.Name = "txtCL_NOS";
+            this.txtCL_NOS.Size = new System.Drawing.Size(67, 20);
+            this.txtCL_NOS.TabIndex = 5;
             // 
             // txtNumeroOSFim
             // 
@@ -965,12 +968,37 @@
             this.txtMargemSugerida.Size = new System.Drawing.Size(164, 20);
             this.txtMargemSugerida.TabIndex = 4;
             // 
+            // txtZoomRelatorio
+            // 
+            this.txtZoomRelatorio.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtZoomRelatorio.Location = new System.Drawing.Point(556, 117);
+            this.txtZoomRelatorio.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.txtZoomRelatorio.Name = "txtZoomRelatorio";
+            this.txtZoomRelatorio.Size = new System.Drawing.Size(137, 20);
+            this.txtZoomRelatorio.TabIndex = 49;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.ForeColor = System.Drawing.Color.Silver;
+            this.label24.Location = new System.Drawing.Point(384, 120);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(94, 13);
+            this.label24.TabIndex = 50;
+            this.label24.Text = "Zoom no Relatório";
+            // 
             // frmConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.ClientSize = new System.Drawing.Size(730, 510);
+            this.Controls.Add(this.txtZoomRelatorio);
+            this.Controls.Add(this.label24);
             this.Controls.Add(this.txtMargemSugerida);
             this.Controls.Add(this.txtTempoRepesagem);
             this.Controls.Add(this.cmdCancelar);
@@ -996,15 +1024,14 @@
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_NOS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_DataCadastro)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_TipoOS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Cliente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Veiculo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Placa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_GrupoCores)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Montadora)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_CodigoCor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Previsao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Chapinhas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Markup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_ValorVenda)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_ValorCusto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_DataFaturamento)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Entrega)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Tempo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCL_Fim)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCL_Inicio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCL_Status)).EndInit();
@@ -1014,17 +1041,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCL_Colorista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCL_SP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCL_Quantidade)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Previsao)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Chapinhas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Markup)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_ValorVenda)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_ValorCusto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_DataFaturamento)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Entrega)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Tempo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_CodigoCor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Montadora)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_GrupoCores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Placa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Veiculo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_Cliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_TipoOS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_DataCadastro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCL_NOS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumeroOSFim)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTempoRepesagem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMargemSugerida)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtZoomRelatorio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1099,5 +1128,7 @@
         public System.Windows.Forms.NumericUpDown txtNumeroOSFim;
         public System.Windows.Forms.NumericUpDown txtTempoRepesagem;
         public System.Windows.Forms.NumericUpDown txtMargemSugerida;
+        public System.Windows.Forms.NumericUpDown txtZoomRelatorio;
+        private System.Windows.Forms.Label label24;
     }
 }
