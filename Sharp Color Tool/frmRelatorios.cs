@@ -11,9 +11,29 @@ namespace Sharp_Color_Tool
 {
     public partial class frmRelatorios : Form
     {
-        public frmRelatorios()
+        public frmRelatorios(string path)
         {
             InitializeComponent();
+            // Path
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = path;
+
+            ////Configurando o DataSource
+            //foreach(var dataSource in dataSources)
+            //{
+            //    var reportDataSource = new Microsoft.Reporting.WinForms.ReportDataSource(dataSource.Key, dataSource.Value);
+            //    this.reportViewer1.LocalReport.DataSources.Add(reportDataSource);
+            //}
+
+            //Configurando Parametros
+            //if (reportParameters != null)
+            //{
+            //    var reportParametersCollection = new List<Microsoft.Reporting.WinForms.ReportParameter>();
+            //    foreach (var parameter in reportParameters)
+            //    {
+            //        var reportParameter = new Microsoft.Reporting.WinForms.ReportParameter(parameter.Key, parameter.Value.ToString());
+            //    }
+            //    this.reportViewer1.LocalReport.SetParameters(reportParametersCollection);
+            //}
         }
 
         private void frmRelatorios_Load(object sender, EventArgs e)
@@ -36,6 +56,11 @@ namespace Sharp_Color_Tool
             }
             config.Save(System.Configuration.ConfigurationSaveMode.Modified);
             System.Configuration.ConfigurationManager.RefreshSection("connectionStrings");
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

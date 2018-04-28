@@ -1931,7 +1931,6 @@
             this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
             this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(71, 19);
             this.relatóriosToolStripMenuItem.Text = "Relatórios";
-            this.relatóriosToolStripMenuItem.MouseHover += new System.EventHandler(this.relatóriosToolStripMenuItem_MouseHover);
             // 
             // entregasPrazoToolStripMenuItem
             // 
@@ -1949,6 +1948,7 @@
             this.volumeToolStripMenuItem.Name = "volumeToolStripMenuItem";
             this.volumeToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.volumeToolStripMenuItem.Text = "Volume";
+            this.volumeToolStripMenuItem.Click += new System.EventHandler(this.volumeToolStripMenuItem_Click);
             // 
             // volumePorClienteToolStripMenuItem
             // 
@@ -2162,7 +2162,7 @@
         private System.Windows.Forms.ToolStripMenuItem volumeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem volumePorClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem testeToolStripMenuItem;
-        public System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }
 

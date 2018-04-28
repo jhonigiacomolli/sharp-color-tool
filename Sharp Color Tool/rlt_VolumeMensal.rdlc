@@ -6,34 +6,75 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.14947cm</Width>
+              <Width>1.82818cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.69717cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.1784cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.22907cm</Width>
+              <Width>1.91285cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.45654cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.8175cm</Width>
+              <Width>2.78094cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.32574cm</Width>
+              <Width>1.24223cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.78432cm</Width>
+              <Width>1.7944cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.83984cm</Width>
+              <Width>1.91536cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
               <Height>0.44125cm</Height>
               <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox14">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Data</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>7pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>Silver</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox14</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>#7292cc</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Black</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox2">
@@ -191,7 +232,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Previsão de Entrega</Value>
+                              <Value>Cor</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>7pt</FontSize>
@@ -229,7 +270,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Data de Entrega</Value>
+                              <Value>Qnt.</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>7pt</FontSize>
@@ -267,7 +308,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Entrega</Value>
+                              <Value>Valor Unit.</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>7pt</FontSize>
@@ -305,7 +346,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Atraso</Value>
+                              <Value>Valor Total</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>7pt</FontSize>
@@ -339,6 +380,45 @@
             <TablixRow>
               <Height>0.41479cm</Height>
               <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Fim">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=FormatDateTime(Fields!Fim.Value, DateFormat.ShortDate)</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>6pt</FontSize>
+                                <Color>#4d4d4d</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Fim</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>#e5e5e5</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Código">
@@ -493,14 +573,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Previsao_Entrega1">
+                    <Textbox Name="Cor">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Previsao_Entrega.Value</Value>
+                              <Value>=Fields!Cor.Value</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>6pt</FontSize>
@@ -513,7 +593,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Previsao_Entrega1</rd:DefaultName>
+                      <rd:DefaultName>Cor</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>#e5e5e5</Color>
@@ -532,14 +612,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Fim">
+                    <Textbox Name="Quantidade">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Fim.Value</Value>
+                              <Value>=Fields!Quantidade.Value</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>6pt</FontSize>
@@ -552,7 +632,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Fim</rd:DefaultName>
+                      <rd:DefaultName>Quantidade</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>#e5e5e5</Color>
@@ -571,14 +651,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Entrega">
+                    <Textbox Name="Valor_Custo">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Entrega.Value</Value>
+                              <Value>=FormatCurrency(Fields!Valor_Custo.Value,2)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>6pt</FontSize>
@@ -587,11 +667,11 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Right</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Entrega</rd:DefaultName>
+                      <rd:DefaultName>Valor_Custo</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>#e5e5e5</Color>
@@ -617,7 +697,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Iif(Fields!Entrega.Value="ATRASADO",DateDiff(DateInterval.Minute,Fields!Previsao_Entrega.Value,Fields!Fim.Value) &amp; " Minutos",NOTHING)</Value>
+                              <Value>=FormatCurrency(Sum(Fields!Quantidade.Value/1000)*Fields!Valor_Custo.Value,2)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>6pt</FontSize>
@@ -626,7 +706,7 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Right</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -661,6 +741,7 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -675,7 +756,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet_Agendamentos</DataSetName>
         <Height>0.85604cm</Height>
-        <Width>16.78088cm</Width>
+        <Width>16.80606cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -703,7 +784,7 @@
         <Top>0.89132cm</Top>
         <Left>0.25986cm</Left>
         <Height>0.4cm</Height>
-        <Width>5.2372cm</Width>
+        <Width>1.92991cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -722,7 +803,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Count(Fields!Cliente.Value)</Value>
+                <Value>=Count(Fields!Cliente.Value) &amp; " Tintas"</Value>
                 <Style>
                   <FontSize>6pt</FontSize>
                 </Style>
@@ -733,8 +814,8 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <Top>0.89132cm</Top>
-        <Left>5.67345cm</Left>
+        <Top>0.9266cm</Top>
+        <Left>2.54229cm</Left>
         <Height>0.4cm</Height>
         <Width>3.16146cm</Width>
         <ZIndex>2</ZIndex>
@@ -755,7 +836,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Registros finalizadosem Atraso:</Value>
+                <Value>Volume em Litros:</Value>
                 <Style>
                   <FontSize>6pt</FontSize>
                   <Color>DimGray</Color>
@@ -769,7 +850,7 @@
         <Top>1.3266cm</Top>
         <Left>0.25986cm</Left>
         <Height>0.4cm</Height>
-        <Width>5.2372cm</Width>
+        <Width>1.92991cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -788,7 +869,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Count(iif(Fields!Entrega.Value="ATRASADO",Fields!Entrega.Value,nothing))</Value>
+                <Value>=FormatNumber(Sum(CDbl(Fields!Quantidade.Value)/1000),2) &amp; " Litros"</Value>
                 <Style>
                   <FontSize>6pt</FontSize>
                 </Style>
@@ -799,8 +880,8 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <Top>1.3266cm</Top>
-        <Left>5.67345cm</Left>
+        <Top>1.36188cm</Top>
+        <Left>2.54229cm</Left>
         <Height>0.4cm</Height>
         <Width>3.16146cm</Width>
         <ZIndex>4</ZIndex>
@@ -821,7 +902,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Registros finalizados no Prazo:</Value>
+                <Value>Faturamento:</Value>
                 <Style>
                   <FontSize>6pt</FontSize>
                   <Color>DimGray</Color>
@@ -835,7 +916,7 @@
         <Top>1.76188cm</Top>
         <Left>0.25986cm</Left>
         <Height>0.4cm</Height>
-        <Width>5.2372cm</Width>
+        <Width>1.92991cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -854,7 +935,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Count(iif(Fields!Entrega.Value="NO PRAZO",Fields!Entrega.Value,nothing))</Value>
+                <Value>=FormatCurrency(Sum(Fields!Valor_Custo.Value),2)</Value>
                 <Style>
                   <FontSize>6pt</FontSize>
                 </Style>
@@ -865,8 +946,8 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <Top>1.7266cm</Top>
-        <Left>5.67345cm</Left>
+        <Top>1.76188cm</Top>
+        <Left>2.54229cm</Left>
         <Height>0.4cm</Height>
         <Width>3.16146cm</Width>
         <ZIndex>6</ZIndex>
@@ -898,7 +979,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Relatório de Entrega de Tintas</Value>
+                  <Value>Relatório de Volume Mensal</Value>
                   <Style>
                     <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -914,7 +995,7 @@
           <Top>0.55002cm</Top>
           <Left>1.82562cm</Left>
           <Height>0.6cm</Height>
-          <Width>14.66422cm</Width>
+          <Width>14.98044cm</Width>
           <Style>
             <Border>
               <Style>None</Style>

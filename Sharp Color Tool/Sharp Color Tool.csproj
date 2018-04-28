@@ -198,6 +198,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="rlt_VolumeMensal.rdlc" />
     <EmbeddedResource Include="rlt_TintasEntregues.rdlc" />
     <None Include="Database_AgendamentosDataSet.xsc">
       <DependentUpon>Database_AgendamentosDataSet.xsd</DependentUpon>
