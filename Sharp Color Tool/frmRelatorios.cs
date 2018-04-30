@@ -1,49 +1,38 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
+using System.Data.OleDb;
+using Microsoft.Reporting.WinForms;
+
 
 namespace Sharp_Color_Tool
 {
     public partial class frmRelatorios : Form
     {
-        public frmRelatorios(string path)
+        public string Path;
+        public string SQL;
+ 
+        public frmRelatorios(string path, string SQL)
         {
             InitializeComponent();
-            // Path
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = path;
+            this.Path = path;
+            this.SQL = SQL;
 
-            ////Configurando o DataSource
-            //foreach(var dataSource in dataSources)
-            //{
-            //    var reportDataSource = new Microsoft.Reporting.WinForms.ReportDataSource(dataSource.Key, dataSource.Value);
-            //    this.reportViewer1.LocalReport.DataSources.Add(reportDataSource);
-            //}
-
-            //Configurando Parametros
-            //if (reportParameters != null)
-            //{
-            //    var reportParametersCollection = new List<Microsoft.Reporting.WinForms.ReportParameter>();
-            //    foreach (var parameter in reportParameters)
-            //    {
-            //        var reportParameter = new Microsoft.Reporting.WinForms.ReportParameter(parameter.Key, parameter.Value.ToString());
-            //    }
-            //    this.reportViewer1.LocalReport.SetParameters(reportParametersCollection);
-            //}
+            AlterarStringDeConexao();
+            Relatorios.GeraRelatorio(this.reportViewer1, Path, SQL);
+        }
+        public frmRelatorios(string path, string SQL, string PArametro1, string Parametro2)
+        {
+            InitializeComponent();
+            this.Path = path;
+            this.SQL = SQL;
+            AlterarStringDeConexao();
+            Relatorios.GeraRelatorio_FiltroData(this.reportViewer1, Path, SQL,PArametro1, Parametro2);
         }
 
         private void frmRelatorios_Load(object sender, EventArgs e)
         {
-            AlterarStringDeConexao();
-            this.AgendamentosTableAdapter.Fill(this.Database_AgendamentosDataSet.Agendamentos);
-            this.reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
-            this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent;
-            this.reportViewer1.ZoomPercent = Globais.ZoomRelatorio;
-            this.reportViewer1.RefreshReport();
+            
         }
 
         private void AlterarStringDeConexao()

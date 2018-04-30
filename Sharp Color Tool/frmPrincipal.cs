@@ -5874,15 +5874,19 @@ namespace Sharp_Color_Tool
         private void entregasPrazoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string path = "Sharp_Color_Tool.rlt_TintasEntregues.rdlc";
-            frmRelatorios Relatorios = new frmRelatorios(path);
+            string TIPO = "TUDO";
+
+            frmFiltroDatas Relatorios = new frmFiltroDatas(path, TIPO);
             Relatorios.Show();
         }
 
         private void volumeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string path = "Sharp_Color_Tool.rlt_VolumeMensal.rdlc";
-            frmRelatorios Relatorios = new frmRelatorios(path);
-            Relatorios.Show();
+            string TIPO = "DATAS";
+
+            frmFiltroDatas Relatorio = new frmFiltroDatas(path, TIPO);
+            Relatorio.Show();
         }
     }
 }

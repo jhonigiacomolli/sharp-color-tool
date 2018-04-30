@@ -1,6 +1,6 @@
 ﻿namespace Sharp_Color_Tool
 {
-    partial class frmRelatorios
+    partial class frmFiltroDatas
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.PictureBox picFavIcon;
             System.Windows.Forms.PictureBox pictureBox1;
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRelatorios));
-            this.AgendamentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.txtDataInicio = new System.Windows.Forms.DateTimePicker();
+            this.txtDataFim = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmgGerar = new System.Windows.Forms.Button();
             picFavIcon = new System.Windows.Forms.PictureBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(picFavIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AgendamentosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // picFavIcon
@@ -57,18 +56,15 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             pictureBox1.Location = new System.Drawing.Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(658, 25);
+            pictureBox1.Size = new System.Drawing.Size(390, 25);
             pictureBox1.TabIndex = 35;
             pictureBox1.TabStop = false;
-            // 
-            // AgendamentosBindingSource
-            // 
-            this.AgendamentosBindingSource.DataMember = "Agendamentos";
+            pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
             // lblTitulo
             // 
@@ -78,17 +74,19 @@
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.lblTitulo.Location = new System.Drawing.Point(34, 6);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(118, 13);
+            this.lblTitulo.Size = new System.Drawing.Size(185, 13);
             this.lblTitulo.TabIndex = 36;
-            this.lblTitulo.Text = "SHARP - Relatórios";
+            this.lblTitulo.Text = "SHARP - Gerador de Relatórios";
+            this.lblTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblTitulo_MouseDown);
+            this.lblTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblTitulo_MouseMove);
+            this.lblTitulo.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblTitulo_MouseUp);
             // 
             // btnFechar
             // 
-            this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFechar.BackColor = System.Drawing.Color.Silver;
             this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFechar.Location = new System.Drawing.Point(656, 0);
+            this.btnFechar.Location = new System.Drawing.Point(355, 0);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(35, 25);
             this.btnFechar.TabIndex = 34;
@@ -97,66 +95,89 @@
             this.btnFechar.UseVisualStyleBackColor = false;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
-            // reportViewer1
+            // txtDataInicio
             // 
-            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource1.Name = "DataSet_Agendamentos";
-            reportDataSource1.Value = this.AgendamentosBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Sharp_Color_Tool.rlt_VolumeMensal.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 22);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ShowBackButton = false;
-            this.reportViewer1.ShowContextMenu = false;
-            this.reportViewer1.ShowCredentialPrompts = false;
-            this.reportViewer1.ShowDocumentMapButton = false;
-            this.reportViewer1.ShowFindControls = false;
-            this.reportViewer1.ShowParameterPrompts = false;
-            this.reportViewer1.ShowProgress = false;
-            this.reportViewer1.ShowPromptAreaButton = false;
-            this.reportViewer1.ShowRefreshButton = false;
-            this.reportViewer1.ShowStopButton = false;
-            this.reportViewer1.Size = new System.Drawing.Size(691, 537);
-            this.reportViewer1.TabIndex = 38;
+            this.txtDataInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtDataInicio.Location = new System.Drawing.Point(14, 47);
+            this.txtDataInicio.Name = "txtDataInicio";
+            this.txtDataInicio.Size = new System.Drawing.Size(180, 20);
+            this.txtDataInicio.TabIndex = 38;
             // 
-            // Database_AgendamentosDataSet
+            // txtDataFim
             // 
+            this.txtDataFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtDataFim.Location = new System.Drawing.Point(200, 47);
+            this.txtDataFim.Name = "txtDataFim";
+            this.txtDataFim.Size = new System.Drawing.Size(180, 20);
+            this.txtDataFim.TabIndex = 39;
             // 
-            // AgendamentosTableAdapter
+            // label8
             // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Silver;
+            this.label8.Location = new System.Drawing.Point(75, 31);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(58, 13);
+            this.label8.TabIndex = 40;
+            this.label8.Text = "Data Inicio";
             // 
-            // frmRelatorios
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Silver;
+            this.label1.Location = new System.Drawing.Point(263, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Data Final";
+            // 
+            // cmgGerar
+            // 
+            this.cmgGerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmgGerar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmgGerar.ForeColor = System.Drawing.Color.Silver;
+            this.cmgGerar.Location = new System.Drawing.Point(125, 76);
+            this.cmgGerar.Name = "cmgGerar";
+            this.cmgGerar.Size = new System.Drawing.Size(141, 26);
+            this.cmgGerar.TabIndex = 42;
+            this.cmgGerar.Text = "Gerar Relatório";
+            this.cmgGerar.UseVisualStyleBackColor = true;
+            this.cmgGerar.Click += new System.EventHandler(this.cmgGerar_Click_1);
+            // 
+            // frmFiltroDatas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(691, 561);
-            this.Controls.Add(this.reportViewer1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.ClientSize = new System.Drawing.Size(390, 114);
+            this.Controls.Add(this.cmgGerar);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtDataFim);
+            this.Controls.Add(this.txtDataInicio);
             this.Controls.Add(picFavIcon);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "frmRelatorios";
-            this.Text = "SHARP - Relatórios";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmRelatorios_Load);
+            this.Name = "frmFiltroDatas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "frmFiltroDatas";
             ((System.ComponentModel.ISupportInitialize)(picFavIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AgendamentosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.BindingSource AgendamentosBindingSource;
+
         public System.Windows.Forms.Label lblTitulo;
         public System.Windows.Forms.Button btnFechar;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.DateTimePicker txtDataInicio;
+        private System.Windows.Forms.DateTimePicker txtDataFim;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Button cmgGerar;
     }
 }
