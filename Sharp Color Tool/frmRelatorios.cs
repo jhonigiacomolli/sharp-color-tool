@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Media;
 using Microsoft.Reporting.WinForms;
 
 
@@ -11,45 +12,60 @@ namespace Sharp_Color_Tool
     {
         public string Path;
         public string SQL;
- 
-        public frmRelatorios(string path, string SQL)
-        {
-            InitializeComponent();
-            this.Path = path;
-            this.SQL = SQL;
+        public string Parametro1;
+        public string Parametro2;
+        public string Parametro3;
 
-            AlterarStringDeConexao();
-            Relatorios.GeraRelatorio(this.reportViewer1, Path, SQL);
-        }
+
         public frmRelatorios(string path, string SQL, string PArametro1, string Parametro2)
         {
             InitializeComponent();
+            this.Size = new System.Drawing.Size(0,0);
+            this.Visible = false;
             this.Path = path;
             this.SQL = SQL;
-            AlterarStringDeConexao();
-            Relatorios.GeraRelatorio_FiltroData(this.reportViewer1, Path, SQL,PArametro1, Parametro2);
+            this.Parametro1 = PArametro1;
+            this.Parametro2 = Parametro2;
+            this.DesktopLocation = new System.Drawing.Point(0,0);
+            bgwProgresso.RunWorkerAsync("DATAS");
         }
-
-        private void frmRelatorios_Load(object sender, EventArgs e)
+        public frmRelatorios(string path, string SQL, string PArametro1, string Parametro2, string Parametro3)
         {
-            
-        }
+            InitializeComponent();
+            this.Size = new System.Drawing.Size(0, 0);
+            this.Visible = false;
+            this.Path = path;
+            this.SQL = SQL;
+            this.Parametro1 = PArametro1;
+            this.Parametro2 = Parametro2;
+            this.Parametro3 = Parametro3;
+            this.DesktopLocation = new System.Drawing.Point(0, 0);
+            bgwProgresso.RunWorkerAsync("DATAS-CLIENTE");
 
-        private void AlterarStringDeConexao()
-        {
-            var config = System.Configuration.ConfigurationManager.OpenExeConfiguration(System.Configuration.ConfigurationUserLevel.None);
-            var connectionStrings = config.ConnectionStrings;
-            foreach (System.Configuration.ConnectionStringSettings connectionString in connectionStrings.ConnectionStrings)
-            {
-                connectionString.ConnectionString = string.Format(Conexao.Database_Agendamentos, Environment.CurrentDirectory);
-            }
-            config.Save(System.Configuration.ConfigurationSaveMode.Modified);
-            System.Configuration.ConfigurationManager.RefreshSection("connectionStrings");
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void bgwProgresso_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            if (e.Argument.Equals("DATAS"))
+            {
+                Relatorios.GeraRelatorio_FiltroData(this, this.reportViewer1, Path, SQL, Parametro1, Parametro2);
+            }
+            if (e.Argument.Equals("DATAS-CLIENTE"))
+            {
+                Relatorios.GeraRelatorio_FiltroDataCliente(this, this.reportViewer1, Path, SQL, Parametro1, Parametro2,Parametro3);
+            }
+        }
+        
+        private void bgwProgresso_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+            this.Size = new System.Drawing.Size((Int32)Globais.Atual_Width, (Int32)(Globais.Atual_Height - 40));
+        }
+
+        
     }
 }

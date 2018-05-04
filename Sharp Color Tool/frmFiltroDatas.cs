@@ -16,6 +16,7 @@ namespace Sharp_Color_Tool
         public string Inicio;
         public string Fim;
         public string TIPO;
+        public string Cliente;
 
         public frmFiltroDatas(string Path, string Tipo)
         {
@@ -23,8 +24,8 @@ namespace Sharp_Color_Tool
             this.TIPO = Tipo;
             this.Path = Path;
             
-            if (Tipo == "TUDO") { SQL = "SELECT * FROM Agendamentos"; };
-            if (Tipo == "DATAS") { SQL = "SELECT * FROM Agendamentos where Fim between @inicio And @fim Order By Fim ASC"; };          
+            if (Tipo == "DATAS") { SQL = "SELECT * FROM Agendamentos where Fim between @inicio And @fim Order By Fim ASC"; };
+            if (Tipo == "DATAS-CLIENTE") { SQL = "SELECT * FROM Agendamentos where Fim between @inicio And @fiM AND Cliente=@Cliente Order By Fim ASC"; };
         }
         private void btnFechar_Click(object sender, EventArgs e)
         {
@@ -35,18 +36,19 @@ namespace Sharp_Color_Tool
         {
             Inicio = txtDataInicio.Value.ToString();
             Fim =txtDataFim.Value.AddDays(1).ToString();
+            Cliente = txtCliente.Text;
 
-            if (TIPO == "TUDO")
-            {
-                frmRelatorios Relatorios = new frmRelatorios(Path, SQL);
-                Relatorios.Show();
-                this.Close();
-            }
             if (TIPO == "DATAS")
             {
-                frmRelatorios Relatorios = new frmRelatorios(Path, SQL,Inicio, Fim);
-                Relatorios.Show();
                 this.Close();
+                frmRelatorios Relatorios = new frmRelatorios(Path, SQL,Inicio, Fim);
+                Relatorios.ShowDialog();               
+            }
+            if (TIPO == "DATAS-CLIENTE")
+            {
+                this.Close();
+                frmRelatorios Relatorios = new frmRelatorios(Path, SQL, Inicio, Fim, Cliente);
+                Relatorios.ShowDialog();
             }
         }
 
@@ -90,6 +92,21 @@ namespace Sharp_Color_Tool
         private void lblTitulo_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
+        }
+
+        private void frmFiltroDatas_Resize(object sender, EventArgs e)
+        {
+            if (this.Width < 500)
+            {
+                txtCliente.Visible = false;
+                lblCliente.Visible = false;
+            }
+            else
+            {
+                txtCliente.Visible = true;
+                lblCliente.Visible = true;
+            }
+            cmgGerar.Location = new Point((this.Size.Width/2)-(cmgGerar.Width/2),76);
         }
     }
 }

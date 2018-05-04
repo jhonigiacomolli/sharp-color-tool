@@ -5874,9 +5874,10 @@ namespace Sharp_Color_Tool
         private void entregasPrazoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string path = "Sharp_Color_Tool.rlt_TintasEntregues.rdlc";
-            string TIPO = "TUDO";
+            string TIPO = "DATAS";
 
             frmFiltroDatas Relatorios = new frmFiltroDatas(path, TIPO);
+            Relatorios.Width = 325;
             Relatorios.Show();
         }
 
@@ -5886,6 +5887,27 @@ namespace Sharp_Color_Tool
             string TIPO = "DATAS";
 
             frmFiltroDatas Relatorio = new frmFiltroDatas(path, TIPO);
+            Relatorio.Width = 325;
+            Relatorio.Show();
+        }
+
+        private void EntregasClientetoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string path = "Sharp_Color_Tool.rlt_TintasEntregues.rdlc";
+            string TIPO = "DATAS-CLIENTE";
+
+            frmFiltroDatas Relatorios = new frmFiltroDatas(path, TIPO);
+            Relatorios.Width = 525;
+            Relatorios.Show();
+        }
+
+        private void volumePorClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string path = "Sharp_Color_Tool.rlt_VolumeMensal.rdlc";
+            string TIPO = "DATAS-CLIENTE";
+
+            frmFiltroDatas Relatorio = new frmFiltroDatas(path, TIPO);
+            Relatorio.Width = 525;
             Relatorio.Show();
         }
     }

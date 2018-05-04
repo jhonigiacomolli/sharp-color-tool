@@ -153,9 +153,9 @@
             this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entregasPrazoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.EntregasClientetoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.volumeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.volumePorClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.testeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             picFavIcon = new System.Windows.Forms.PictureBox();
             pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(picFavIcon)).BeginInit();
@@ -1924,9 +1924,9 @@
             this.relatóriosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.relatóriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.entregasPrazoToolStripMenuItem,
+            this.EntregasClientetoolStripMenuItem,
             this.volumeToolStripMenuItem,
-            this.volumePorClienteToolStripMenuItem,
-            this.testeToolStripMenuItem});
+            this.volumePorClienteToolStripMenuItem});
             this.relatóriosToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
             this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
             this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(71, 19);
@@ -1937,16 +1937,25 @@
             this.entregasPrazoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.entregasPrazoToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
             this.entregasPrazoToolStripMenuItem.Name = "entregasPrazoToolStripMenuItem";
-            this.entregasPrazoToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.entregasPrazoToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.entregasPrazoToolStripMenuItem.Text = "Entregas - Prazo";
             this.entregasPrazoToolStripMenuItem.Click += new System.EventHandler(this.entregasPrazoToolStripMenuItem_Click);
+            // 
+            // EntregasClientetoolStripMenuItem
+            // 
+            this.EntregasClientetoolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.EntregasClientetoolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.EntregasClientetoolStripMenuItem.Name = "EntregasClientetoolStripMenuItem";
+            this.EntregasClientetoolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.EntregasClientetoolStripMenuItem.Text = "Entregas - Prazos por Cliente";
+            this.EntregasClientetoolStripMenuItem.Click += new System.EventHandler(this.EntregasClientetoolStripMenuItem_Click);
             // 
             // volumeToolStripMenuItem
             // 
             this.volumeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.volumeToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
             this.volumeToolStripMenuItem.Name = "volumeToolStripMenuItem";
-            this.volumeToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.volumeToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.volumeToolStripMenuItem.Text = "Volume";
             this.volumeToolStripMenuItem.Click += new System.EventHandler(this.volumeToolStripMenuItem_Click);
             // 
@@ -1955,15 +1964,9 @@
             this.volumePorClienteToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.volumePorClienteToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
             this.volumePorClienteToolStripMenuItem.Name = "volumePorClienteToolStripMenuItem";
-            this.volumePorClienteToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.volumePorClienteToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.volumePorClienteToolStripMenuItem.Text = "Volume por Cliente";
-            // 
-            // testeToolStripMenuItem
-            // 
-            this.testeToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.testeToolStripMenuItem.Name = "testeToolStripMenuItem";
-            this.testeToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.testeToolStripMenuItem.Text = "teste";
+            this.volumePorClienteToolStripMenuItem.Click += new System.EventHandler(this.volumePorClienteToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -2161,8 +2164,8 @@
         private System.Windows.Forms.ToolStripMenuItem entregasPrazoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem volumeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem volumePorClienteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem testeToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem EntregasClientetoolStripMenuItem;
     }
 }
 

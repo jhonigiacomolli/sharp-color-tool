@@ -37,6 +37,8 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.bgwProgresso = new System.ComponentModel.BackgroundWorker();
+            this.timerProgresso = new System.Windows.Forms.Timer(this.components);
             picFavIcon = new System.Windows.Forms.PictureBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(picFavIcon)).BeginInit();
@@ -118,14 +120,17 @@
             this.reportViewer1.ShowPromptAreaButton = false;
             this.reportViewer1.ShowRefreshButton = false;
             this.reportViewer1.ShowStopButton = false;
-            this.reportViewer1.Size = new System.Drawing.Size(691, 537);
+            this.reportViewer1.Size = new System.Drawing.Size(691, 540);
             this.reportViewer1.TabIndex = 38;
             // 
-            // Database_AgendamentosDataSet
+            // bgwProgresso
             // 
+            this.bgwProgresso.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwProgresso_DoWork);
+            this.bgwProgresso.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwProgresso_RunWorkerCompleted);
             // 
-            // AgendamentosTableAdapter
+            // timerProgresso
             // 
+            this.timerProgresso.Interval = 5000;
             // 
             // frmRelatorios
             // 
@@ -142,9 +147,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmRelatorios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "SHARP - Relatórios";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmRelatorios_Load);
             ((System.ComponentModel.ISupportInitialize)(picFavIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AgendamentosBindingSource)).EndInit();
@@ -157,6 +161,8 @@
         private System.Windows.Forms.BindingSource AgendamentosBindingSource;
         public System.Windows.Forms.Label lblTitulo;
         public System.Windows.Forms.Button btnFechar;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        public Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        public System.ComponentModel.BackgroundWorker bgwProgresso;
+        private System.Windows.Forms.Timer timerProgresso;
     }
 }
