@@ -324,6 +324,14 @@
     <None Include="bin\x86\Debug\BTN\BTN_Sair_Desabilitado.png" />
     <None Include="bin\x86\Debug\BTN\BTN_Sair_Sobre.png" />
     <None Include="bin\x86\Debug\BTN\teste.png" />
+    <None Include="bin\x86\Debug\BTN\FavIcon.png" />
+    <None Include="bin\x86\Debug\BTN\Ocultar Contador.png" />
+    <None Include="bin\x86\Debug\BTN\Contador 1.png" />
+    <None Include="bin\x86\Debug\BTN\Contador 2.png" />
+    <None Include="bin\x86\Debug\BTN\Exibir Contador.png" />
+    <None Include="bin\x86\Debug\BTN\FavIcon%2825px%29.png" />
+    <None Include="bin\x86\Debug\BTN\Botão Fechar Opções.png" />
+    <None Include="bin\x86\Debug\BTN\Botão Abrir Opções.png" />
     <Content Include="Icone Sharp.ico" />
   </ItemGroup>
   <ItemGroup>

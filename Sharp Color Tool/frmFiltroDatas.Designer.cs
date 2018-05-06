@@ -160,7 +160,6 @@
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(193, 21);
             this.txtCliente.TabIndex = 43;
-            this.txtCliente.Text = "CAVALIERI";
             // 
             // lblCliente
             // 

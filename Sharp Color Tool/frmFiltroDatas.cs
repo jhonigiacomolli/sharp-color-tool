@@ -23,7 +23,9 @@ namespace Sharp_Color_Tool
             InitializeComponent();
             this.TIPO = Tipo;
             this.Path = Path;
-            
+
+            new Clientes().LerClientes(txtCliente);
+
             if (Tipo == "DATAS") { SQL = "SELECT * FROM Agendamentos where Fim between @inicio And @fim Order By Fim ASC"; };
             if (Tipo == "DATAS-CLIENTE") { SQL = "SELECT * FROM Agendamentos where Fim between @inicio And @fiM AND Cliente=@Cliente Order By Fim ASC"; };
         }
@@ -34,7 +36,7 @@ namespace Sharp_Color_Tool
         
         private void cmgGerar_Click_1(object sender, EventArgs e)
         {
-            Inicio = txtDataInicio.Value.ToString();
+            Inicio = txtDataInicio.Value.AddDays(-1).ToString();
             Fim =txtDataFim.Value.AddDays(1).ToString();
             Cliente = txtCliente.Text;
 

@@ -658,7 +658,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FormatCurrency(Fields!Valor_Custo.Value,2)</Value>
+                              <Value>=FormatCurrency(Fields!Valor_Venda.Value,2)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>6pt</FontSize>
@@ -697,7 +697,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FormatCurrency(Sum(Fields!Quantidade.Value/1000)*Fields!Valor_Custo.Value,2)</Value>
+                              <Value>=FormatCurrency(Sum(Fields!Quantidade.Value/1000)*Fields!Valor_Venda.Value,2)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>6pt</FontSize>
@@ -756,7 +756,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet_Agendamentos</DataSetName>
         <Height>0.85604cm</Height>
-        <Width>16.80606cm</Width>
+        <Width>16.80607cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -935,7 +935,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=FormatCurrency(Sum(Fields!Valor_Custo.Value),2)</Value>
+                <Value>=FormatCurrency(Sum(Fields!Valor_Venda.Value),2)</Value>
                 <Style>
                   <FontSize>6pt</FontSize>
                 </Style>
@@ -965,7 +965,7 @@
     <Height>1.51041in</Height>
     <Style />
   </Body>
-  <Width>16.80606cm</Width>
+  <Width>16.80607cm</Width>
   <Page>
     <PageHeader>
       <Height>1.88204cm</Height>

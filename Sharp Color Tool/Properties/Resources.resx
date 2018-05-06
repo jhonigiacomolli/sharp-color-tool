@@ -166,9 +166,6 @@
   <data name="Icone_Exclamação" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icone_Exclamação.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FavIcon(25px)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FavIcon(25px).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="FavIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FavIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -202,9 +199,6 @@
   <data name="BTN_Finalizar_Fora" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\x86\Debug\BTN\BTN_Finalizar_Fora.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Botão Fechar Opções" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Botão Fechar Opções.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="BTN_Editar_Fora" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\x86\Debug\BTN\BTN_Editar_Fora.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -213,9 +207,6 @@
   </data>
   <data name="BTN_Pausar_Desabilitado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\x86\Debug\BTN\BTN_Pausar_Desabilitado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Logo Sharp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\x86\Debug\BTN\Logo Sharp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BTN_Excluir_Fora" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\x86\Debug\BTN\BTN_Excluir_Fora.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,16 +229,25 @@
   <data name="BTN_Faturar_Fora" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\x86\Debug\BTN\BTN_Faturar_Fora.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Botão Abrir Opções" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Botão Abrir Opções.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="BTN_Reabrir_Sobre" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\x86\Debug\BTN\BTN_Reabrir_Sobre.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Exibir Contador" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Exibir Contador.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Botão_Abrir_Opções" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\x86\Debug\BTN\Botão Abrir Opções.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Ocultar Contador" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ocultar Contador.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Botão_Fechar_Opções" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\x86\Debug\BTN\Botão Fechar Opções.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Exibir_Contador" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\x86\Debug\BTN\Contador 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FavIcon_25px_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\x86\Debug\BTN\FavIcon(25px).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo_Sharp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\x86\Debug\BTN\Logo Sharp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ocultar_Contador" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\x86\Debug\BTN\Contador 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

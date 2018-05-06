@@ -61,6 +61,38 @@ namespace Sharp_Color_Tool
                 messagebox.ShowDialog();
             }
         }
+        public void LerClientes(ComboBox ComboClientes)
+        {
+            try
+            {
+                OleDbConnection conn = new OleDbConnection(Conexao.Database_Agendamentos);
+                //abre a conexao
+                conn.Open();
+
+                //cria um comando oledb
+                OleDbCommand cmd = conn.CreateCommand();
+
+                //define o tipo do comando como texto 
+                cmd.CommandText = "Select * from Clientes ORDER BY Cliente ASC";
+
+                //executa o comando e gera um datareader
+                OleDbDataReader dr = cmd.ExecuteReader();
+
+                //inicia leitura do datareader
+                while (dr.Read())
+                {
+                    ComboClientes.Items.Add(dr["Cliente"].ToString().ToUpper());
+                }
+                //fecha o datareader
+                dr.Close();
+                conn.Close();
+            }
+            catch (OleDbException ex)
+            {
+                Form messagebox = new frmMensagemPersonalizada("Critico", "Erro", "Error: " + ex.Message);
+                messagebox.ShowDialog();
+            }
+        }
 
         public void CadastraCliente(string Cliente, string Prioridade)
         {

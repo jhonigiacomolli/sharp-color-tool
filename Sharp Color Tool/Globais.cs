@@ -182,5 +182,7 @@ namespace Sharp_Color_Tool
                 messagebox.ShowDialog();
             }
         }
+
+
     }
 }

@@ -65,7 +65,7 @@ namespace Sharp_Color_Tool.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Botão_Abrir_Opções {
             get {
-                object obj = ResourceManager.GetObject("Botão Abrir Opções", resourceCulture);
+                object obj = ResourceManager.GetObject("Botão_Abrir_Opções", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -75,7 +75,7 @@ namespace Sharp_Color_Tool.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Botão_Fechar_Opções {
             get {
-                object obj = ResourceManager.GetObject("Botão Fechar Opções", resourceCulture);
+                object obj = ResourceManager.GetObject("Botão_Fechar_Opções", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -415,7 +415,7 @@ namespace Sharp_Color_Tool.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Exibir_Contador {
             get {
-                object obj = ResourceManager.GetObject("Exibir Contador", resourceCulture);
+                object obj = ResourceManager.GetObject("Exibir_Contador", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -435,7 +435,7 @@ namespace Sharp_Color_Tool.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap FavIcon_25px_ {
             get {
-                object obj = ResourceManager.GetObject("FavIcon(25px)", resourceCulture);
+                object obj = ResourceManager.GetObject("FavIcon_25px_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -475,7 +475,7 @@ namespace Sharp_Color_Tool.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Logo_Sharp {
             get {
-                object obj = ResourceManager.GetObject("Logo Sharp", resourceCulture);
+                object obj = ResourceManager.GetObject("Logo_Sharp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -485,7 +485,7 @@ namespace Sharp_Color_Tool.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Ocultar_Contador {
             get {
-                object obj = ResourceManager.GetObject("Ocultar Contador", resourceCulture);
+                object obj = ResourceManager.GetObject("Ocultar_Contador", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
