@@ -11,7 +11,7 @@
 
 <br>
 
-Sharp Color Tool é um gerenciador de cronograma produtivo para empresas de confecção de tintas automotivas, foi desenvolvido com o intuito de organizar e priorizar o cronograma de execução das tarefas baseado em nives de prioridade de cada cliente da empresa. Alem da organização a ferramenta automatiza a execução de tarefas repetitivas como a criação e preenchimento de ordem serviços no formato padrão da emrpesa em arquivo '.xlsm' com os dados iniciais.<br><br>
+Sharp Color Tool é um gerenciador de cronograma produtivo para empresas de confecção de tintas automotivas, foi desenvolvido com o intuito de organizar e priorizar o cronograma de execução das tarefas baseado em níveis de prioridade de cada cliente da empresa. Além da organização a ferramenta automatiza a execução de tarefas repetitivas como a criação e preenchimento de ordem serviços no formato padrão da empresa em arquivo '.xlsm' com os dados iniciais..<br><br>
 
 ## <img height="17" style="margin: 0 20px 0 0" src="Sharp Color Tool/Resources/FavIcon.png" alt="html"/><strong>Principais caracteristicas técnicas do projeto:</strong>
 >* Cadastro, Edição e Exclusão de clientes
@@ -25,7 +25,7 @@ Sharp Color Tool é um gerenciador de cronograma produtivo para empresas de conf
 >* Calculo de custos do produto
 >* Faturamento do produto (Organizacional)
 >* Geração de relatórios analíticos periódicos
->* Configurações de parametros da aplicação
+>* Configurações de parâmetros da aplicação
 >* Configuração das informações das ordens de serviço exibidas
 
 <br>
@@ -53,11 +53,11 @@ Pré-visualização do formulário de faturamento do produto:<br>
 
 ## ☑️<strong>Recursos Utilizados</strong>
 
-> Este projeto foi desenvolvido com recursos do .Net Framework 4.0, utilizando-se da C# como linguagem programacional, a aplicação utiliza um banco de dados em Access e integração com Excel.<br><br>
-<img height="45" style="margin: 0 10px 5px 10px" src="https://microsite.net.br/microsite/icones/langs/dotnet_icon.svg" alt="dot-net"/>
-<img height="45" style="margin: 0 10px" src="https://microsite.net.br/microsite/icones/langs/csharp_icon.svg" alt="c-charp"/>
-<img height="45" style="margin: 0 10px" src="https://microsite.net.br/microsite/icones/langs/access_icon.svg" alt="access"/>
-<img height="45" style="margin: 0 10px" src="https://microsite.net.br/microsite/icones/langs/excel_icon.svg" alt="excel"/>
+> Este projeto foi desenvolvido com recursos do .Net Framework 4.0, utilizando-se da C# como linguagem, a aplicação utiliza um banco de dados em Access e integração com Excel.<br><br>
+<code><img height="45" style="margin: 0 10px 5px 10px" src="https://microsite.net.br/microsite/icones/langs/dotnet_icon.svg" alt="dot-net"/></code>
+<code><img height="45" style="margin: 0 10px" src="https://microsite.net.br/microsite/icones/langs/csharp_icon.svg" alt="c-charp"/></code>
+<code><img height="45" style="margin: 0 10px" src="https://microsite.net.br/microsite/icones/langs/access_icon.svg" alt="access"/></code>
+<code><img height="45" style="margin: 0 10px" src="https://microsite.net.br/microsite/icones/langs/excel_icon.svg" alt="excel"/></code>
 
 ----
 <br><br>
