@@ -52,6 +52,8 @@ namespace Sharp_Color_Tool
             DateTime agora = DateTime.Now;
             DateTime Previsao = Convert.ToDateTime(string.Concat(txtPrevisao.Text," ",txtHorario.Text,":00"));
             string Previsao_prioridade = Previsao.ToString("yyyy/MM/dd HH:mm:ss");
+
+
             if (_Tipo == "Cadastro")
             {
 
@@ -60,14 +62,14 @@ namespace Sharp_Color_Tool
 
                 if (Previsao > agora)
                 {
-                    comandoSQL = "INSERT INTO Agendamentos(Tipo_OS,Cliente,Veiculo,Placa,Cor,Pintura,Data_Cadastro,Previsao_Entrega,Status_Operacao,Prioridade,Entrega,Grupo_Cores,Montadora,Cod_Cor,Quantidade,Corpo_Prova,Existente)" +
-                        " VALUES ('" + txtTipoOS.Text + "','" + txtCliente.Text + "','" + txtVeiculo.Text + "','" + txtPlaca.Text + "','" + txtCor.Text + "','" + txtPintura.Text + "','" + DateTime.Now.ToShortDateString() + "','" + string.Concat(txtPrevisao.Text, " ", txtHorario.Text, ":00") + "','" + _Status + "','" + string.Concat(_CodStatus, " ", Previsao_prioridade, " ", txtPrioridade.Text) + "','" + _NoPrazo + "','" + txtGrupoCor.Text + "','" + txtMontadora.Text + "','" + txtCodCor.Text + "','" + txtQuantidade.Text + "','" + txtCorpo_Prova.Text + "','" + Ordem_Servico.existente + "')";
+                    comandoSQL = "INSERT INTO Agendamentos(Tipo_OS,Cliente,Veiculo,Placa,Cor,Pintura,Data_Cadastro,Previsao_Entrega,Status_Operacao,Prioridade,Entrega,Grupo_Cores,Montadora,Cod_Cor,Quantidade,Corpo_Prova,Existente,Operador)" +
+                        " VALUES ('" + txtTipoOS.Text + "','" + txtCliente.Text + "','" + txtVeiculo.Text + "','" + txtPlaca.Text + "','" + txtCor.Text + "','" + txtPintura.Text + "','" + DateTime.Now.ToShortDateString() + "','" + string.Concat(txtPrevisao.Text, " ", txtHorario.Text, ":00") + "','" + _Status + "','" + string.Concat(_CodStatus, " ", Previsao_prioridade, " ", txtPrioridade.Text) + "','" + _NoPrazo + "','" + txtGrupoCor.Text + "','" + txtMontadora.Text + "','" + txtCodCor.Text + "','" + txtQuantidade.Text + "','" + txtCorpo_Prova.Text + "','" + Ordem_Servico.existente + "','" + cboOperador.Text + "')";
                 }
 
                 if (Previsao<=agora)
                 {
                     comandoSQL = "INSERT INTO Agendamentos(Tipo_OS,Cliente,Veiculo,Placa,Cor,Pintura,Data_Cadastro,Previsao_Entrega,Status_Operacao,Prioridade,Entrega,Grupo_Cores,Montadora,Cod_Cor,Quantidade,Corpo_Prova,Existente)" +
-                        " VALUES ('" + txtTipoOS.Text + "','" + txtCliente.Text + "','" + txtVeiculo.Text + "','" + txtPlaca.Text + "','" + txtCor.Text + "','" + txtPintura.Text + "','" + DateTime.Now.ToShortDateString() + "','" +  string.Concat(txtPrevisao.Text, " ", txtHorario.Text, ":00") + "','" + _Status + "','" + string.Concat(_CodStatus, " ", Previsao_prioridade, " ", txtPrioridade.Text) + "','" + _Atrasado + "','" + txtGrupoCor.Text + "','" + txtMontadora.Text + "','" + txtCodCor.Text + "','" + txtQuantidade.Text + "','" + txtCorpo_Prova.Text + "','" + Ordem_Servico.existente + "')";
+                        " VALUES ('" + txtTipoOS.Text + "','" + txtCliente.Text + "','" + txtVeiculo.Text + "','" + txtPlaca.Text + "','" + txtCor.Text + "','" + txtPintura.Text + "','" + DateTime.Now.ToShortDateString() + "','" +  string.Concat(txtPrevisao.Text, " ", txtHorario.Text, ":00") + "','" + _Status + "','" + string.Concat(_CodStatus, " ", Previsao_prioridade, " ", txtPrioridade.Text) + "','" + _Atrasado + "','" + txtGrupoCor.Text + "','" + txtMontadora.Text + "','" + txtCodCor.Text + "','" + txtQuantidade.Text + "','" + txtCorpo_Prova.Text + "','" + Ordem_Servico.existente + "','" + cboOperador.Text + "')";
 
                 }
                 //cria um comando oledb
@@ -123,11 +125,11 @@ namespace Sharp_Color_Tool
 
                 if(Previsao>agora)
                 {
-                    comandoSQL = "UPDATE Agendamentos SET Cliente='" + txtCliente.Text.Replace("'", "''") + "', Veiculo='" + txtVeiculo.Text + "', Placa='" + txtPlaca.Text + "', Corpo_Prova='" + txtCorpo_Prova.Text + "', Quantidade='" + txtQuantidade.Text + "', Cod_Cor='" + txtCodCor.Text + "', Montadora='" + txtMontadora.Text + "', Grupo_Cores='" + txtGrupoCor.Text + "', Tipo_OS='" + txtTipoOS.Text + "', Cor='" + txtCor.Text + "', Entrega='" + _NoPrazo + "', Pintura='" + txtPintura.Text + "', Previsao_Entrega='" + string.Concat(txtPrevisao.Text, " ", txtHorario.Text, ":00") + "', Prioridade='" + string.Concat(_CodStatus, " ", Previsao_prioridade, " ", txtPrioridade.Text) + "' WHERE Código=" + int.Parse(txtID.Text) + "";
+                    comandoSQL = "UPDATE Agendamentos SET Cliente='" + txtCliente.Text.Replace("'", "''") + "', Veiculo='" + txtVeiculo.Text + "', Placa='" + txtPlaca.Text + "', Corpo_Prova='" + txtCorpo_Prova.Text + "', Quantidade='" + txtQuantidade.Text + "', Cod_Cor='" + txtCodCor.Text + "', Montadora='" + txtMontadora.Text + "', Grupo_Cores='" + txtGrupoCor.Text + "', Tipo_OS='" + txtTipoOS.Text + "', Cor='" + txtCor.Text + "', Entrega='" + _NoPrazo + "', Operador='" + cboOperador.Text + "', Pintura='" + txtPintura.Text + "', Previsao_Entrega='" + string.Concat(txtPrevisao.Text, " ", txtHorario.Text, ":00") + "', Prioridade='" + string.Concat(_CodStatus, " ", Previsao_prioridade, " ", txtPrioridade.Text) + "' WHERE Código=" + int.Parse(txtID.Text) + "";
                 }
                 if(Previsao<=agora)
                 {
-                    comandoSQL = "UPDATE Agendamentos SET Cliente='" + txtCliente.Text.Replace("'", "''") + "', Veiculo='" + txtVeiculo.Text + "', Placa='" + txtPlaca.Text + "', Corpo_Prova='" + txtCorpo_Prova.Text + "', Quantidade='" + txtQuantidade.Text + "', Cod_Cor='" + txtCodCor.Text + "', Montadora='" + txtMontadora.Text + "', Grupo_Cores='" + txtGrupoCor.Text + "', Tipo_OS='" + txtTipoOS.Text + "', Cor='" + txtCor.Text + "', Entrega='" + _Atrasado + "', Pintura='" + txtPintura.Text + "', Previsao_Entrega='" + string.Concat(txtPrevisao.Text, " ", txtHorario.Text, ":00") + "', Prioridade='" + string.Concat(_CodStatus, " ", Previsao_prioridade, " ", txtPrioridade.Text) + "' WHERE Código=" + int.Parse(txtID.Text) + "";
+                    comandoSQL = "UPDATE Agendamentos SET Cliente='" + txtCliente.Text.Replace("'", "''") + "', Veiculo='" + txtVeiculo.Text + "', Placa='" + txtPlaca.Text + "', Corpo_Prova='" + txtCorpo_Prova.Text + "', Quantidade='" + txtQuantidade.Text + "', Cod_Cor='" + txtCodCor.Text + "', Montadora='" + txtMontadora.Text + "', Grupo_Cores='" + txtGrupoCor.Text + "', Tipo_OS='" + txtTipoOS.Text + "', Cor='" + txtCor.Text + "', Entrega='" + _Atrasado + "', Operador='" + cboOperador.Text + "', Pintura='" + txtPintura.Text + "', Previsao_Entrega='" + string.Concat(txtPrevisao.Text, " ", txtHorario.Text, ":00") + "', Prioridade='" + string.Concat(_CodStatus, " ", Previsao_prioridade, " ", txtPrioridade.Text) + "' WHERE Código=" + int.Parse(txtID.Text) + "";
 
                 }
                 //cria um comando oledb
@@ -415,6 +417,39 @@ namespace Sharp_Color_Tool
                 while (dr.Read())
                 {
                     txtTipoOS.Items.Add(dr["Tipo_OS"].ToString().ToUpper());
+                }
+            }
+            catch (System.Data.OleDb.OleDbException ex)
+            {
+                MessageBox.Show("Ocorreu um erro durante a execução da instrução SQL." +
+                        "Erro : " + ex.Message, "SQL");
+            }
+            finally
+            {
+                //fecha a conexao
+                conn.Close();
+            }
+        }
+        public void Preenche_CBO_Operador()
+        {
+            OleDbConnection conn = new OleDbConnection(Conexao.Database_Agendamentos);
+            try
+            {
+                //abre a conexao
+                conn.Open();
+
+                //cria um comando oledb
+                OleDbCommand cmd = conn.CreateCommand();
+                //define o tipo do comando como texto 
+                cmd.CommandText = "Select * from usuarios ORDER BY usuario ASC";
+
+                //executa o comando e gera um datareader
+                OleDbDataReader dr = cmd.ExecuteReader();
+
+                //inicia leitura do datareader
+                while (dr.Read())
+                {
+                    cboOperador.Items.Add(dr["usuario"].ToString().ToUpper());
                 }
             }
             catch (System.Data.OleDb.OleDbException ex)

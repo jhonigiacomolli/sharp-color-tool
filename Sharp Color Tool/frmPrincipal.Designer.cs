@@ -156,6 +156,7 @@
             this.EntregasClientetoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.volumeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.volumePorClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.volumeComCustoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             picFavIcon = new System.Windows.Forms.PictureBox();
             pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(picFavIcon)).BeginInit();
@@ -214,7 +215,7 @@
             this.lstTintas.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lstTintas.Location = new System.Drawing.Point(0, 37);
             this.lstTintas.Name = "lstTintas";
-            this.lstTintas.Size = new System.Drawing.Size(1752, 234);
+            this.lstTintas.Size = new System.Drawing.Size(1352, 234);
             this.lstTintas.TabIndex = 20;
             this.lstTintas.UseCompatibleStateImageBehavior = false;
             this.lstTintas.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lstTintas_ColumnClick);
@@ -408,7 +409,7 @@
             this.lstTintasFinalizadas.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lstTintasFinalizadas.Location = new System.Drawing.Point(0, 275);
             this.lstTintasFinalizadas.Name = "lstTintasFinalizadas";
-            this.lstTintasFinalizadas.Size = new System.Drawing.Size(1752, 262);
+            this.lstTintasFinalizadas.Size = new System.Drawing.Size(1352, 228);
             this.lstTintasFinalizadas.Sorting = System.Windows.Forms.SortOrder.Descending;
             this.lstTintasFinalizadas.TabIndex = 25;
             this.lstTintasFinalizadas.UseCompatibleStateImageBehavior = false;
@@ -850,7 +851,7 @@
             this.cmdOpen_Options.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cmdOpen_Options.BackgroundImage")));
             this.cmdOpen_Options.Location = new System.Drawing.Point(4, 313);
             this.cmdOpen_Options.Name = "cmdOpen_Options";
-            this.cmdOpen_Options.Size = new System.Drawing.Size(22, 113);
+            this.cmdOpen_Options.Size = new System.Drawing.Size(22, 112);
             this.cmdOpen_Options.TabIndex = 2;
             this.cmdOpen_Options.TabStop = false;
             this.cmdOpen_Options.Click += new System.EventHandler(this.cmdOpen_Options_Click);
@@ -861,7 +862,7 @@
             this.cmdClose_Options.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cmdClose_Options.BackgroundImage")));
             this.cmdClose_Options.Location = new System.Drawing.Point(4, 325);
             this.cmdClose_Options.Name = "cmdClose_Options";
-            this.cmdClose_Options.Size = new System.Drawing.Size(22, 113);
+            this.cmdClose_Options.Size = new System.Drawing.Size(22, 100);
             this.cmdClose_Options.TabIndex = 3;
             this.cmdClose_Options.TabStop = false;
             this.cmdClose_Options.Click += new System.EventHandler(this.cmdClose_Options_Click);
@@ -1926,7 +1927,8 @@
             this.entregasPrazoToolStripMenuItem,
             this.EntregasClientetoolStripMenuItem,
             this.volumeToolStripMenuItem,
-            this.volumePorClienteToolStripMenuItem});
+            this.volumePorClienteToolStripMenuItem,
+            this.volumeComCustoToolStripMenuItem});
             this.relatóriosToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
             this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
             this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(71, 19);
@@ -1937,7 +1939,7 @@
             this.entregasPrazoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.entregasPrazoToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
             this.entregasPrazoToolStripMenuItem.Name = "entregasPrazoToolStripMenuItem";
-            this.entregasPrazoToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.entregasPrazoToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.entregasPrazoToolStripMenuItem.Text = "Entregas - Prazo";
             this.entregasPrazoToolStripMenuItem.Click += new System.EventHandler(this.entregasPrazoToolStripMenuItem_Click);
             // 
@@ -1955,7 +1957,7 @@
             this.volumeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.volumeToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
             this.volumeToolStripMenuItem.Name = "volumeToolStripMenuItem";
-            this.volumeToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.volumeToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.volumeToolStripMenuItem.Text = "Volume";
             this.volumeToolStripMenuItem.Click += new System.EventHandler(this.volumeToolStripMenuItem_Click);
             // 
@@ -1967,6 +1969,15 @@
             this.volumePorClienteToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.volumePorClienteToolStripMenuItem.Text = "Volume por Cliente";
             this.volumePorClienteToolStripMenuItem.Click += new System.EventHandler(this.volumePorClienteToolStripMenuItem_Click);
+            // 
+            // volumeComCustoToolStripMenuItem
+            // 
+            this.volumeComCustoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.volumeComCustoToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.volumeComCustoToolStripMenuItem.Name = "volumeComCustoToolStripMenuItem";
+            this.volumeComCustoToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.volumeComCustoToolStripMenuItem.Text = "Volume com Custo";
+            this.volumeComCustoToolStripMenuItem.Click += new System.EventHandler(this.volumeComCustoToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -2166,6 +2177,7 @@
         private System.Windows.Forms.ToolStripMenuItem volumePorClienteToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem EntregasClientetoolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem volumeComCustoToolStripMenuItem;
     }
 }
 

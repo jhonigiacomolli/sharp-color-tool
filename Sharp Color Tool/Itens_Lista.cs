@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.OleDb;
-using System.Windows.Forms;
-using System.Text;
 
 namespace Sharp_Color_Tool
 {
@@ -36,7 +32,9 @@ namespace Sharp_Color_Tool
         public string Chapinhas { get; set; }
         public string Existente { get; set; }
         public string Valor_Sugerido { get; set; }
-
+        public string Carga { get; set; }
+        public string NumeroPedido { get; set; }
+        public string Operador { get; set; }
 
     }    
 }

@@ -36,8 +36,8 @@ namespace Sharp_Color_Tool
         
         private void cmgGerar_Click_1(object sender, EventArgs e)
         {
-            Inicio = txtDataInicio.Value.AddDays(-1).ToString();
-            Fim =txtDataFim.Value.AddDays(1).ToString();
+            Inicio = txtDataInicio.Value.ToShortDateString();
+            Fim =txtDataFim.Value.AddDays(1).ToShortDateString();
             Cliente = txtCliente.Text;
 
             if (TIPO == "DATAS")
@@ -45,6 +45,12 @@ namespace Sharp_Color_Tool
                 this.Close();
                 frmRelatorios Relatorios = new frmRelatorios(Path, SQL,Inicio, Fim);
                 Relatorios.ShowDialog();               
+            }
+            if (TIPO == "DATAS-CUSTO")
+            {
+                this.Close();
+                frmRelatorios Relatorios = new frmRelatorios(Path, SQL, Inicio, Fim);
+                Relatorios.ShowDialog();
             }
             if (TIPO == "DATAS-CLIENTE")
             {

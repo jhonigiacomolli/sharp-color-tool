@@ -99,6 +99,8 @@
             this.txtMargemSugerida = new System.Windows.Forms.NumericUpDown();
             this.txtZoomRelatorio = new System.Windows.Forms.NumericUpDown();
             this.label24 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.txtCaminhoTintas = new System.Windows.Forms.TextBox();
             picFavIcon = new System.Windows.Forms.PictureBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(picFavIcon)).BeginInit();
@@ -213,7 +215,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Silver;
-            this.label1.Location = new System.Drawing.Point(25, 72);
+            this.label1.Location = new System.Drawing.Point(25, 100);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(133, 13);
             this.label1.TabIndex = 42;
@@ -222,7 +224,7 @@
             // txtCaminhoBackup
             // 
             this.txtCaminhoBackup.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtCaminhoBackup.Location = new System.Drawing.Point(194, 69);
+            this.txtCaminhoBackup.Location = new System.Drawing.Point(194, 97);
             this.txtCaminhoBackup.Name = "txtCaminhoBackup";
             this.txtCaminhoBackup.Size = new System.Drawing.Size(499, 20);
             this.txtCaminhoBackup.TabIndex = 1;
@@ -231,7 +233,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(25, 98);
+            this.label3.Location = new System.Drawing.Point(25, 126);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(161, 13);
             this.label3.TabIndex = 44;
@@ -241,7 +243,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Silver;
-            this.label4.Location = new System.Drawing.Point(384, 98);
+            this.label4.Location = new System.Drawing.Point(384, 126);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(166, 13);
             this.label4.TabIndex = 46;
@@ -251,7 +253,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Silver;
-            this.label5.Location = new System.Drawing.Point(25, 124);
+            this.label5.Location = new System.Drawing.Point(25, 152);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(107, 13);
             this.label5.TabIndex = 48;
@@ -313,7 +315,7 @@
             this.groupBox1.Controls.Add(this.txtCL_NOS);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.ForeColor = System.Drawing.Color.Silver;
-            this.groupBox1.Location = new System.Drawing.Point(28, 159);
+            this.groupBox1.Location = new System.Drawing.Point(28, 187);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(665, 268);
             this.groupBox1.TabIndex = 5;
@@ -921,7 +923,7 @@
             // txtNumeroOSFim
             // 
             this.txtNumeroOSFim.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtNumeroOSFim.Location = new System.Drawing.Point(556, 95);
+            this.txtNumeroOSFim.Location = new System.Drawing.Point(556, 123);
             this.txtNumeroOSFim.Name = "txtNumeroOSFim";
             this.txtNumeroOSFim.Size = new System.Drawing.Size(137, 20);
             this.txtNumeroOSFim.TabIndex = 3;
@@ -931,7 +933,7 @@
             this.cmdCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdCancelar.ForeColor = System.Drawing.Color.Silver;
-            this.cmdCancelar.Location = new System.Drawing.Point(357, 450);
+            this.cmdCancelar.Location = new System.Drawing.Point(357, 478);
             this.cmdCancelar.Name = "cmdCancelar";
             this.cmdCancelar.Size = new System.Drawing.Size(120, 41);
             this.cmdCancelar.TabIndex = 32;
@@ -944,7 +946,7 @@
             this.cmdGravar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdGravar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdGravar.ForeColor = System.Drawing.Color.Silver;
-            this.cmdGravar.Location = new System.Drawing.Point(238, 450);
+            this.cmdGravar.Location = new System.Drawing.Point(238, 478);
             this.cmdGravar.Name = "cmdGravar";
             this.cmdGravar.Size = new System.Drawing.Size(120, 41);
             this.cmdGravar.TabIndex = 31;
@@ -955,7 +957,7 @@
             // txtTempoRepesagem
             // 
             this.txtTempoRepesagem.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtTempoRepesagem.Location = new System.Drawing.Point(194, 96);
+            this.txtTempoRepesagem.Location = new System.Drawing.Point(194, 124);
             this.txtTempoRepesagem.Name = "txtTempoRepesagem";
             this.txtTempoRepesagem.Size = new System.Drawing.Size(164, 20);
             this.txtTempoRepesagem.TabIndex = 2;
@@ -963,7 +965,7 @@
             // txtMargemSugerida
             // 
             this.txtMargemSugerida.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtMargemSugerida.Location = new System.Drawing.Point(194, 122);
+            this.txtMargemSugerida.Location = new System.Drawing.Point(194, 150);
             this.txtMargemSugerida.Name = "txtMargemSugerida";
             this.txtMargemSugerida.Size = new System.Drawing.Size(164, 20);
             this.txtMargemSugerida.TabIndex = 4;
@@ -971,7 +973,7 @@
             // txtZoomRelatorio
             // 
             this.txtZoomRelatorio.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtZoomRelatorio.Location = new System.Drawing.Point(556, 117);
+            this.txtZoomRelatorio.Location = new System.Drawing.Point(556, 145);
             this.txtZoomRelatorio.Maximum = new decimal(new int[] {
             300,
             0,
@@ -985,18 +987,38 @@
             // 
             this.label24.AutoSize = true;
             this.label24.ForeColor = System.Drawing.Color.Silver;
-            this.label24.Location = new System.Drawing.Point(384, 120);
+            this.label24.Location = new System.Drawing.Point(384, 148);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(94, 13);
             this.label24.TabIndex = 50;
             this.label24.Text = "Zoom no Relatório";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.ForeColor = System.Drawing.Color.Silver;
+            this.label33.Location = new System.Drawing.Point(25, 72);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(110, 13);
+            this.label33.TabIndex = 52;
+            this.label33.Text = "Caminho Pasta Tintas";
+            // 
+            // txtCaminhoTintas
+            // 
+            this.txtCaminhoTintas.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtCaminhoTintas.Location = new System.Drawing.Point(194, 69);
+            this.txtCaminhoTintas.Name = "txtCaminhoTintas";
+            this.txtCaminhoTintas.Size = new System.Drawing.Size(499, 20);
+            this.txtCaminhoTintas.TabIndex = 51;
             // 
             // frmConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.ClientSize = new System.Drawing.Size(730, 510);
+            this.ClientSize = new System.Drawing.Size(730, 549);
+            this.Controls.Add(this.label33);
+            this.Controls.Add(this.txtCaminhoTintas);
             this.Controls.Add(this.txtZoomRelatorio);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.txtMargemSugerida);
@@ -1130,5 +1152,7 @@
         public System.Windows.Forms.NumericUpDown txtMargemSugerida;
         public System.Windows.Forms.NumericUpDown txtZoomRelatorio;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label33;
+        public System.Windows.Forms.TextBox txtCaminhoTintas;
     }
 }

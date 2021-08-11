@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Data.OleDb;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace Sharp_Color_Tool
@@ -52,6 +50,7 @@ namespace Sharp_Color_Tool
         public static Int32 LstTIntas_Coluna_Previsao = 0;
         public static double Margen_Sugerida;
         public static Int32 ZoomRelatorio;
+        public static string CaminhoTintas;
 
 
         public static void Config()
@@ -106,6 +105,7 @@ namespace Sharp_Color_Tool
                     LstTIntas_Coluna_Previsao = Convert.ToInt32(dr["LstTIntas_Coluna_Previsao"].ToString());
                     Margen_Sugerida= Convert.ToDouble(dr["Margem_Sugerida"].ToString());
                     ZoomRelatorio = Convert.ToInt32(dr["ZoomRelatorio"].ToString());
+                    CaminhoTintas = dr["CaminhoTintas"].ToString();
                 }
             }
             finally
@@ -149,9 +149,10 @@ namespace Sharp_Color_Tool
             configuracoes.txtCL_Chapinhas.Value = LstTIntas_Coluna_Chapinhas;
             configuracoes.txtCL_Previsao.Value = LstTIntas_Coluna_Previsao;
             configuracoes.txtZoomRelatorio.Value = ZoomRelatorio;
+            configuracoes.txtCaminhoTintas.Text = CaminhoTintas;
         }
 
-        public void Atualizar_Configuracoes(string EnderecoOS,string Backup, int TempoRepesagem, int NumeroOSFim, int CL_Nos,int CL_DataCadastro,int CL_TipoOS,int CL_Cliente, int CL_Veiculo,int CL_Placa,int CL_GrupoCores, int CL_Montadora, int CL_COdCOr, int CL_Qnt, int CL_SP, int CL_Colorista,int CL_Cor, int CL_CorpoProva, int CL_Prioridade, int CL_Status, int CL_Inicio, int CL_Fim, int CL_Tempo, int CL_Entrega, int CL_DataFat, int CL_ValorCusto, int CL_ValorVenda, int CL_MArkup, int CL_Chapinhas, int CL_Previsao, int MargemSugerida, int ZoomRelatorio)
+        public void Atualizar_Configuracoes(string EnderecoOS,string Backup,string PastaTintas, int TempoRepesagem, int NumeroOSFim, int CL_Nos,int CL_DataCadastro,int CL_TipoOS,int CL_Cliente, int CL_Veiculo,int CL_Placa,int CL_GrupoCores, int CL_Montadora, int CL_COdCOr, int CL_Qnt, int CL_SP, int CL_Colorista,int CL_Cor, int CL_CorpoProva, int CL_Prioridade, int CL_Status, int CL_Inicio, int CL_Fim, int CL_Tempo, int CL_Entrega, int CL_DataFat, int CL_ValorCusto, int CL_ValorVenda, int CL_MArkup, int CL_Chapinhas, int CL_Previsao, int MargemSugerida, int ZoomRelatorio)
         {
             int ID = 1;
 
@@ -165,7 +166,7 @@ namespace Sharp_Color_Tool
                 OleDbCommand cmd = conn.CreateCommand();
 
                 //define o tipo do comando como texto 
-                cmd.CommandText = "UPDATE Config SET Endereco_OSModelo='" + ModeloOS.Replace("'", "''") + "', Pasta_BackupOS='" + Backup + "', Tempo_Repesagem='" + TempoRepesagem + "', Numero_OSFim='" + NumeroOSFim + "', LstTIntas_Coluna_NumeroOS='" + CL_Nos + "', LstTIntas_Coluna_DataCadastro='" + CL_DataCadastro + "', LstTIntas_Coluna_TipoOS='" + CL_TipoOS + "', LstTIntas_Coluna_Cliente='" + CL_Cliente + "', LstTIntas_Coluna_Veiculo='" + CL_Veiculo + "', LstTIntas_Coluna_Placa='" + CL_Placa + "', LstTIntas_Coluna_GrupoCores='" + CL_GrupoCores + "', LstTIntas_Coluna_Montadora='" + CL_Montadora + "', LstTIntas_Coluna_CodigoCor='" + CL_COdCOr + "', LstTIntas_Coluna_Quantidade='" + CL_Qnt + "', LstTIntas_Coluna_Pintura='" + CL_SP + "', LstTIntas_Coluna_Colorista='" + CL_Colorista + "', LstTIntas_Coluna_Cor='" + CL_Cor + "', LstTIntas_Coluna_CorpoProva='" + CL_CorpoProva + "', LstTIntas_Coluna_Prioridade='" + CL_Prioridade + "', LstTIntas_Coluna_StatusOperacao='" + CL_Status + "', LstTIntas_Coluna_Inicio='" + CL_Inicio + "', LstTIntas_Coluna_Fim='" + CL_Fim + "', LstTIntas_Coluna_Tempo='" + CL_Tempo + "', LstTIntas_Coluna_Entrega='" + CL_Entrega + "', LstTIntas_Coluna_DataFaturamento='" + CL_DataFat + "', LstTIntas_Coluna_ValorCusto='" + CL_ValorCusto + "', LstTIntas_Coluna_ValorVenda='" + CL_ValorVenda + "', LstTIntas_Coluna_Markup='" + CL_MArkup + "', LstTIntas_Coluna_Chapinhas='" + CL_Chapinhas + "', LstTIntas_Coluna_Previsao='" + CL_Previsao + "', Margem_Sugerida='" + MargemSugerida + "', ZoomRelatorio='" + ZoomRelatorio + "' WHERE Código=" + ID + "";
+                cmd.CommandText = "UPDATE Config SET Endereco_OSModelo='" + ModeloOS.Replace("'", "''") + "', CaminhoTintas='" + PastaTintas + "', Pasta_BackupOS='" + Backup + "', Tempo_Repesagem='" + TempoRepesagem + "', Numero_OSFim='" + NumeroOSFim + "', LstTIntas_Coluna_NumeroOS='" + CL_Nos + "', LstTIntas_Coluna_DataCadastro='" + CL_DataCadastro + "', LstTIntas_Coluna_TipoOS='" + CL_TipoOS + "', LstTIntas_Coluna_Cliente='" + CL_Cliente + "', LstTIntas_Coluna_Veiculo='" + CL_Veiculo + "', LstTIntas_Coluna_Placa='" + CL_Placa + "', LstTIntas_Coluna_GrupoCores='" + CL_GrupoCores + "', LstTIntas_Coluna_Montadora='" + CL_Montadora + "', LstTIntas_Coluna_CodigoCor='" + CL_COdCOr + "', LstTIntas_Coluna_Quantidade='" + CL_Qnt + "', LstTIntas_Coluna_Pintura='" + CL_SP + "', LstTIntas_Coluna_Colorista='" + CL_Colorista + "', LstTIntas_Coluna_Cor='" + CL_Cor + "', LstTIntas_Coluna_CorpoProva='" + CL_CorpoProva + "', LstTIntas_Coluna_Prioridade='" + CL_Prioridade + "', LstTIntas_Coluna_StatusOperacao='" + CL_Status + "', LstTIntas_Coluna_Inicio='" + CL_Inicio + "', LstTIntas_Coluna_Fim='" + CL_Fim + "', LstTIntas_Coluna_Tempo='" + CL_Tempo + "', LstTIntas_Coluna_Entrega='" + CL_Entrega + "', LstTIntas_Coluna_DataFaturamento='" + CL_DataFat + "', LstTIntas_Coluna_ValorCusto='" + CL_ValorCusto + "', LstTIntas_Coluna_ValorVenda='" + CL_ValorVenda + "', LstTIntas_Coluna_Markup='" + CL_MArkup + "', LstTIntas_Coluna_Chapinhas='" + CL_Chapinhas + "', LstTIntas_Coluna_Previsao='" + CL_Previsao + "', Margem_Sugerida='" + MargemSugerida + "', ZoomRelatorio='" + ZoomRelatorio + "' WHERE Código=" + ID + "";
 
                 //executa o comando e gera um datareader
                 OleDbDataReader dr = cmd.ExecuteReader();

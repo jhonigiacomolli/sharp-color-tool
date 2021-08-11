@@ -55,6 +55,10 @@ namespace Sharp_Color_Tool
             {
                 Relatorios.GeraRelatorio_FiltroData(this, this.reportViewer1, Path, SQL, Parametro1, Parametro2);
             }
+            if (e.Argument.Equals("DATAS-CUSTO"))
+            {
+                Relatorios.GeraRelatorio_FiltroData(this, this.reportViewer1, Path, SQL, Parametro1, Parametro2);
+            }
             if (e.Argument.Equals("DATAS-CLIENTE"))
             {
                 Relatorios.GeraRelatorio_FiltroDataCliente(this, this.reportViewer1, Path, SQL, Parametro1, Parametro2,Parametro3);

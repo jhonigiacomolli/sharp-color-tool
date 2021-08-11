@@ -40,7 +40,6 @@ namespace Sharp_Color_Tool
                     Relatorio.LocalReport.Refresh();
                 }));
             }
-
         }
 
         public static void GeraRelatorio_FiltroDataCliente(frmRelatorios Formulario, ReportViewer Relatorio, string Path, string SQL, string Parametro1, string Parametro2, string Parametro3)

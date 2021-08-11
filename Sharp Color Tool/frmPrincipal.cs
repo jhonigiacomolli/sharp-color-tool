@@ -134,6 +134,8 @@ namespace Sharp_Color_Tool
             lstTintas.Columns.Add("Markup", Globais.LstTIntas_Coluna_Markup, HorizontalAlignment.Right);
             lstTintas.Columns.Add("Chapinhas", Globais.LstTIntas_Coluna_Chapinhas, HorizontalAlignment.Center);
             lstTintas.Columns.Add("Existente", 0);
+            lstTintas.Columns.Add("Carga", 0);
+            lstTintas.Columns.Add("NumeroPedido", 0);
 
             Int32 Posicao1 = Globais.LstTIntas_Coluna_NumeroOS;
             Int32 Posicao2 = Posicao1 + Globais.LstTIntas_Coluna_DataCadastro;
@@ -305,14 +307,17 @@ namespace Sharp_Color_Tool
             lstTintasFinalizadas.Columns.Add("Markup", Globais.LstTIntas_Coluna_Markup, HorizontalAlignment.Right);
             lstTintasFinalizadas.Columns.Add("Chapinhas", Globais.LstTIntas_Coluna_Chapinhas, HorizontalAlignment.Center);
             lstTintasFinalizadas.Columns.Add("Existente", 0);
+            lstTintasFinalizadas.Columns.Add("Carga", 0);
+            lstTintasFinalizadas.Columns.Add("NumeroPedido", 0);
+            lstTintasFinalizadas.Columns.Add("Operador", 50);
 
             menuStrip1.Renderer = new MyRenderer();
-
+            lstTintasFinalizadas.Scrollable = true;
             carrega_LST_tintas();
             AtualizaLSTOSAberta();
             Globais.Config();
 
-            
+
         }
 
 
@@ -408,15 +413,34 @@ namespace Sharp_Color_Tool
                         item.SubItems.Add(dr["Colorista"].ToString().ToUpper());
                         item.SubItems.Add(dr["Data_Faturamento"].ToString().ToUpper());
 
-                        double Custo = Convert.ToDouble(dr["Valor_Custo"]);
-                        item.SubItems.Add(string.Format("{0:N2}", Custo));
+                        if (dr["Valor_Custo"] is DBNull)
+                        {
+                            double Custo = 0;
+                            item.SubItems.Add(string.Format("{0:N2}", Custo));
+                        }
+                        else
+                        {
+                            double Custo = Convert.ToDouble(dr["Valor_Custo"]);
+                            item.SubItems.Add(string.Format("{0:N2}", Custo));
+                        }
 
-                        double Venda = Convert.ToDouble(dr["Valor_Venda"]);
-                        item.SubItems.Add(string.Format("{0:N2}", Venda));
+                        if (dr["Valor_Venda"] is DBNull)
+                        {
+                            double Venda = 0;
+                            item.SubItems.Add(string.Format("{0:N2}", Venda));
+                        }
+                        else
+                        {
+                            double Venda = Convert.ToDouble(dr["Valor_Venda"]);
+                            item.SubItems.Add(string.Format("{0:N2}", Venda));
+                        }
 
                         item.SubItems.Add(dr["Markup"].ToString().ToUpper());
                         item.SubItems.Add(dr["Contador_Chapinhas"].ToString().ToUpper());
                         item.SubItems.Add(dr["Existente"].ToString().ToUpper());
+                        item.SubItems.Add(dr["Carga"].ToString().ToUpper());
+                        item.SubItems.Add(dr["NumeroPedido"].ToString().ToUpper());
+                        item.SubItems.Add(dr["Operador"].ToString().ToUpper());
                     }
 
                     lstTintas.Items.Add(item);
@@ -424,7 +448,7 @@ namespace Sharp_Color_Tool
                     lvwColumnSorter.Order = SortOrder.Ascending;
                     lvwColumnSorter.SortColumn = 19;
                     lstTintas.Sort();
-                    
+
                 }
                 //fecha o datareader
                 dr.Close();
@@ -546,6 +570,9 @@ namespace Sharp_Color_Tool
                         item2.SubItems.Add(dr2["Markup"].ToString().ToUpper());
                         item2.SubItems.Add(dr2["Contador_Chapinhas"].ToString().ToUpper());
                         item2.SubItems.Add(dr2["Existente"].ToString().ToUpper());
+                        item2.SubItems.Add(dr2["Carga"].ToString().ToUpper());
+                        item2.SubItems.Add(dr2["NumeroPedido"].ToString().ToUpper());
+                        item2.SubItems.Add(dr2["Operador"].ToString().ToUpper());
                     }
 
                     lstTintasFinalizadas.Items.Add(item2);
@@ -575,6 +602,8 @@ namespace Sharp_Color_Tool
             frmIncluir frmincluir = new frmIncluir(this);
             frmincluir.lblTitulo.Text = "SHARP - Inclusão de item";
             frmincluir.txtTipo.Text = "Cadastro";
+            frmincluir.Preenche_CBO_Operador();
+            frmincluir.cboOperador.SelectedIndex = 0;
             frmincluir.Preenche_CBO_Clientes();
             frmincluir.Preenche_CBO_SP();
             frmincluir.Preenche_CBO_Cores();
@@ -619,11 +648,13 @@ namespace Sharp_Color_Tool
                             TipoPintura = lstTintas.Items[i].SubItems[11].Text,
                             CorpoProva = lstTintas.Items[i].SubItems[12].Text,
                             Previsao = DateTime.Parse(lstTintas.Items[i].SubItems[13].Text),
-                            Status = lstTintas.Items[i].SubItems[14].Text
+                            Status = lstTintas.Items[i].SubItems[14].Text,
+                            Operador = lstTintas.Items[i].SubItems[29].Text,
                         });
                     }
 
                 }
+                frmincluir.Preenche_CBO_Operador();
                 frmincluir.Preenche_CBO_TipoOS();
                 frmincluir.Preenche_CBO_Clientes();
                 frmincluir.Preenche_CBO_Cores();
@@ -646,6 +677,7 @@ namespace Sharp_Color_Tool
                 frmincluir.txtPrevisao.Text = Lista[0].Previsao.ToString();
                 frmincluir.txtHorario.Text = Lista[0].Previsao.ToShortTimeString();
                 frmincluir.txtStatus.Text = Lista[0].Status;
+                frmincluir.cboOperador.Text = Lista[0].Operador;
 
                 //Modifica a cor dos campos, para mostrar a edição
                 frmincluir.txtID.BackColor = System.Drawing.Color.BlanchedAlmond;
@@ -662,6 +694,7 @@ namespace Sharp_Color_Tool
                 frmincluir.txtCorpo_Prova.BackColor = System.Drawing.Color.BlanchedAlmond;
                 frmincluir.txtPrevisao.BackColor = System.Drawing.Color.BlanchedAlmond;
                 frmincluir.txtHorario.BackColor = System.Drawing.Color.BlanchedAlmond;
+                frmincluir.cboOperador.BackColor = System.Drawing.Color.BlanchedAlmond;
 
                 //Muda o caption para Editar
                 frmincluir.lblTitulo.Text = "SHARP - Edição de Item";
@@ -1346,6 +1379,12 @@ namespace Sharp_Color_Tool
                         Lista.Add(new Itens_Lista()
                         {
                             NOS = lstTintas.Items[i].Text,
+                            TipoOS = lstTintas.Items[i].SubItems[2].Text,
+                            Cliente = lstTintas.Items[i].SubItems[3].Text,
+                            Veiculo = lstTintas.Items[i].SubItems[4].Text,
+                            Placa = lstTintas.Items[i].SubItems[5].Text,
+                            Cor = lstTintas.Items[i].SubItems[7].Text,
+                            TipoPintura = lstTintas.Items[i].SubItems[11].Text,
                             Previsao = DateTime.Parse(lstTintas.Items[i].SubItems[13].Text),
                             Inicio = lstTintas.Items[i].SubItems[15].Text,
                             Tempo = lstTintas.Items[i].SubItems[17].Text,
@@ -1383,47 +1422,57 @@ namespace Sharp_Color_Tool
                     excelApp.Visible = false;
                     try
                     {
-                        string myPath = string.Concat(Globais.PastaBackupOS, Lista[S].NOS, ".xlsm");
-                        Excel.Workbook wbExcel = excelApp.Workbooks.Open(myPath);
-                        Excel.Worksheet wsPlanilha = (Excel.Worksheet)wbExcel.Worksheets.get_Item("Ordem de Serviço");
 
-                        string TipoOS = wsPlanilha.get_Range("F5").Text;
-                        string Veiculo = wsPlanilha.get_Range("C6").Text;
-                        string Placa = wsPlanilha.get_Range("C7").Text;
-                        string Cliente = wsPlanilha.get_Range("C8").Text;
-                        string GrupoCor = wsPlanilha.get_Range("C9").Text;
-                        string Cor = wsPlanilha.get_Range("C10").Text;
-                        string Montadora = wsPlanilha.get_Range("C11").Text;
-                        string Codigo = wsPlanilha.get_Range("C12").Text;
-                        string SP = wsPlanilha.get_Range("C13").Text;
-                        string Quantidade = wsPlanilha.get_Range("J14").Text;
-                        string Corpo_Prova = wsPlanilha.get_Range("C15").Text;
-                        string Colorista = wsPlanilha.get_Range("C4").Text;
-                        string Valor_Custo = wsPlanilha.get_Range("H4").Text;
-                        string Contador_Chapinhas = wsPlanilha.get_Range("I5").Text;
+                        string Origem = "";
 
-                        string Valor_Venda;
-                        if (wsPlanilha.get_Range("H3").Text == string.Empty)
+                        if (Lista[S].TipoOS.Equals("AJUSTE"))
                         {
-                            Valor_Venda = "0,00";
+                            Origem = string.Concat(Globais.CaminhoTintas, Lista[S].Cliente, " - ", Lista[S].Veiculo, " - ", Lista[S].Placa, " - ", Lista[S].Cor, " - ", Lista[S].TipoPintura, ".xlsm");
                         }
-                        else
+                        if (Lista[S].TipoOS.Equals("REPESAGEM"))
                         {
-                            Valor_Venda = wsPlanilha.get_Range("H3").Text;
+                            Origem = string.Concat(Globais.CaminhoTintas, Lista[S].TipoOS, " - ", Lista[S].Cliente, " - ", Lista[S].Veiculo, " - ", Lista[S].Placa, " - ", Lista[S].Cor, " - ", Lista[S].TipoPintura, ".xlsm");
+                        }
+                        if (Lista[S].TipoOS.Equals("ERRADA"))
+                        {
+                            Origem = string.Concat(Globais.CaminhoTintas, Lista[S].TipoOS, " - ", Lista[S].Cliente, " - ", Lista[S].Veiculo, " - ", Lista[S].Placa, " - ", Lista[S].Cor, " - ", Lista[S].TipoPintura, ".xlsm");
                         }
 
-                        excelApp.DisplayAlerts = false;
+                        //string myPath = string.Concat(Origem);
+                        //Excel.Workbook wbExcel = excelApp.Workbooks.Open(myPath);
+                        //Excel.Worksheet wsPlanilha = (Excel.Worksheet)wbExcel.Worksheets.get_Item("Ordem de Serviço");
 
-                        excelApp.Workbooks.Close();
-                        excelApp.Quit();
+                        //string TipoOS = wsPlanilha.get_Range("F5").Text;
+                        //string Veiculo = wsPlanilha.get_Range("C6").Text;
+                        //string Placa = wsPlanilha.get_Range("C7").Text;
+                        //string Cliente = wsPlanilha.get_Range("C8").Text;
+                        //string GrupoCor = wsPlanilha.get_Range("C9").Text;
+                        //string Cor = wsPlanilha.get_Range("C10").Text;
+                        //string Montadora = wsPlanilha.get_Range("C11").Text;
+                        //string Codigo = wsPlanilha.get_Range("C12").Text;
+                        //string SP = wsPlanilha.get_Range("C13").Text;
+                        //string Quantidade = wsPlanilha.get_Range("C14").Text;
+                        //string Corpo_Prova = wsPlanilha.get_Range("C15").Text;
+                        //string Colorista = wsPlanilha.get_Range("C4").Text;
+                        //string Valor_Custo = wsPlanilha.get_Range("H4").Text;
+                        //string Contador_Chapinhas = wsPlanilha.get_Range("I5").Text;
+                        //string Carga = wsPlanilha.get_Range("H11").Text;
 
-                        //Mata os objetos COM da memória
-                        System.Runtime.InteropServices.Marshal.ReleaseComObject(wbExcel);
-                        System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
+                        //string Valor_Venda;
+                        //if (wsPlanilha.get_Range("H3").Text == string.Empty)
+                        //{
+                        //    Valor_Venda = "0,00";
+                        //}
+                        //else
+                        //{
+                        //    Valor_Venda = wsPlanilha.get_Range("H3").Text;
+                        //}
+
 
                         OleDbConnection conn = new OleDbConnection(Conexao.Database_Agendamentos);
+                        //string comandoSQL = "UPDATE Agendamentos SET Status_Operacao='" + _NovoStatus.Replace("'", "''") + "', Pintura='" + SP + "', Corpo_Prova='" + Corpo_Prova + "', Contador_Chapinhas='" + Contador_Chapinhas + "', Valor_Custo='" + Valor_Custo + "', Valor_Venda='" + Valor_Venda + "', Colorista='" + Colorista + "', Quantidade='" + Quantidade + "', Cod_Cor='" + Codigo + "', Montadora='" + Montadora + "', Cor='" + Cor + "', Grupo_Cores='" + GrupoCor + "', Tipo_OS='" + TipoOS + "', Cliente='" + Cliente + "', Placa='" + Placa + "', Veiculo='" + Veiculo + "', Fim='" + _TempoFim + "', Tempo='" + _NovoTempo + "', Entrega='" + _Entrega + "', Existente='" + _Existente + "', Carga='" + Carga + "', Prioridade='" + string.Concat(_Status_Prioridade, " ", _TempoFim.ToString("yyyy/MM/dd hh:mm:ss"), " ", _Prioridade) + "' WHERE Código=" + int.Parse(Lista[S].NOS) + "";
 
-                        string comandoSQL = "UPDATE Agendamentos SET Status_Operacao='" + _NovoStatus.Replace("'", "''") + "', Pintura='" + SP + "', Corpo_Prova='" + Corpo_Prova + "', Contador_Chapinhas='" + Contador_Chapinhas + "', Valor_Custo='" + Valor_Custo + "', Valor_Venda='" + Valor_Venda + "', Colorista='" + Colorista + "', Quantidade='" + Quantidade + "', Cod_Cor='" + Codigo + "', Montadora='" + Montadora + "', Cor='" + Cor + "', Grupo_Cores='" + GrupoCor + "', Tipo_OS='" + TipoOS + "', Cliente='" + Cliente + "', Placa='" + Placa + "', Veiculo='" + Veiculo + "', Fim='" + _TempoFim + "', Tempo='" + _NovoTempo + "', Entrega='" + _Entrega + "', Existente='" + _Existente + "', Prioridade='" + string.Concat(_Status_Prioridade, " ", _TempoFim.ToString("yyyy/MM/dd hh:mm:ss"), " ", _Prioridade) + "' WHERE Código=" + int.Parse(Lista[S].NOS) + "";
+                        string comandoSQL = "UPDATE Agendamentos SET Status_Operacao='" + _NovoStatus.Replace("'", "''") + "', Fim='" + _TempoFim + "', Tempo='" + _NovoTempo + "', Entrega='" + _Entrega + "', Existente='" + _Existente + "', Prioridade='" + string.Concat(_Status_Prioridade, " ", _TempoFim.ToString("yyyy/MM/dd hh:mm:ss"), " ", _Prioridade) + "' WHERE Código=" + int.Parse(Lista[S].NOS) + "";
 
                         //cria um comando oledb
                         OleDbCommand cmd = new OleDbCommand(comandoSQL, conn);
@@ -1436,6 +1485,9 @@ namespace Sharp_Color_Tool
                             //executa o comando e gera um datareader
                             cmd.ExecuteNonQuery();
 
+                            Form messagebox = new frmMensagemPersonalizada("Alerta", "Ordem de serviço finalizada", "Ordem de serviço Nº " + Lista[S].NOS + " finalizada!");
+                            messagebox.ShowDialog();
+
                             conn.Close();
 
 
@@ -1447,15 +1499,26 @@ namespace Sharp_Color_Tool
                             messagebox.ShowDialog();
                         }
 
+
                         finally
                         {
+                            AtualizaLSTOSAberta();
+                            carrega_LST_tintas();
 
+                            //wbExcel.Close(true);
+                            //excelApp.Workbooks.Close();
+                            //excelApp.Quit();
+
+                            ////Mata os objetos COM da memória
+                            //System.Runtime.InteropServices.Marshal.ReleaseComObject(wbExcel);
+                            //System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
                         }
                     }
                     catch (Exception)
                     {
-                        Form Messagebox = new frmMensagemPersonalizada("Critico", "Erro de importação", "Ocorreu um erro, os dados não foram importados da OS Nº " + Lista[S].NOS);
+                        Form Messagebox = new frmMensagemPersonalizada("Alerta", "Erro de importação", "Alguns dados não foram importados da OS Nº " + Lista[S].NOS);
                         Messagebox.ShowDialog();
+
 
                         OleDbConnection conn = new OleDbConnection(Conexao.Database_Agendamentos);
 
@@ -1472,9 +1535,10 @@ namespace Sharp_Color_Tool
                             //executa o comando e gera um datareader
                             cmd.ExecuteNonQuery();
 
+                            Form messagebox = new frmMensagemPersonalizada("Alerta", "Ordem de serviço finalizada", "Ordem de serviço Nº " + Lista[S].NOS + " finalizada!");
+                            messagebox.ShowDialog();
+
                             conn.Close();
-
-
                         }
 
                         catch (OleDbException ex)
@@ -1483,17 +1547,14 @@ namespace Sharp_Color_Tool
                             messagebox.ShowDialog();
                         }
 
+
                         finally
                         {
-
+                            carrega_LST_tintas();
+                            AtualizaLSTOSAberta();
                         }
                     }
                 }
-                Form msg = new frmMensagemPersonalizada("Alerta", "Ordem de serviço finalizada", "Ordens de Serviço Finalizadas!");
-                msg.ShowDialog();
-
-                carrega_LST_tintas();
-                AtualizaLSTOSAberta();
             }
 
             if (check_Multi_Selecao.Checked == false)
@@ -1527,47 +1588,62 @@ namespace Sharp_Color_Tool
                 excelApp.Visible = false;
                 try
                 {
-                    string myPath = string.Concat(Globais.PastaBackupOS, _ID, ".xlsm");
-                    Excel.Workbook wbExcel = excelApp.Workbooks.Open(myPath);
-                    Excel.Worksheet wsPlanilha = (Excel.Worksheet)wbExcel.Worksheets.get_Item("Ordem de Serviço");
+                    string _NOS = lstTintas.FocusedItem.Text;
+                    string _TipoOS = lstTintas.FocusedItem.SubItems[2].Text;
+                    string _Cliente = lstTintas.FocusedItem.SubItems[3].Text;
+                    string _Veiculo = lstTintas.FocusedItem.SubItems[4].Text;
+                    string _Placa = lstTintas.FocusedItem.SubItems[5].Text;
+                    string _Cor = lstTintas.FocusedItem.SubItems[7].Text;
+                    string _TipoPintura = lstTintas.FocusedItem.SubItems[11].Text;
 
-                    string TipoOS = wsPlanilha.get_Range("F5").Text;
-                    string Veiculo = wsPlanilha.get_Range("C6").Text;
-                    string Placa = wsPlanilha.get_Range("C7").Text;
-                    string Cliente = wsPlanilha.get_Range("C8").Text;
-                    string GrupoCor = wsPlanilha.get_Range("C9").Text;
-                    string Cor = wsPlanilha.get_Range("C10").Text;
-                    string Montadora = wsPlanilha.get_Range("C11").Text;
-                    string Codigo = wsPlanilha.get_Range("C12").Text;
-                    string SP = wsPlanilha.get_Range("C13").Text;
-                    string Quantidade = wsPlanilha.get_Range("C14").Text;
-                    string Corpo_Prova = wsPlanilha.get_Range("C15").Text;
-                    string Colorista = wsPlanilha.get_Range("C4").Text;
-                    string Valor_Custo = wsPlanilha.get_Range("H4").Text;
-                    string Contador_Chapinhas = wsPlanilha.get_Range("I5").Text;
 
-                    string Valor_Venda;
-                    if(wsPlanilha.get_Range("H3").Text == string.Empty)
+                    string Origem = "";
+
+                    if (_TipoOS.Equals("AJUSTE"))
                     {
-                        Valor_Venda = "0,00";
+                        Origem = string.Concat(Globais.CaminhoTintas, _Cliente, " - ", _Veiculo, " - ", _Placa, " - ", _Cor, " - ", _TipoPintura, ".xlsm");
                     }
-                    else
+                    if (_TipoOS.Equals("REPESAGEM"))
                     {
-                        Valor_Venda = wsPlanilha.get_Range("H3").Text;
+                        Origem = string.Concat(Globais.CaminhoTintas, _TipoOS, " - ", _Cliente, " - ", _Veiculo, " - ", _Placa, " - ", _Cor, " - ", _TipoPintura, ".xlsm");
+                    }
+                    if (_TipoOS.Equals("ERRADA"))
+                    {
+                        Origem = string.Concat(Globais.CaminhoTintas, _TipoOS, " - ", _Cliente, " - ", _Veiculo, " - ", _Placa, " - ", _Cor, " - ", _TipoPintura, ".xlsm");
                     }
 
-                    excelApp.DisplayAlerts = false;
+                    //Excel.Workbook wbExcel = excelApp.Workbooks.Open(Origem);
+                    //Excel.Worksheet wsPlanilha = (Excel.Worksheet)wbExcel.Worksheets.get_Item("Ordem de Serviço");
 
-                    excelApp.Workbooks.Close();
-                    excelApp.Quit();
+                    //string TipoOS = wsPlanilha.get_Range("F5").Text;
+                    //string Veiculo = wsPlanilha.get_Range("C6").Text;
+                    //string Placa = wsPlanilha.get_Range("C7").Text;
+                    //string Cliente = wsPlanilha.get_Range("C8").Text;
+                    //string GrupoCor = wsPlanilha.get_Range("C9").Text;
+                    //string Cor = wsPlanilha.get_Range("C10").Text;
+                    //string Montadora = wsPlanilha.get_Range("C11").Text;
+                    //string Codigo = wsPlanilha.get_Range("C12").Text;
+                    //string SP = wsPlanilha.get_Range("C13").Text;
+                    //string Quantidade = wsPlanilha.get_Range("C14").Text;
+                    //string Corpo_Prova = wsPlanilha.get_Range("C15").Text;
+                    //string Colorista = wsPlanilha.get_Range("C4").Text;
+                    //string Valor_Custo = wsPlanilha.get_Range("H4").Text;
+                    //string Contador_Chapinhas = wsPlanilha.get_Range("I5").Text;
+                    //string Carga = wsPlanilha.get_Range("H11").Text;
 
-                    //Mata os objetos COM da memória
-                    System.Runtime.InteropServices.Marshal.ReleaseComObject(wbExcel);
-                    System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
+                    //string Valor_Venda;
+                    //if (wsPlanilha.get_Range("H3").Text == string.Empty)
+                    //{
+                    //    Valor_Venda = "0,00";
+                    //}
+                    //else
+                    //{
+                    //    Valor_Venda = wsPlanilha.get_Range("H3").Text;
+                    //}
 
                     OleDbConnection conn = new OleDbConnection(Conexao.Database_Agendamentos);
-
-                    string comandoSQL = "UPDATE Agendamentos SET Status_Operacao='" + _NovoStatus.Replace("'", "''") + "', Pintura='" + SP + "', Corpo_Prova='" + Corpo_Prova + "', Contador_Chapinhas='" + Contador_Chapinhas + "', Valor_Custo='" + Valor_Custo + "', Valor_Venda='" + Valor_Venda + "', Colorista='" + Colorista + "', Quantidade='" + Quantidade + "', Cod_Cor='" + Codigo + "', Montadora='" + Montadora + "', Cor='" + Cor + "', Grupo_Cores='" + GrupoCor + "', Tipo_OS='" + TipoOS + "', Cliente='" + Cliente + "', Placa='" + Placa + "', Veiculo='" + Veiculo + "', Fim='" + _TempoFim + "', Tempo='" + _NovoTempo + "', Entrega='" + _Entrega + "', Existente='" + _Existente + "', Prioridade='" + string.Concat(_Status_Prioridade, " ", _TempoFim.ToString("yyyy/MM/dd hh:mm:ss"), " ", _Prioridade) + "' WHERE Código=" + int.Parse(_ID) + "";
+                    //string comandoSQL = "UPDATE Agendamentos SET Status_Operacao='" + _NovoStatus.Replace("'", "''") + "', Pintura='" + SP + "', Corpo_Prova='" + Corpo_Prova + "', Contador_Chapinhas='" + Contador_Chapinhas + "', Valor_Custo='" + Valor_Custo + "', Valor_Venda='" + Valor_Venda + "', Colorista='" + Colorista + "', Quantidade='" + Quantidade + "', Cod_Cor='" + Codigo + "', Montadora='" + Montadora + "', Cor='" + Cor + "', Grupo_Cores='" + GrupoCor + "', Tipo_OS='" + TipoOS + "', Cliente='" + Cliente + "', Placa='" + Placa + "', Veiculo='" + Veiculo + "', Fim='" + _TempoFim + "', Tempo='" + _NovoTempo + "', Entrega='" + _Entrega + "', Existente='" + _Existente + "', Carga='" + Carga + "', Prioridade='" + string.Concat(_Status_Prioridade, " ", _TempoFim.ToString("yyyy/MM/dd hh:mm:ss"), " ", _Prioridade) + "' WHERE Código=" + int.Parse(_ID) + "";
+                    string comandoSQL = "UPDATE Agendamentos SET Status_Operacao='" + _NovoStatus.Replace("'", "''") + "', Fim='" + _TempoFim + "', Tempo='" + _NovoTempo + "', Entrega='" + _Entrega + "', Existente='" + _Existente + "', Prioridade='" + string.Concat(_Status_Prioridade, " ", _TempoFim.ToString("yyyy/MM/dd hh:mm:ss"), " ", _Prioridade) + "' WHERE Código=" + int.Parse(_ID) + "";
 
                     //cria um comando oledb
                     OleDbCommand cmd = new OleDbCommand(comandoSQL, conn);
@@ -1599,11 +1675,19 @@ namespace Sharp_Color_Tool
                     {
                         AtualizaLSTOSAberta();
                         carrega_LST_tintas();
+
+                        //wbExcel.Close(true);
+                        //excelApp.Workbooks.Close();
+                        //excelApp.Quit();
+
+                        ////Mata os objetos COM da memória
+                        //System.Runtime.InteropServices.Marshal.ReleaseComObject(wbExcel);
+                        //System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
                     }
                 }
                 catch (Exception)
                 {
-                    Form Messagebox = new frmMensagemPersonalizada("Critico", "Erro de importação", "Ocorreu um erro, os dados não foram importados da OS Nº " + _ID);
+                    Form Messagebox = new frmMensagemPersonalizada("Alerta", "Erro de importação", "Alguns dados não foram importados da OS Nº " + _ID);
                     Messagebox.ShowDialog();
 
 
@@ -1626,8 +1710,6 @@ namespace Sharp_Color_Tool
                         messagebox.ShowDialog();
 
                         conn.Close();
-
-
                     }
 
                     catch (OleDbException ex)
@@ -5516,10 +5598,34 @@ namespace Sharp_Color_Tool
             }
         }
 
+        public string ConsultaCaminhoOSFaturada(string ID)
+        {
+            OleDbConnection conn = new OleDbConnection(Conexao.Database_Agendamentos);
+
+            conn.Open();
+
+            //cria um comando oledb
+            OleDbCommand cmd = conn.CreateCommand();
+            //define o tipo do comando como texto 
+            cmd.CommandText = "Select * from Agendamentos where Códico=" + ID + "";
+
+            //executa o comando e gera um datareader
+            OleDbDataReader dr = cmd.ExecuteReader();
+
+            string Caminho = "";
+
+            //inicia leitura do datareader
+            while (dr.Read())
+            {
+                Caminho = dr["CaminhoOS"].ToString();
+            }
+            return Caminho;
+        }
         private void cmdFaturar_Click(object sender, EventArgs e)
         {
-            string Faturado;
             DialogResult Resultado;
+            string Faturado;
+
 
             if (check_Multi_Selecao.Checked == true && lstTintasFinalizadas.CheckedItems.Count > 1)
             {
@@ -5537,84 +5643,48 @@ namespace Sharp_Color_Tool
                 {
                     if (lstTintasFinalizadas.Items[i].Checked == true)
                     {
-                         
-
                         OS.NOS = lstTintasFinalizadas.Items[i].SubItems[0].Text;
+                        OS.TipoOS = lstTintasFinalizadas.Items[i].SubItems[2].Text;
                         OS.Cliente = lstTintasFinalizadas.Items[i].SubItems[3].Text;
                         OS.Veiculo = lstTintasFinalizadas.Items[i].SubItems[4].Text;
                         OS.Placa = lstTintasFinalizadas.Items[i].SubItems[5].Text;
                         OS.Cor = lstTintasFinalizadas.Items[i].SubItems[7].Text;
                         OS.TipoPintura = lstTintasFinalizadas.Items[i].SubItems[11].Text;
-                        OS.Quantidade = lstTintasFinalizadas.Items[i].SubItems[10].Text + " mls";
+                        OS.Quantidade = lstTintasFinalizadas.Items[i].SubItems[10].Text;
                         OS.ValorCusto = decimal.Parse(lstTintasFinalizadas.Items[i].SubItems[22].Text).ToString("N2");
                         if (lstTintasFinalizadas.Items[i].SubItems[23].Text != string.Empty)
                         {
-                            OS.Markup =lstTintasFinalizadas.Items[i].SubItems[24].Text;
+                            OS.Markup = lstTintasFinalizadas.Items[i].SubItems[24].Text;
 
                             OS.ValorVenda = decimal.Parse(lstTintasFinalizadas.Items[i].SubItems[23].Text).ToString("N2");
-
                         }
                         Margem = 1 + (Globais.Margen_Sugerida / 100);
                         ValorSugerido = double.Parse(lstTintasFinalizadas.Items[i].SubItems[22].Text) * Margem;
                         OS.Valor_Sugerido = ValorSugerido.ToString();
                         OS.Existente = lstTintasFinalizadas.Items[i].SubItems[26].Text;
+                        OS.Carga = lstTintasFinalizadas.Items[i].SubItems[27].Text;
+                        OS.NumeroPedido = lstTintasFinalizadas.Items[i].SubItems[28].Text;
+                        OS.GrupoCores = lstTintasFinalizadas.Items[i].SubItems[6].Text;
                     }
                 }
-
-
-                if (OS.Existente == "SIM")
-                {
-                    frmFaturamento frm = new frmFaturamento(this);
-
-                    frm.lblNOS.Text = OS.NOS;
-                    frm.lblCliente.Text = OS.Cliente;
-                    frm.lblVeiculo.Text = OS.Veiculo;
-                    frm.lblPlaca.Text = OS.Placa;
-                    frm.lblCor.Text = OS.Cor;
-                    frm.lblSP.Text = OS.TipoPintura;
-                    frm.lblQuantidade.Text =OS.Quantidade + " mls";
-                    frm.lblCusto.Text =double.Parse(OS.ValorCusto).ToString("N2");
-                    if (OS.ValorVenda != "0,00")
-                    {
-                        double Markup = double.Parse(OS.Markup);
-
-                        frm.txtVenda.Text = decimal.Parse(OS.Markup).ToString("N2");
-                        frm.lblMarkup.Text = string.Format("{0:P2}", Markup);
-                    }
-                    frm.lblSugerido.Text = OS.Valor_Sugerido;
-                    frm.ShowDialog();
-                }
-
-                if (OS.Existente == string.Empty)
+                if (OS.Existente != "SIM" || OS.Existente == string.Empty)
                 {
                     Form MSG = new frmMensagemPersonalizada("Questao", "Faturamento", "A OS Nº " + OS.NOS + " ja foi faturada, deseja fazer alguma alteração?");
                     Resultado = MSG.ShowDialog();
 
-                    if (Resultado == DialogResult.OK)
+
+                    if (Resultado.Equals(DialogResult.OK))
                     {
-                        frmFaturamento frm = new frmFaturamento(this);
+                        frmSenha senha = new frmSenha(this,OS, "FATURAMENTO");
+                        senha.Show();
 
-                        frm.lblNOS.Text = OS.NOS;
-                        frm.lblCliente.Text = OS.Cliente;
-                        frm.lblVeiculo.Text = OS.Veiculo;
-                        frm.lblPlaca.Text = OS.Placa;
-                        frm.lblCor.Text = OS.Cor;
-                        frm.lblSP.Text = OS.TipoPintura;
-                        frm.lblQuantidade.Text = OS.Quantidade + " mls";
-                        frm.lblCusto.Text = double.Parse(OS.ValorCusto).ToString("N2");
-                        if (OS.ValorVenda != "0,00")
-                        {
-                            double Markup = double.Parse(OS.Markup);
-
-                            frm.txtVenda.Text = decimal.Parse(OS.Markup).ToString("N2");
-                            frm.lblMarkup.Text = string.Format("{0:P2}", Markup);
-                        }
-                        frm.lblSugerido.Text = OS.Valor_Sugerido;
-                        frm.ShowDialog();
                     }
                 }
-
-
+                if (OS.Existente.Equals("SIM"))
+                {
+                    frmNumeroPedido frm = new frmNumeroPedido(this, OS);
+                    frm.Show();
+                }
             }
 
             if (check_Multi_Selecao.Checked == false)
@@ -5624,32 +5694,7 @@ namespace Sharp_Color_Tool
                 double ValorSugerido;
                 Faturado = lstTintasFinalizadas.FocusedItem.SubItems[26].Text;
 
-                if (Faturado == "SIM")
-                {
-                    frmFaturamento frm = new frmFaturamento(this);
 
-                    frm.lblNOS.Text = ID;
-                    frm.lblCliente.Text = lstTintasFinalizadas.FocusedItem.SubItems[3].Text;
-                    frm.lblVeiculo.Text = lstTintasFinalizadas.FocusedItem.SubItems[4].Text;
-                    frm.lblPlaca.Text = lstTintasFinalizadas.FocusedItem.SubItems[5].Text;
-                    frm.lblCor.Text = lstTintasFinalizadas.FocusedItem.SubItems[7].Text;
-                    frm.lblSP.Text = lstTintasFinalizadas.FocusedItem.SubItems[11].Text;
-                    frm.lblQuantidade.Text = lstTintasFinalizadas.FocusedItem.SubItems[10].Text + " mls";
-                    frm.lblCusto.Text = decimal.Parse(lstTintasFinalizadas.FocusedItem.SubItems[22].Text).ToString("N2");
-                    if (lstTintasFinalizadas.FocusedItem.SubItems[23].Text != string.Empty)
-                    {
-                        string Markup = lstTintasFinalizadas.FocusedItem.SubItems[24].Text;
-
-                        frm.txtVenda.Text = decimal.Parse(lstTintasFinalizadas.FocusedItem.SubItems[23].Text).ToString("N2");
-                        frm.lblMarkup.Text = string.Format("{0:P2}", Markup);
-                    }
-
-                    Margem = 1 + (Globais.Margen_Sugerida / 100);
-                    ValorSugerido = double.Parse(lstTintasFinalizadas.FocusedItem.SubItems[22].Text) * Margem;
-                    frm.lblSugerido.Text = ValorSugerido.ToString("N2");
-
-                    frm.ShowDialog();
-                }
                 if (Faturado != "SIM" || Faturado == string.Empty)
                 {
 
@@ -5658,7 +5703,7 @@ namespace Sharp_Color_Tool
 
                     if (Resultado == DialogResult.OK)
                     {
-                        frmFaturamento frm = new frmFaturamento(this);
+                        frmFaturamento frm = new frmFaturamento(this, "NOVO");
 
                         frm.lblNOS.Text = ID;
                         frm.lblCliente.Text = lstTintasFinalizadas.FocusedItem.SubItems[3].Text;
@@ -5673,15 +5718,48 @@ namespace Sharp_Color_Tool
                             string Markup = lstTintasFinalizadas.FocusedItem.SubItems[24].Text;
 
                             frm.txtVenda.Text = decimal.Parse(lstTintasFinalizadas.FocusedItem.SubItems[23].Text).ToString("N2");
-                            frm.lblMarkup.Text = string.Format("{0:P2}", Markup);
+                            frm.lblMarkup.Text = Markup;
                         }
 
                         Margem = 1 + (Globais.Margen_Sugerida / 100);
                         ValorSugerido = double.Parse(lstTintasFinalizadas.FocusedItem.SubItems[22].Text) * Margem;
                         frm.lblSugerido.Text = ValorSugerido.ToString("N2");
+                        frm.lblCarga.Text = lstTintasFinalizadas.FocusedItem.SubItems[27].Text;
+                        frm.txtNPedido.Text = lstTintasFinalizadas.FocusedItem.SubItems[28].Text;
 
                         frm.ShowDialog();
                     }
+
+                }
+                if (Faturado == "SIM")
+                {
+                    Itens_Lista OS2 = new Itens_Lista();
+
+                    OS2.NOS = lstTintasFinalizadas.FocusedItem.SubItems[0].Text;
+                    OS2.TipoOS = lstTintasFinalizadas.FocusedItem.SubItems[2].Text;
+                    OS2.Cliente = lstTintasFinalizadas.FocusedItem.SubItems[3].Text;
+                    OS2.Veiculo = lstTintasFinalizadas.FocusedItem.SubItems[4].Text;
+                    OS2.Placa = lstTintasFinalizadas.FocusedItem.SubItems[5].Text;
+                    OS2.Cor = lstTintasFinalizadas.FocusedItem.SubItems[7].Text;
+                    OS2.TipoPintura = lstTintasFinalizadas.FocusedItem.SubItems[11].Text;
+                    OS2.Quantidade = lstTintasFinalizadas.FocusedItem.SubItems[10].Text;
+                    OS2.ValorCusto = decimal.Parse(lstTintasFinalizadas.FocusedItem.SubItems[22].Text).ToString("N2");
+                    if (lstTintasFinalizadas.FocusedItem.SubItems[23].Text != string.Empty)
+                    {
+                        OS2.Markup = lstTintasFinalizadas.FocusedItem.SubItems[24].Text;
+
+                        OS2.ValorVenda = decimal.Parse(lstTintasFinalizadas.FocusedItem.SubItems[23].Text).ToString("N2");
+                    }
+                    Margem = 1 + (Globais.Margen_Sugerida / 100);
+                    ValorSugerido = double.Parse(lstTintasFinalizadas.FocusedItem.SubItems[22].Text) * Margem;
+                    OS2.Valor_Sugerido = ValorSugerido.ToString();
+                    OS2.Existente = lstTintasFinalizadas.FocusedItem.SubItems[26].Text;
+                    OS2.Carga = lstTintasFinalizadas.FocusedItem.SubItems[27].Text;
+                    OS2.NumeroPedido = lstTintasFinalizadas.FocusedItem.SubItems[28].Text;
+                    OS2.GrupoCores = lstTintasFinalizadas.FocusedItem.SubItems[6].Text;
+
+                    frmNumeroPedido frm = new frmNumeroPedido(this, OS2);
+                    frm.ShowDialog();
                 }
             }
         }
@@ -5908,6 +5986,16 @@ namespace Sharp_Color_Tool
 
             frmFiltroDatas Relatorio = new frmFiltroDatas(path, TIPO);
             Relatorio.Width = 525;
+            Relatorio.Show();
+        }
+
+        private void volumeComCustoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string path = "Sharp_Color_Tool.rlt_VolumeMensalCusto.rdlc";
+            string TIPO = "DATAS";
+
+            frmFiltroDatas Relatorio = new frmFiltroDatas(path, TIPO);
+            Relatorio.Width = 325;
             Relatorio.Show();
         }
     }

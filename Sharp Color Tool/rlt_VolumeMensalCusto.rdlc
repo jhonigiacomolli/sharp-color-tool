@@ -6,28 +6,28 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.82818cm</Width>
+              <Width>1.70466cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.69717cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.1784cm</Width>
+              <Width>1.86217cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.91285cm</Width>
+              <Width>1.35722cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.45654cm</Width>
+              <Width>1.24487cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.78094cm</Width>
+              <Width>1.73747cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.24223cm</Width>
+              <Width>0.92601cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.7944cm</Width>
+              <Width>1.81208cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.91536cm</Width>
@@ -301,14 +301,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox13">
+                    <Textbox Name="Textbox17">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Valor Unit.</Value>
+                              <Value>Custo</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>7pt</FontSize>
@@ -322,7 +322,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox13</rd:DefaultName>
+                      <rd:DefaultName>Textbox17</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>#7292cc</Color>
@@ -346,7 +346,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Valor Total</Value>
+                              <Value>Venda</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>7pt</FontSize>
@@ -651,14 +651,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Valor_Custo">
+                    <Textbox Name="Valor_Custo1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FormatCurrency(Fields!Valor_Venda.Value,2)</Value>
+                              <Value>=iif(Fields!Quantidade.Value like "","0,00",formatcurrency(sum(iif(Fields!Quantidade.Value like "",0,fields!Quantidade.Value)*fields!Valor_Custo.Value)/1000,2))</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>6pt</FontSize>
@@ -671,7 +671,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Valor_Custo</rd:DefaultName>
+                      <rd:DefaultName>Valor_Custo1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>#e5e5e5</Color>
@@ -756,7 +756,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet_Agendamentos</DataSetName>
         <Height>0.85604cm</Height>
-        <Width>16.80607cm</Width>
+        <Width>14.25702cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -913,7 +913,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox18</rd:DefaultName>
-        <Top>1.76188cm</Top>
+        <Top>2.39688cm</Top>
         <Left>0.25986cm</Left>
         <Height>0.4cm</Height>
         <Width>1.92991cm</Width>
@@ -946,7 +946,7 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <Top>1.76188cm</Top>
+        <Top>2.39688cm</Top>
         <Left>2.54229cm</Left>
         <Height>0.4cm</Height>
         <Width>3.16146cm</Width>
@@ -961,11 +961,77 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox23">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Custo:</Value>
+                <Style>
+                  <FontSize>6pt</FontSize>
+                  <Color>DimGray</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox18</rd:DefaultName>
+        <Top>1.92632cm</Top>
+        <Left>0.25986cm</Left>
+        <Height>0.4cm</Height>
+        <Width>1.92991cm</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="txtNoPrazo2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Microsoft.VisualBasic.Strings.FormatCurrency(Sum((Fields!Quantidade.Value / 1000) * Fields!Valor_Custo.Value), 2)</Value>
+                <Style>
+                  <FontSize>6pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>1.92632cm</Top>
+        <Left>2.54229cm</Left>
+        <Height>0.4cm</Height>
+        <Width>3.16146cm</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>1.51041in</Height>
     <Style />
   </Body>
-  <Width>16.80607cm</Width>
+  <Width>17.77276cm</Width>
   <Page>
     <PageHeader>
       <Height>1.88204cm</Height>

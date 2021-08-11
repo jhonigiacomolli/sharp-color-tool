@@ -17,7 +17,6 @@ namespace Sharp_Color_Tool
         {
             try
             {
-
                 ListView LST = lst;
                 ListViewItem item;
 

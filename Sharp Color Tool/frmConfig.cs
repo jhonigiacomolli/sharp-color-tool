@@ -106,8 +106,9 @@ namespace Sharp_Color_Tool
             int CL_Previsao = (Int32)txtCL_Previsao.Value;
             int Margem = (Int32)txtMargemSugerida.Value;
             int Zoom = (Int32)txtZoomRelatorio.Value;
+            string PastaTintas = txtCaminhoTintas.Text;
 
-            new Globais().Atualizar_Configuracoes(OSModelo,Backup,Repesagem,OSFim,CL_NOS,CL_DtCadastro,CL_TipoOS,CL_Cliente,CL_Veiculo,CL_Placa,CL_GrupoCores,CL_Montadora,CL_COdCOr,CL_Qnt,CL_Pintura,CL_Colorista,CL_Cor,CL_CorpoProva,CL_Prioridade,CL_Status,CL_Inicio,CL_Fim,CL_Tempo,CL_Entrega,CL_dtFaturamento,CL_Custo,CL_Venda,CL_Markup,CL_Chapinhas,CL_Previsao,Margem,Zoom);
+            new Globais().Atualizar_Configuracoes(OSModelo,Backup,PastaTintas,Repesagem,OSFim,CL_NOS,CL_DtCadastro,CL_TipoOS,CL_Cliente,CL_Veiculo,CL_Placa,CL_GrupoCores,CL_Montadora,CL_COdCOr,CL_Qnt,CL_Pintura,CL_Colorista,CL_Cor,CL_CorpoProva,CL_Prioridade,CL_Status,CL_Inicio,CL_Fim,CL_Tempo,CL_Entrega,CL_dtFaturamento,CL_Custo,CL_Venda,CL_Markup,CL_Chapinhas,CL_Previsao,Margem,Zoom);
             Globais.Config();
             this.Close();
         }
